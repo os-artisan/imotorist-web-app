@@ -6,34 +6,14 @@
 
 [Click here for the official documentation](http://laravel-boilerplate.com)
 
-### Slack Channel
-
-Please join us in our Slack channel to get faster responses to your questions. Get your invite here: https://laravel-5-boilerplate.herokuapp.com
-
 ### Introduction
 
-In a nutshell, iMotorist system will facilitate traffic police offices to book traffic violations and offenders to pay their tickets. 
+iMotorist system will facilitate traffic police offices to book traffic violations and offenders to pay their tickets. 
 
 ### Wiki
 
-Please view the [wiki](https://github.com/rappasoft/laravel-5-boilerplate/wiki) for a list of [features](https://github.com/rappasoft/laravel-5-boilerplate/wiki#features).
+Please view the [wiki](https://github.com/iMotorist/imotorist-web-app/wiki) for a list of [features](https://github.com/iMotorist/imotorist-web-app/wiki#features).
 
 ### Issues
 
-If you come across any issues please [report them here](https://github.com/rappasoft/Laravel-5-Boilerplate/issues).
-
-### Contributing
-
-Thank you for considering contributing to the Laravel Boilerplate project! Please feel free to make any pull requests, or e-mail me a feature request you would like to see in the future to Anthony Rappa at rappa819@gmail.com.
-
-### Security Vulnerabilities
-
-If you discover a security vulnerability within this boilerplate, please send an e-mail to Anthony Rappa at rappa819@gmail.com, or create a pull request if possible. All security vulnerabilities will be promptly addressed. Please reference [this page](https://github.com/rappasoft/laravel-5-boilerplate/wiki/7.-Security-Fixes) to make sure you are up to date.
-
-### Donations
-
-If you would like to help the continued efforts of this project, any size [donations](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=JJWUZ4E9S9SFG&lc=US&item_name=Laravel%205%20Boilerplate&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted) are welcomed and highly appreciated.
-
-### License
-
-MIT: [http://anthony.mit-license.org](http://anthony.mit-license.org)
+If you come across any issues please [report them here](https://github.com/iMotorist/imotorist-web-app/issues).
