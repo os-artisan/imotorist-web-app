@@ -65,3 +65,4 @@ after_failure:
 notifications:
   email: false
   slack: imotorist:WJzW2rWGHd3x6F45BPOkUZ8I
+  on_success: always
