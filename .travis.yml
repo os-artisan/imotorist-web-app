@@ -64,3 +64,5 @@ after_failure:
 
 notifications:
     slack: imotorist:WJzW2rWGHd3x6F45BPOkUZ8I
+      on_success: change
+      on_failure: always
