@@ -1,6 +1,6 @@
 ## iMotorist
 
-[![Latest Stable Version](https://poser.pugx.org/rappasoft/laravel-5-boilerplate/v/stable)](https://packagist.org/packages/rappasoft/laravel-5-boilerplate) [![Latest Unstable Version](https://poser.pugx.org/rappasoft/laravel-5-boilerplate/v/unstable)](https://packagist.org/packages/rappasoft/laravel-5-boilerplate) [![Build Status](https://travis-ci.org/iMotorist/imotorist-web-app.svg?branch=master)](https://travis-ci.org/iMotorist/imotorist-web-app) [![Coverage Status](https://coveralls.io/repos/github/iMotorist/imotorist-web-app/badge.svg?branch=master)](https://coveralls.io/github/iMotorist/imotorist-web-app?branch=master) [![StyleCI](https://styleci.io/repos/93291041/shield?branch=master)](https://styleci.io/repos/93291041)
+[![Build Status](https://travis-ci.org/iMotorist/imotorist-web-app.svg?branch=master)](https://travis-ci.org/iMotorist/imotorist-web-app) [![Coverage Status](https://coveralls.io/repos/github/iMotorist/imotorist-web-app/badge.svg?branch=master)](https://coveralls.io/github/iMotorist/imotorist-web-app?branch=master) [![StyleCI](https://styleci.io/repos/93291041/shield?branch=master)](https://styleci.io/repos/93291041)
 
 ### Official Documentation
 
