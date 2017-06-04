@@ -67,5 +67,5 @@ notifications:
   slack: 
     rooms:
       - secure: imotorist:WJzW2rWGHd3x6F45BPOkUZ8I
-    on_success: change
+    on_success: always
     on_failure: always

@@ -20,7 +20,7 @@ class LoggedInFormTest extends BrowserKitTestCase
                  ->type('', 'email')
                  ->press('update-profile')
                  ->seePageIs('/account')
-                 ->see('The first name field is not required.')
+                 ->see('The first name field is required.')
                  ->see('The last name field is required.')
                  ->see('The email field is required.');
         } else {
