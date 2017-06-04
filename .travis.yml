@@ -64,6 +64,4 @@ after_failure:
 
 notifications:
   email: false
-  slack: 
-    rooms:
-      - secure: imotorist:WJzW2rWGHd3x6F45BPOkUZ8I
+  slack: imotorist:WJzW2rWGHd3x6F45BPOkUZ8I
