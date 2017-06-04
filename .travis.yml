@@ -63,8 +63,10 @@ after_failure:
   - cat storage/logs/laravel-`date +"%Y-%m-%d"`.log
 
 notifications:
-    slack: 
-      rooms:
-        - secure: imotorist:WJzW2rWGHd3x6F45BPOkUZ8I
-      on_success: change
-      on_failure: always
+  email: false
+  slack: 
+    rooms:
+      - secure: imotorist:WJzW2rWGHd3x6F45BPOkUZ8I
+    on_success: change
+    on_failure: always
+    erwerwewrwerwe
