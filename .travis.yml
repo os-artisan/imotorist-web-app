@@ -66,4 +66,3 @@ notifications:
   email: false
   slack: imotorist:tNnKlrzgtHK4CSLwkAvYfMA4
   on_success: change
-  on_failure: always
