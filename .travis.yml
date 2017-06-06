@@ -64,4 +64,7 @@ after_failure:
 
 notifications:
   email: false
-  slack: imotorist:tNnKlrzgtHK4CSLwkAvYfMA4
+  slack:
+    secure: coHQAPG3sP07dArq5AWgALTxe5at12FxMPwi7WXvESZlI7rs7hTat60e0CIn0fUPw4bH6hkO9qfaqhOFe7nd43nFbK3PIPXd3daRemnvBXDKXkOq0ea6XFLzuu/xOtw+arvOZmum0QsV+F245WknaH/dvOS3F4WqPG/RhLi+7NQp1cyy1tFWcuxOSUY2Ow7d4L1x8ZSSMs97URXXBbclFPDiziljLTvr/RTbsZUQho/K06CKyJx9CX18qSbV/+HSwInO3pf5DM8ro0PCFY/O4kHC4wSPS+1oX/2rg9P8gPehJUdBrrRx5PpQSOl291E4WGo7YcqddoMmXImTdhjnTd9kq/WS2CahxO+1qplFiol5gvcx9NHEWK+T3Px+BBqFQ6HTeJyG7kP95GZAtk3XcX77y4qUMIZ8s0wSmFYOLILZ4WTXyAOHbwDPWW56RtLDbtmTkhZvZHedYF7JuHQ4y6LqRwzld/5+nix8W33WS1Ub+tLy9W7tt7o1HcgRSBOs1NwwAsaRArDstLkYsxfnbUYYrRxOZr9YxO2arbiOWfpedPhat/GVOMZWDXOC3lZfmB6eMI5s0QM0+DNHOUQr1/SbZDQxe/T9aKTcmMS6FHLtK52Cmh+MAjnx1JqLIk0jFEmfG4AhRmNyn/TLY7w5VkOAs25UftaIX+Bux0WM2iM=
+    on_success: never
+    on_failure: always
