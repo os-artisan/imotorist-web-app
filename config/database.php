@@ -33,6 +33,17 @@ return [
 
     'connections' => [
 
+        'heroku' => [
+            'driver' => 'pgsql',
+            'host' => env('DATABASE_URL', 'host'),
+            'database' => substr(env('DATABASE_URL', 'path'), 1),
+            'username' => env('DATABASE_URL', 'user'),
+            'password' => env('DATABASE_URL', 'pass'),
+            'charset' => 'utf8',
+            'prefix' => '',
+            'schema' => 'public',
+        ],
+
         'sqlite' => [
             'driver' => 'sqlite',
             'database' => env('DB_DATABASE', database_path('database.sqlite')),
@@ -82,17 +93,6 @@ return [
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
-        ],
-
-        'heroku' => [
-            'driver' => 'pgsql',
-            'host' => parse_url(getenv("DATABASE_URL"))["host"],
-            'database' => substr(parse_url(getenv("DATABASE_URL"))["path"], 1),
-            'username' => parse_url(getenv("DATABASE_URL"))["user"],
-            'password' => parse_url(getenv("DATABASE_URL"))["pass"],
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
         ],
 
     ],
