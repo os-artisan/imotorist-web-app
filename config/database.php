@@ -1,5 +1,12 @@
 <?php
 
+    $url = env("DATABASE_URL");
+
+    $host = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $database = substr($url["path"], 1);
+
 return [
 
     /*
@@ -31,17 +38,17 @@ return [
     |
     */
 
-    'connections' => [
 
+    'connections' => [
         'heroku' => [
-            'driver' => 'pgsql',
-            'host' => env('DATABASE_URL', 'host'),
-            'database' => substr(parse_url(getenv("DATABASE_URL"))["path"], 1),
-            'username' => env('DATABASE_URL', 'user'),
-            'password' => env('DATABASE_URL', 'pass'),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'schema' => 'public',
+            'driver'   => 'pgsql',
+            'host'     => $host,
+            'database' => $database,
+            'username' => $username,
+            'password' => $password,
+            'charset'  => 'utf8',
+            'prefix'   => '',
+            'schema'   => 'public',
         ],
 
         'sqlite' => [
