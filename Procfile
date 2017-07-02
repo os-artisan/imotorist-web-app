@@ -1,3 +1,3 @@
 web: vendor/bin/heroku-php-apache2 public/
 
-release: php artisan entrust:migration --no-interaction
+release: yes | php artisan migrate --seed
