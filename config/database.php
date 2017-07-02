@@ -1,6 +1,6 @@
 <?php
 
-    $url = env("DATABASE_URL");
+    $url = getenv("DATABASE_URL");
 
     $host = $url["host"];
     $username = $url["user"];
