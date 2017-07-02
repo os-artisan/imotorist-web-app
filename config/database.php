@@ -5,8 +5,7 @@ $username = null;
 $password = null;
 $database = null;
 
-if(!is_null(env('DATABASE_URL')))
-{
+if(!is_null(env('DATABASE_URL'))){
     $url = parse_url(env("DATABASE_URL"));
 
     $host = $url["host"];
@@ -45,7 +44,6 @@ return [
     | choice installed on your machine before you begin development.
     |
     */
-
 
     'connections' => [
         'heroku' => [
