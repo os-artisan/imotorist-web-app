@@ -5,13 +5,13 @@ $username = null;
 $password = null;
 $database = null;
 
-if(!is_null(env('DATABASE_URL'))){
-    $url = parse_url(env("DATABASE_URL"));
+if (! is_null(env('DATABASE_URL'))) {
+    $url = parse_url(env('DATABASE_URL'));
 
-    $host = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
-    $database = substr($url["path"], 1);
+    $host = $url['host'];
+    $username = $url['user'];
+    $password = $url['pass'];
+    $database = substr($url['path'], 1);
 }
 
 return [
