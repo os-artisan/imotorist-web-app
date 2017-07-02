@@ -36,7 +36,7 @@ return [
         'heroku' => [
             'driver' => 'pgsql',
             'host' => env('DATABASE_URL', 'host'),
-            'database' => substr(env('DATABASE_URL', 'path'), 1),
+            'database' => substr(parse_url(getenv("DATABASE_URL"))["path"], 1),
             'username' => env('DATABASE_URL', 'user'),
             'password' => env('DATABASE_URL', 'pass'),
             'charset' => 'utf8',
