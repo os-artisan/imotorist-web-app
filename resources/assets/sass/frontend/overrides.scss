@@ -1,0 +1,16 @@
+// Navbar nav links
+
+.navbar-nav {
+
+  // underline on hover
+  @media (min-width: $grid-float-breakpoint) {
+
+    > li:hover {
+      border-bottom: 1px solid $brand-primary;
+
+      >a {
+        padding-bottom: $navbar-padding-vertical - 1px;
+      }
+    }
+  }
+}

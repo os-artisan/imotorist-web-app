@@ -1,5 +1,5 @@
 // Body
-$body-bg: #f5f8fa;
+$body-bg: #fff;
 
 // Borders
 $laravel-border-color: darken($body-bg, 10%);
@@ -9,7 +9,7 @@ $panel-default-border: $laravel-border-color;
 $panel-inner-border: $laravel-border-color;
 
 // Brands
-$brand-primary: #3097D1;
+$brand-primary: #00d1b2;
 $brand-info: #8eb4cb;
 $brand-success: #2ab27b;
 $brand-warning: #cbb956;
@@ -25,6 +25,7 @@ $text-color: #636b6f;
 
 // Navbar
 $navbar-default-bg: #fff;
+$navbar-height: 60px;
 
 // Buttons
 $btn-default-color: $text-color;

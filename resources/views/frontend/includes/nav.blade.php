@@ -8,7 +8,9 @@
                 <span class="icon-bar"></span>
             </button>
 
-            {{ link_to_route('frontend.index', app_name(), [], ['class' => 'navbar-brand']) }}
+            <a href="{{route('frontend.index')}}" class="navbar-logo">
+                <img src="{{asset('img/imotorist-logo.svg')}}" alt="{{app_name()}} Logo">
+            </a>
         </div><!--navbar-header-->
 
         <div class="collapse navbar-collapse" id="frontend-navbar-collapse">
