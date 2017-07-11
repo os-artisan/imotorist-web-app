@@ -9,8 +9,8 @@
         <title>@yield('title', app_name())</title>
 
         <!-- Meta -->
-        <meta name="description" content="@yield('meta_description', 'Laravel 5 Boilerplate')">
-        <meta name="author" content="@yield('meta_author', 'Anthony Rappa')">
+        <meta name="description" content="@yield('meta_description', 'On the spot, traffic fine payment system')">
+        <meta name="author" content="@yield('meta_author', 'P. K. Tharindu')">
         @yield('meta')
 
         <!-- Styles -->
