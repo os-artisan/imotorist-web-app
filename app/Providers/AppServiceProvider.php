@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Schema;
+use Laravel\Dusk\DuskServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -76,6 +77,11 @@ class AppServiceProvider extends ServiceProvider
              * Load third party local aliases
              */
             $loader->alias('Debugbar', \Barryvdh\Debugbar\Facade::class);
+
+            /*
+             * Load Laravel Dusk
+             */
+            $this->app->register(DuskServiceProvider::class);
         }
     }
 }
