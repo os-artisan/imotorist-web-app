@@ -44,4 +44,8 @@
             {!! session()->get('flash_message') !!}
         @endif
     </div>
+@elseif (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
 @endif

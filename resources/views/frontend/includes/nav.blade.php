@@ -43,7 +43,7 @@
                 @else
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ $logged_in_user->name }} <span class="caret"></span>
+                            {{ substr($logged_in_user->name,0,20) }}{{ (strlen($logged_in_user->name) > 20) ? "..." : "" }} <span class="caret"></span>
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
