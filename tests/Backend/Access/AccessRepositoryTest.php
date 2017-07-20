@@ -25,7 +25,7 @@ class AccessRepositoryTest extends BrowserKitTestCase
             ->getByPermission(['view-backend'])
             ->toArray();
 
-        $this->assertCount(3, $results);
+        $this->assertCount(4, $results);
         $this->assertArraySubset(['name' => $this->executive->name], $results[0]);
         $this->assertArraySubset(['name' => $this->user->name], $results[1]);
     }
@@ -48,7 +48,7 @@ class AccessRepositoryTest extends BrowserKitTestCase
             ->getByPermission([1], 'id')
             ->toArray();
 
-        $this->assertCount(3, $results);
+        $this->assertCount(4, $results);
         $this->assertArraySubset(['name' => $this->executive->name], $results[0]);
         $this->assertArraySubset(['name' => $this->user->name], $results[1]);
     }
@@ -59,7 +59,7 @@ class AccessRepositoryTest extends BrowserKitTestCase
             ->getByRole('User')
             ->toArray();
 
-        $this->assertCount(1, $results);
+        $this->assertCount(2, $results);
         $this->assertArraySubset(['name' => $this->user->name], $results[0]);
     }
 
@@ -69,7 +69,7 @@ class AccessRepositoryTest extends BrowserKitTestCase
             ->getByRole(['User', 'Executive'])
             ->toArray();
 
-        $this->assertCount(2, $results);
+        $this->assertCount(3, $results);
         $this->assertArraySubset(['name' => $this->executive->name], $results[0]);
         $this->assertArraySubset(['name' => $this->user->name], $results[1]);
     }
@@ -90,7 +90,7 @@ class AccessRepositoryTest extends BrowserKitTestCase
             ->getByRole([1, 3], 'id')
             ->toArray();
 
-        $this->assertCount(2, $results);
+        $this->assertCount(3, $results);
         $this->assertArraySubset(['name' => $this->admin->name], $results[0]);
         $this->assertArraySubset(['name' => $this->user->name], $results[1]);
     }
