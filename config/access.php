@@ -3,12 +3,23 @@
 use App\Models\Access\Role\Role;
 use App\Models\Access\Permission\Permission;
 use App\Models\Access\User\Officer;
+use App\Models\Access\User\Motorist;
 
 return [
     /*
      * Users table used to store users
      */
     'users_table' => 'users',
+
+    /*
+     * Motorist model used by Access to create correct relations.
+    */
+    'motorist' => Motorist::class,
+
+    /*
+     * Motorists table used by Access to save motorists to the database.
+     */
+    'motorists_table' => 'motorists',
 
     /*
      * Officer model used by Access to create correct relations.

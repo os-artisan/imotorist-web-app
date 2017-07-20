@@ -2,6 +2,8 @@
 
 namespace App\Models\Access\User\Traits\Relationship;
 
+use App\Models\Access\User\User;
+
 /**
  * Class OfficerRelationship.
  */
@@ -12,6 +14,6 @@ trait MotoristRelationship
      */
     public function user()
     {
-        return $this->belongsTo('App\Models\Access\User\User');
+        return $this->belongsTo(User::class);
     }
 }
