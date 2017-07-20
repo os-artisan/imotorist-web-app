@@ -3,9 +3,9 @@
 namespace App\Models\Access\User\Traits\Relationship;
 
 use App\Models\System\Session;
-use App\Models\Access\User\SocialLogin;
 use App\Models\Access\User\Officer;
 use App\Models\Access\User\Motorist;
+use App\Models\Access\User\SocialLogin;
 
 /**
  * Class UserRelationship.

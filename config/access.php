@@ -1,9 +1,9 @@
 <?php
 
 use App\Models\Access\Role\Role;
-use App\Models\Access\Permission\Permission;
 use App\Models\Access\User\Officer;
 use App\Models\Access\User\Motorist;
+use App\Models\Access\Permission\Permission;
 
 return [
     /*
