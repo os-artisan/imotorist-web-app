@@ -22,10 +22,10 @@ class CreateUsersTable extends Migration
             $table->string('other_names');
             $table->string('email')->unique();
             $table->string('password')->nullable();
-            $table->string('phone', 15)->nullable();
+            $table->string('phone', 15)->nullable()->unique();
             $table->string('address', 255)->nullable();
-            $table->string('nic', 15)->nullable();
-            $table->string('passport', 15)->nullable();
+            $table->string('nic', 15)->nullable()->unique();
+            $table->string('passport', 15)->nullable()->unique();
             $table->date('date_of_birth')->nullable();
             $table->rememberToken();
             $table->timestamps();

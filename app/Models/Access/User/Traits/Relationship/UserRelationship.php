@@ -35,4 +35,12 @@ trait UserRelationship
     {
         return $this->hasMany(Session::class);
     }
+
+    /**
+     * @return mixed
+     */
+    public function officer()
+    {
+        return $this->hasOne('App\Models\Access\User\Officer');
+    }
 }
