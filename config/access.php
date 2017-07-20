@@ -2,12 +2,23 @@
 
 use App\Models\Access\Role\Role;
 use App\Models\Access\Permission\Permission;
+use App\Models\Access\User\Officer;
 
 return [
     /*
      * Users table used to store users
      */
     'users_table' => 'users',
+
+    /*
+     * Officer model used by Access to create correct relations.
+    */
+    'officer' => Officer::class,
+
+    /*
+     * Officers table used by Access to save officers to the database.
+     */
+    'officers_table' => 'officers',
 
     /*
      * Role model used by Access to create correct relations. Update the role if it is in a different namespace.

@@ -43,4 +43,12 @@ trait UserRelationship
     {
         return $this->hasOne('App\Models\Access\User\Officer');
     }
+
+    /**
+     * @return mixed
+     */
+    public function motorists()
+    {
+        return $this->hasMany('App\Models\Access\User\Motorist');
+    }
 }
