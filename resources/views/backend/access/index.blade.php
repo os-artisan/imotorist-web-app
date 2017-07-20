@@ -29,8 +29,8 @@
                     <thead>
                     <tr>
                         <th>{{ trans('labels.backend.access.users.table.id') }}</th>
-                        <th>{{ trans('labels.backend.access.users.table.first_name') }}</th>
-                        <th>{{ trans('labels.backend.access.users.table.last_name') }}</th>
+                        <th>{{ trans('labels.backend.access.users.table.surname') }}</th>
+                        <th>{{ trans('labels.backend.access.users.table.other_names') }}</th>
                         <th>{{ trans('labels.backend.access.users.table.email') }}</th>
                         <th>{{ trans('labels.backend.access.users.table.confirmed') }}</th>
                         <th>{{ trans('labels.backend.access.users.table.roles') }}</th>
@@ -72,8 +72,8 @@
                 },
                 columns: [
                     {data: 'id', name: '{{config('access.users_table')}}.id'},
-                    {data: 'first_name', name: '{{config('access.users_table')}}.first_name'},
-                    {data: 'last_name', name: '{{config('access.users_table')}}.last_name'},
+                    {data: 'surname', name: '{{config('access.users_table')}}.surname'},
+                    {data: 'other_names', name: '{{config('access.users_table')}}.other_names'},
                     {data: 'email', name: '{{config('access.users_table')}}.email'},
                     {data: 'confirmed', name: '{{config('access.users_table')}}.confirmed'},
                     {data: 'roles', name: '{{config('access.roles_table')}}.name', sortable: false},

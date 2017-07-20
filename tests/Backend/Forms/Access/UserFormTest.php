@@ -19,14 +19,14 @@ class UserFormTest extends BrowserKitTestCase
     {
         $this->actingAs($this->admin)
              ->visit('/admin/access/user/create')
-             ->type('', 'first_name')
-             ->type('', 'last_name')
+             ->type('', 'surname')
+             ->type('', 'other_names')
              ->type('', 'email')
              ->type('', 'password')
              ->type('', 'password_confirmation')
              ->press('Create')
-             ->see('The first name field is required.')
-             ->see('The last name field is required.')
+             ->see('The surname field is required.')
+             ->see('The other names field is required.')
              ->see('The email field is required.')
              ->see('The password field is required.');
     }
@@ -35,8 +35,8 @@ class UserFormTest extends BrowserKitTestCase
     {
         $this->actingAs($this->admin)
              ->visit('/admin/access/user/create')
-             ->type('Test', 'first_name')
-             ->type('User', 'last_name')
+             ->type('Test', 'surname')
+             ->type('User', 'other_names')
              ->type('test@test.com', 'email')
              ->type('123456', 'password')
              ->type('1234567', 'password_confirmation')
@@ -51,15 +51,15 @@ class UserFormTest extends BrowserKitTestCase
 
         // Create any needed resources
         $faker = Faker\Factory::create();
-        $firstName = $faker->firstName;
-        $lastName = $faker->lastName;
+        $surname = $faker->lastName;
+        $otherNames = $faker->firstName;
         $email = $faker->safeEmail;
         $password = $faker->password(8);
 
         $this->actingAs($this->admin)
              ->visit('/admin/access/user/create')
-             ->type($firstName, 'first_name')
-             ->type($lastName, 'last_name')
+             ->type($surname, 'surname')
+             ->type($otherNames, 'other_names')
              ->type($email, 'email')
              ->type($password, 'password')
              ->type($password, 'password_confirmation')
@@ -73,8 +73,8 @@ class UserFormTest extends BrowserKitTestCase
              ->see('The user was successfully created.')
              ->seeInDatabase(config('access.users_table'),
                  [
-                     'first_name' => $firstName,
-                     'last_name' => $lastName,
+                     'surname' => $surname,
+                     'other_names' => $otherNames,
                      'email' => $email,
                      'status' => 1,
                      'confirmed' => 1,
@@ -95,15 +95,15 @@ class UserFormTest extends BrowserKitTestCase
 
         // Create any needed resources
         $faker = Faker\Factory::create();
-        $firstName = $faker->firstName;
-        $lastName = $faker->lastName;
+        $surname = $faker->lastName;
+        $otherNames = $faker->firstName;
         $email = $faker->safeEmail;
         $password = $faker->password(8);
 
         $this->actingAs($this->admin)
              ->visit('/admin/access/user/create')
-             ->type($firstName, 'first_name')
-             ->type($lastName, 'last_name')
+             ->type($surname, 'surname')
+             ->type($otherNames, 'other_names')
              ->type($email, 'email')
              ->type($password, 'password')
              ->type($password, 'password_confirmation')
@@ -117,8 +117,8 @@ class UserFormTest extends BrowserKitTestCase
              ->see('The user was successfully created.')
              ->seeInDatabase(config('access.users_table'),
                  [
-                     'first_name' => $firstName,
-                     'last_name' => $lastName,
+                     'surname' => $surname,
+                     'other_names' => $otherNames,
                      'email' => $email,
                      'status' => 1,
                      'confirmed' => 0,
@@ -140,8 +140,8 @@ class UserFormTest extends BrowserKitTestCase
     {
         $this->actingAs($this->admin)
              ->visit('/admin/access/user/create')
-             ->type('User', 'first_name')
-             ->type('Surname', 'last_name')
+             ->type('User', 'surname')
+             ->type('Surname', 'other_names')
              ->type('user@user.com', 'email')
              ->type('123456', 'password')
              ->type('123456', 'password_confirmation')
@@ -154,12 +154,12 @@ class UserFormTest extends BrowserKitTestCase
     {
         $this->actingAs($this->admin)
              ->visit('/admin/access/user/3/edit')
-             ->type('', 'first_name')
-             ->type('', 'last_name')
+             ->type('', 'surname')
+             ->type('', 'other_names')
              ->type('', 'email')
              ->press('Update')
-             ->see('The first name field is required.')
-             ->see('The last name field is required.')
+             ->see('The surname field is required.')
+             ->see('The other names field is required.')
              ->see('The email field is required.');
     }
 
@@ -170,11 +170,11 @@ class UserFormTest extends BrowserKitTestCase
 
         $this->actingAs($this->admin)
              ->visit('/admin/access/user/'.$this->user->id.'/edit')
-             ->see($this->user->first_name)
-             ->see($this->user->last_name)
+             ->see($this->user->surname)
+             ->see($this->user->other_names)
              ->see($this->user->email)
-             ->type('User', 'first_name')
-             ->type('New', 'last_name')
+             ->type('User', 'surname')
+             ->type('New', 'other_names')
              ->type('user2@user.com', 'email')
              ->uncheck('status')
              ->uncheck('confirmed')
@@ -186,8 +186,8 @@ class UserFormTest extends BrowserKitTestCase
              ->seeInDatabase(config('access.users_table'),
                  [
                      'id'        => $this->user->id,
-                     'first_name'      => 'User',
-                     'last_name'      => 'New',
+                     'surname'      => 'User',
+                     'other_names'      => 'New',
                      'email'     => 'user2@user.com',
                      'status'    => 0,
                      'confirmed' => 0,

@@ -41,8 +41,8 @@ class UserRouteTest extends BrowserKitTestCase
              ->see('View User')
              ->see('Overview')
              ->see('History')
-             ->see($this->user->first_name)
-             ->see($this->user->last_name)
+             ->see($this->user->surname)
+             ->see($this->user->other_names)
              ->see($this->user->email);
     }
 
@@ -51,8 +51,8 @@ class UserRouteTest extends BrowserKitTestCase
         $this->actingAs($this->admin)
              ->visit('/admin/access/user/'.$this->user->id.'/edit')
              ->see('Edit User')
-             ->see($this->user->first_name)
-             ->see($this->user->last_name)
+             ->see($this->user->surname)
+             ->see($this->user->other_names)
              ->see($this->user->email);
     }
 

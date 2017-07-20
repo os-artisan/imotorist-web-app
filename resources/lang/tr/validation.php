@@ -132,8 +132,8 @@ return [
                     ],
 
                     'name'       => 'İsim',
-                    'first_name' => 'Ad',
-                    'last_name'  => 'Soyad',
+                    'surname' => 'Ad',
+                    'other_names'  => 'Soyad',
                     'system'     => 'Sistem',
                 ],
 
@@ -149,8 +149,8 @@ return [
                     'confirmed'               => 'Onaylandı',
                     'email'                   => 'E-posta Adresi',
                     'name'                    => 'İsim',
-                    'last_name'               => 'Soyad',
-                    'first_name'              => 'Ad',
+                    'other_names'               => 'Soyad',
+                    'surname'              => 'Ad',
                     'other_permissions'       => 'Diğer Yetkiler',
                     'password'                => 'Parola',
                     'password_confirmation'   => 'Parola Onayı',
@@ -161,8 +161,8 @@ return [
 
         'frontend' => [
             'email'                     => 'E-posta Adresi',
-            'first_name'                => 'Ad',
-            'last_name'                 => 'Soyad',
+            'surname'                => 'Ad',
+            'other_names'                 => 'Soyad',
             'password'                  => 'Parola',
             'password_confirmation'     => 'Parola Onay',
             'old_password'              => 'Eski Parola',
