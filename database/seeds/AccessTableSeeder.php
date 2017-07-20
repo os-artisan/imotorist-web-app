@@ -25,6 +25,7 @@ class AccessTableSeeder extends Seeder
         $this->call(PermissionTableSeeder::class);
         $this->call(PermissionRoleSeeder::class);
         $this->call(OfficerTableSeeder::class);
+        $this->call(MotoristTableSeeder::class);
 
         $this->enableForeignKeys();
     }

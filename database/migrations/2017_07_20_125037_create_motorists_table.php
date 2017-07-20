@@ -21,6 +21,7 @@ class CreateMotoristsTable extends Migration
             $table->date('issued_date');
             $table->date('expiry_date');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

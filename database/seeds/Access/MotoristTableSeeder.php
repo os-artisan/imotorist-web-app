@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 /**
  * Class UserTableSeeder.
  */
-class OfficerTableSeeder extends Seeder
+class MotoristTableSeeder extends Seeder
 {
     use DisableForeignKeys, TruncateTable;
 
@@ -21,19 +21,21 @@ class OfficerTableSeeder extends Seeder
     public function run()
     {
         $this->disableForeignKeys();
-        $this->truncate(config('access.officers_table'));
+        $this->truncate(config('access.motorists_table'));
 
-        //Add the traffic police officer, user id of 4
-        $officers = [
+        //Add the motorist, user id of 5
+        $motorists = [
             [
-                'user_id'        => 4,
-                'badge_no'         => '50000',
+                'user_id'           => 5,
+                'license_no'        => 'B400167',
+                'issued_date'       => '2010-08-27',
+                'expiry_date'       => '2018-08-27',
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),
             ],
         ];
 
-        DB::table(config('access.officers_table'))->insert($officers);
+        DB::table(config('access.motorists_table'))->insert($motorists);
 
         $this->enableForeignKeys();
     }

@@ -3,11 +3,13 @@
 namespace App\Models\Access\User;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Access\User\Traits\Relationship\MotoristRelationship;
 
 class Motorist extends Model
 {
-    use MotoristRelationship;
+    use SoftDeletes,
+        MotoristRelationship;
 
     /**
      * The database table used by the model.
@@ -22,6 +24,11 @@ class Motorist extends Model
      * @var array
      */
     protected $fillable = ['user_id', 'license_no', 'issued_date', 'expiry_date'];
+
+    /**
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
 
     /**
      * @param array $attributes
