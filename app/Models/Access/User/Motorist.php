@@ -23,7 +23,7 @@ class Motorist extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'license_no', 'issued_date', 'expiry_date'];
+    protected $fillable = ['user_id', 'license_no', 'issued_date', 'expiry_date', 'status'];
 
     /**
      * @var array

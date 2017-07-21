@@ -20,6 +20,7 @@ class CreateMotoristsTable extends Migration
             $table->string('license_no', 15)->unique();
             $table->date('issued_date');
             $table->date('expiry_date');
+            $table->tinyInteger('status')->default(1)->unsigned();
             $table->timestamps();
             $table->softDeletes();
         });

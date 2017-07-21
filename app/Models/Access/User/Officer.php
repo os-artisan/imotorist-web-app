@@ -3,11 +3,13 @@
 namespace App\Models\Access\User;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Access\User\Traits\Relationship\OfficerRelationship;
 
 class Officer extends Model
 {
-    use OfficerRelationship;
+    use SoftDeletes,
+        OfficerRelationship;
 
     /**
      * The database table used by the model.
@@ -21,7 +23,12 @@ class Officer extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'badge_no'];
+    protected $fillable = ['user_id', 'badge_no', 'status'];
+
+    /**
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
 
     /**
      * @param array $attributes
