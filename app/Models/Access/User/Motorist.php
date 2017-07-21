@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Access\User\Traits\Relationship\MotoristRelationship;
 
+/**
+ * Class Motorist.
+ */
 class Motorist extends Model
 {
     use SoftDeletes,

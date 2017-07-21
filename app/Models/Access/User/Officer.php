@@ -6,6 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Access\User\Traits\Relationship\OfficerRelationship;
 
+/**
+ * Class Officer.
+ */
 class Officer extends Model
 {
     use SoftDeletes,

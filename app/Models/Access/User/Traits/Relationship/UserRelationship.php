@@ -3,8 +3,6 @@
 namespace App\Models\Access\User\Traits\Relationship;
 
 use App\Models\System\Session;
-use App\Models\Access\User\Officer;
-use App\Models\Access\User\Motorist;
 use App\Models\Access\User\SocialLogin;
 
 /**
@@ -43,7 +41,7 @@ trait UserRelationship
      */
     public function officer()
     {
-        return $this->hasOne(Officer::class);
+        return $this->hasOne(config('access.officer'));
     }
 
     /**
@@ -51,6 +49,6 @@ trait UserRelationship
      */
     public function motorists()
     {
-        return $this->hasMany(Motorist::class);
+        return $this->hasMany(config('access.motorist'));
     }
 }

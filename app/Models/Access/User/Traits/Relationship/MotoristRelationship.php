@@ -2,8 +2,6 @@
 
 namespace App\Models\Access\User\Traits\Relationship;
 
-use App\Models\Access\User\User;
-
 /**
  * Class OfficerRelationship.
  */
@@ -14,6 +12,14 @@ trait MotoristRelationship
      */
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(config('auth.providers.users.model'));
+    }
+
+    /**
+     * @return mixed
+     */
+    public function vehicleClasses()
+    {
+        return $this->belongsToMany(config('license.vehicle_class'), config('license.motorist_vehicle_class_table'), 'motorist_id', 'vehicle_class_id');
     }
 }
