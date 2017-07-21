@@ -6,7 +6,7 @@ use Database\DisableForeignKeys;
 use Illuminate\Support\Facades\DB;
 
 /**
- * Class RoleTableSeeder.
+ * Class OtherVehicleClassTableSeeder.
  */
 class OtherVehicleClassTableSeeder extends Seeder
 {

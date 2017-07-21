@@ -7,7 +7,7 @@ use Database\DisableForeignKeys;
 use Illuminate\Support\Facades\DB;
 
 /**
- * Class UserTableSeeder.
+ * Class OfficerTableSeeder.
  */
 class OfficerTableSeeder extends Seeder
 {

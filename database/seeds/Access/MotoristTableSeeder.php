@@ -7,7 +7,7 @@ use Database\DisableForeignKeys;
 use Illuminate\Support\Facades\DB;
 
 /**
- * Class UserTableSeeder.
+ * Class MotoristTableSeeder.
  */
 class MotoristTableSeeder extends Seeder
 {
@@ -27,9 +27,9 @@ class MotoristTableSeeder extends Seeder
         $motorists = [
             [
                 'user_id'           => 5,
-                'license_no'        => 'B400167',
-                'issued_date'       => '2010-08-27',
-                'expiry_date'       => '2018-08-27',
+                'license_no'        => 'B507614',
+                'issued_date'       => '2011-06-21',
+                'expiry_date'       => '2019-06-21',
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),
             ],

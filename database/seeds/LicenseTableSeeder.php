@@ -21,6 +21,7 @@ class LicenseTableSeeder extends Seeder
 
         $this->call(VehicleClassTableSeeder::class);
         $this->call(OtherVehicleClassTableSeeder::class);
+        $this->call(MotoristVehicleClassTableSeeder::class);
 
         $this->enableForeignKeys();
     }
