@@ -9,7 +9,7 @@
             </button>
 
             <a href="{{route('frontend.index')}}" class="navbar-logo">
-                <img src="{{asset('img/imotorist-logo.svg')}}" alt="{{app_name()}} Logo">
+                <img src="{{ Request::is('/') ? asset('img/imotorist-logo-light.svg') : asset('img/imotorist-logo.svg') }}" alt="{{app_name()}} Logo">
             </a>
         </div><!--navbar-header-->
 
