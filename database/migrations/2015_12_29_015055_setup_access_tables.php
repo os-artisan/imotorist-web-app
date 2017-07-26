@@ -17,7 +17,7 @@ class SetupAccessTables extends Migration
     public function up()
     {
         Schema::table(config('access.users_table'), function ($table) {
-            $table->tinyInteger('status')->after('password')->default(1)->unsigned();
+            $table->tinyInteger('status')->after('date_of_birth')->default(1)->unsigned();
             $table->string('confirmation_code')->after('status')->nullable();
             $table->boolean('confirmed')->after('confirmation_code')->default(config('access.users.confirm_email') ? false : true);
             $table->softDeletes();

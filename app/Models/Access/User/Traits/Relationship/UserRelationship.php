@@ -35,4 +35,20 @@ trait UserRelationship
     {
         return $this->hasMany(Session::class);
     }
+
+    /**
+     * @return mixed
+     */
+    public function officer()
+    {
+        return $this->hasOne(config('access.officer'));
+    }
+
+    /**
+     * @return mixed
+     */
+    public function motorists()
+    {
+        return $this->hasMany(config('access.motorist'));
+    }
 }

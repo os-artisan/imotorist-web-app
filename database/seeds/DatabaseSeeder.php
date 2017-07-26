@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         Model::unguard();
 
         $this->call(AccessTableSeeder::class);
+        $this->call(LicenseTableSeeder::class);
         $this->call(HistoryTypeTableSeeder::class);
 
         Model::reguard();

@@ -132,8 +132,8 @@ return [
                     ],
 
                     'name'       => 'Name',
-                    'first_name' => 'First Name',
-                    'last_name'  => 'Last Name',
+                    'surname' => 'Surname',
+                    'other_names'  => 'Other Names',
                     'system'     => 'System',
                 ],
 
@@ -149,8 +149,8 @@ return [
                     'confirmed'               => 'Confirmed',
                     'email'                   => 'E-mail Address',
                     'name'                    => 'Name',
-                    'last_name'               => 'Last Name',
-                    'first_name'              => 'First Name',
+                    'other_names'               => 'Other Names',
+                    'surname'              => 'Surname',
                     'other_permissions'       => 'Other Permissions',
                     'password'                => 'Password',
                     'password_confirmation'   => 'Password Confirmation',
@@ -161,8 +161,8 @@ return [
 
         'frontend' => [
             'email'                     => 'E-mail Address',
-            'first_name'                => 'First Name',
-            'last_name'                 => 'Last Name',
+            'surname'                => 'Surname',
+            'other_names'                 => 'Other Names',
             'password'                  => 'Password',
             'password_confirmation'     => 'Password Confirmation',
             'old_password'              => 'Old Password',

@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\Access\Role\Role;
+use App\Models\Access\User\Officer;
+use App\Models\Access\User\Motorist;
 use App\Models\Access\Permission\Permission;
 
 return [
@@ -8,6 +10,26 @@ return [
      * Users table used to store users
      */
     'users_table' => 'users',
+
+    /*
+     * Motorist model used by Access to create correct relations.
+    */
+    'motorist' => Motorist::class,
+
+    /*
+     * Motorists table used by Access to save motorists to the database.
+     */
+    'motorists_table' => 'motorists',
+
+    /*
+     * Officer model used by Access to create correct relations.
+    */
+    'officer' => Officer::class,
+
+    /*
+     * Officers table used by Access to save officers to the database.
+     */
+    'officers_table' => 'officers',
 
     /*
      * Role model used by Access to create correct relations. Update the role if it is in a different namespace.
@@ -63,7 +85,12 @@ return [
         /*
          * Whether or not the users email can be changed on the edit profile screen
          */
-        'change_email' => false,
+        'change_email' => true,
+
+        /*
+         * Whether or not the user has to verify their mobile number
+         */
+        'verify_mobile' => true,
     ],
 
     /*
