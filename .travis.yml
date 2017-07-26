@@ -47,7 +47,7 @@ before_script:
   - if [[ $EXEC_COVERAGE != 'true' ]]; then phpenv config-rm xdebug.ini ; fi
   - if [[ $EXEC_COVERAGE = 'true' ]]; then echo "memory_limit=-1" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini ; fi
   - composer self-update || true
-  - composer install --dev --no-interaction -o --no-scripts
+  - composer install --no-interaction -o --no-scripts
   - composer run-script post-root-package-install
   - composer run-script post-create-project-cmd
   - composer run-script post-install-cmd

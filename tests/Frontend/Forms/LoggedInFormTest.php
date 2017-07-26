@@ -51,7 +51,7 @@ class LoggedInFormTest extends BrowserKitTestCase
                  ->type($this->user->other_names.'_'.$rand, 'other_names')
                  ->type('2_'.$this->user->email, 'email')
                  ->press('update-profile')
-                 ->seePageIs('login')
+                 ->seePageIs('/login')
                  ->see('You must confirm your new e-mail address before you can log in again.')
                  ->seeInDatabase(config('access.users_table'),
                      [
