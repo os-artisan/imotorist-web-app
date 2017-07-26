@@ -27,6 +27,11 @@ class PermissionRoleSeeder extends Seeder
          */
         Role::find(2)->permissions()->sync([1]);
 
+        /*
+         * Assign view backend to traffic police officer role
+         */
+        Role::find(4)->permissions()->sync([1]);
+
         $this->enableForeignKeys();
     }
 }

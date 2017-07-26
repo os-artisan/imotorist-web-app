@@ -91,8 +91,8 @@ class UserRepository extends BaseRepository
             ->with('roles')
             ->select([
                 config('access.users_table').'.id',
-                config('access.users_table').'.first_name',
-                config('access.users_table').'.last_name',
+                config('access.users_table').'.surname',
+                config('access.users_table').'.other_names',
                 config('access.users_table').'.email',
                 config('access.users_table').'.status',
                 config('access.users_table').'.confirmed',
@@ -157,8 +157,8 @@ class UserRepository extends BaseRepository
 
         $this->checkUserByEmail($data, $user);
 
-        $user->first_name = $data['first_name'];
-        $user->last_name = $data['last_name'];
+        $user->surname = $data['surname'];
+        $user->other_names = $data['other_names'];
         $user->email = $data['email'];
         $user->status = isset($data['status']) ? 1 : 0;
         $user->confirmed = isset($data['confirmed']) ? 1 : 0;
@@ -352,8 +352,8 @@ class UserRepository extends BaseRepository
     {
         $user = self::MODEL;
         $user = new $user;
-        $user->first_name = $input['first_name'];
-        $user->last_name = $input['last_name'];
+        $user->surname = $input['surname'];
+        $user->other_names = $input['other_names'];
         $user->email = $input['email'];
         $user->password = bcrypt($input['password']);
         $user->status = isset($input['status']) ? 1 : 0;

@@ -14,16 +14,16 @@
                         {{csrf_field()}}
 
                     <div class="form-group">
-                        <label for="first_name" class="control-label col-md-4">{{trans('validation.attributes.frontend.first_name')}}</label>
+                        <label for="surname" class="control-label col-md-4">{{trans('validation.attributes.frontend.surname')}}</label>
                         <div class="col-md-6">
-                            <input maxlength="191" required="required" autofocus="autofocus" name="first_name" type="text" class="form-control" placeholder="{{trans('validation.attributes.frontend.first_name')}}">
+                            <input maxlength="191" required="required" autofocus="autofocus" name="surname" type="text" class="form-control" placeholder="{{trans('validation.attributes.frontend.surname')}}">
                         </div><!--col-md-6-->
                     </div><!--form-group-->
 
                     <div class="form-group">
-                        <label for="last_name" class="control-label col-md-4">{{trans('validation.attributes.frontend.last_name')}}</label>
+                        <label for="other_names" class="control-label col-md-4">{{trans('validation.attributes.frontend.other_names')}}</label>
                         <div class="col-md-6">
-                            <input maxlength="191" required="required" name="last_name" type="text" class="form-control" placeholder="{{trans('validation.attributes.frontend.last_name')}}">
+                            <input maxlength="191" required="required" name="other_names" type="text" class="form-control" placeholder="{{trans('validation.attributes.frontend.other_names')}}">
                         </div><!--col-md-6-->
                     </div><!--form-group-->
 

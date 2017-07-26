@@ -1,18 +1,18 @@
 {{ Form::model($logged_in_user, ['route' => 'frontend.user.profile.update', 'class' => 'form-horizontal', 'method' => 'PATCH']) }}
 
     <div class="form-group">
-        {{ Form::label('first_name', trans('validation.attributes.frontend.first_name'),
+        {{ Form::label('surname', trans('validation.attributes.frontend.surname'),
         ['class' => 'col-md-4 control-label']) }}
         <div class="col-md-6">
-            {{ Form::text('first_name', null,
-            ['class' => 'form-control', 'required' => 'required', 'autofocus' => 'autofocus', 'maxlength' => '191', 'placeholder' => trans('validation.attributes.frontend.first_name')]) }}
+            {{ Form::text('surname', null,
+            ['class' => 'form-control', 'required' => 'required', 'autofocus' => 'autofocus', 'maxlength' => '191', 'placeholder' => trans('validation.attributes.frontend.surname')]) }}
         </div>
     </div>
     <div class="form-group">
-        {{ Form::label('last_name', trans('validation.attributes.frontend.last_name'),
+        {{ Form::label('other_names', trans('validation.attributes.frontend.other_names'),
         ['class' => 'col-md-4 control-label']) }}
         <div class="col-md-6">
-            {{ Form::text('last_name', null, ['class' => 'form-control', 'required' => 'required', 'maxlength' => '191', 'placeholder' => trans('validation.attributes.frontend.last_name')]) }}
+            {{ Form::text('other_names', null, ['class' => 'form-control', 'required' => 'required', 'maxlength' => '191', 'placeholder' => trans('validation.attributes.frontend.other_names')]) }}
         </div>
     </div>
 

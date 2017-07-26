@@ -103,8 +103,8 @@ class UserRepository extends BaseRepository
     {
         $user = self::MODEL;
         $user = new $user;
-        $user->first_name = $data['first_name'];
-        $user->last_name = $data['last_name'];
+        $user->surname = $data['surname'];
+        $user->other_names = $data['other_names'];
         $user->email = $data['email'];
         $user->confirmation_code = md5(uniqid(mt_rand(), true));
         $user->status = 1;
@@ -162,12 +162,12 @@ class UserRepository extends BaseRepository
                 throw new GeneralException(trans('exceptions.frontend.auth.registration_disabled'));
             }
 
-            // Get users first name and last name from their full name
+            // Get users surname and Other names from their full name
             $nameParts = $this->getNameParts($data->getName());
 
             $user = $this->create([
-                'first_name'  => $nameParts['first_name'],
-                'last_name'  => $nameParts['last_name'],
+                'surname'  => $nameParts['surname'],
+                'other_names'  => $nameParts['other_names'],
                 'email' => $user_email,
             ], true);
         }
@@ -230,8 +230,8 @@ class UserRepository extends BaseRepository
     public function updateProfile($id, $input)
     {
         $user = $this->find($id);
-        $user->first_name = $input['first_name'];
-        $user->last_name = $input['last_name'];
+        $user->surname = $input['surname'];
+        $user->other_names = $input['other_names'];
 
         if ($user->canChangeEmail()) {
             //Address is not current address
@@ -294,18 +294,18 @@ class UserRepository extends BaseRepository
         $result = [];
 
         if (empty($parts)) {
-            $result['first_name'] = null;
-            $result['last_name'] = null;
+            $result['surname'] = null;
+            $result['other_names'] = null;
         }
 
         if (! empty($parts) && $size == 1) {
-            $result['first_name'] = $parts[0];
-            $result['last_name'] = null;
+            $result['surname'] = $parts[0];
+            $result['other_names'] = null;
         }
 
         if (! empty($parts) && $size >= 2) {
-            $result['first_name'] = $parts[0];
-            $result['last_name'] = $parts[1];
+            $result['surname'] = $parts[0];
+            $result['other_names'] = $parts[1];
         }
 
         return $result;
