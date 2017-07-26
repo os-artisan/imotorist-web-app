@@ -85,7 +85,7 @@ return [
         /*
          * Whether or not the users email can be changed on the edit profile screen
          */
-        'change_email' => true,
+        'change_email' => false,
 
         /*
          * Whether or not the user has to verify their mobile number
