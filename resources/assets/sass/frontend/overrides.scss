@@ -1,9 +1,18 @@
-// Navbar 
-// Navbar nav links
+/* Navbar */
+
+@media (min-width: $grid-float-breakpoint){
+	.navbar {
+		border: 0;
+		border-bottom: 1px solid $navbar-default-border;
+	    border-radius: 0;
+	}	
+}
+
+/* Navbar nav links */
 
 .navbar-nav {
 
-  // underline on hover
+  /* underline on hover */
   @media (min-width: $grid-float-breakpoint) {
 
     > li:hover {
