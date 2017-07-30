@@ -22,4 +22,12 @@ trait DivisionRelationship
     {
         return $this->hasMany(config('police.district'));
     }
+
+    /**
+     * @return mixed
+     */
+    public function stations()
+    {
+        return $this->hasManyThrough(config('police.station'), config('police.district'), 'division_id', 'district_id');
+    }
 }

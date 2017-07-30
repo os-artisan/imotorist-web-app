@@ -3,6 +3,7 @@
 namespace App\Models\Police;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Police\Traits\Relationship\StationRelationship;
 
 /**
@@ -10,7 +11,8 @@ use App\Models\Police\Traits\Relationship\StationRelationship;
  */
 class Station extends Model
 {
-    use StationRelationship;
+    use SoftDeletes,
+        StationRelationship;
 
     /**
      * The database table used by the model.
@@ -25,6 +27,11 @@ class Station extends Model
      * @var array
      */
     protected $fillable = ['district_id', 'name', 'status'];
+
+    /**
+     * @var array
+     */
+    protected $dates = ['deleted_at'];
 
     /**
      * @param array $attributes

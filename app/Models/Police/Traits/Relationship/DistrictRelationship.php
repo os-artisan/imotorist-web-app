@@ -22,4 +22,12 @@ trait DistrictRelationship
     {
         return $this->hasMany(config('police.station'));
     }
+
+    /**
+     * @return mixed
+     */
+    public function range()
+    {
+        return $this->division->range();
+    }
 }

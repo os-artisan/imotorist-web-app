@@ -14,4 +14,20 @@ trait StationRelationship
     {
         return $this->belongsTo(config('police.district'));
     }
+
+    /**
+     * @return mixed
+     */
+    public function division()
+    {
+        return $this->district->division();
+    }
+
+        /**
+     * @return mixed
+     */
+    public function range()
+    {
+        return $this->division->range();
+    }
 }
