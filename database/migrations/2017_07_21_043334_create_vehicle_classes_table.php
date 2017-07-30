@@ -13,7 +13,7 @@ class CreateVehicleClassesTable extends Migration
      */
     public function up()
     {
-        Schema::create('vehicle_classes', function (Blueprint $table) {
+        Schema::create(config('license.vehicle_classes_table'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('class', 2)->unique();
             $table->text('description');
@@ -27,6 +27,6 @@ class CreateVehicleClassesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vehicle_classes');
+        Schema::dropIfExists(config('license.vehicle_classes_table'));
     }
 }
