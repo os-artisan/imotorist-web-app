@@ -5,9 +5,9 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner text-center">
-                <h1>Your Favorite Source of Free Bootstrap Themes</h1>
-                <p>Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
-                <a href="#" class="btn btn-primary btn-xl page-scroll">Find Out More</a>
+                <h1 class="mb-20">New Way of Paying Traffic Fines in Sri Lanka!</h1>
+                <p class="mb-25">Our traffic fine payment service works just like an electronic account payment. It is a simple and secure way to pay traffic fines with very little effort.</p>
+                <a href="#" class="btn btn-primary btn-lg page-scroll">Find Out More</a>
             </div>
         </div>
     </header>
