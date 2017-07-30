@@ -33,15 +33,17 @@
             ]); ?>
         </script>
     </head>
-    <body id="app-layout">
+    <body id="app-layout" class="{{ str_replace('.', '-', Route::currentRouteName()) }}">
         <div id="app">
             @include('includes.partials.logged-in-as')
             @include('frontend.includes.nav')
 
-            <div class="container">
+            <div class="container messages">
                 @include('includes.partials.messages')
-                @yield('content')
             </div><!-- container -->
+
+            @yield('content')
+            
         </div><!--#app-->
 
         <!-- Scripts -->

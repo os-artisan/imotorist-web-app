@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#frontend-navbar-collapse">
@@ -9,7 +9,7 @@
             </button>
 
             <a href="{{route('frontend.index')}}" class="navbar-logo">
-                <img src="{{asset('img/imotorist-logo.svg')}}" alt="{{app_name()}} Logo">
+                <img src="{{ Request::is('/') ? asset('img/imotorist-logo-light.svg') : asset('img/imotorist-logo.svg') }}" alt="{{app_name()}} Logo">
             </a>
         </div><!--navbar-header-->
 

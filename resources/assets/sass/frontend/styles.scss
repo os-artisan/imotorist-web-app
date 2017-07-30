@@ -1,6 +1,10 @@
-// Navbar
+/* -------------------------------- 
 
-.navbar-logo {
+Navbar
+
+-------------------------------- */
+
+ .navbar-logo {
 
   float: left;
   margin: 5px 15px;
@@ -8,4 +12,104 @@
   img {
     height: 50px;
   }
+}
+
+// For home page
+.frontend-index {
+  .navbar {
+    background-color: transparent;
+    border: 0;
+
+    .navbar-nav > li > a, .navbar-text {
+      color: $navbar-default-border;
+    }
+
+    .navbar-nav > li > a {
+      &:focus, &:hover {
+        color: white;
+      }
+    }
+
+    .navbar-nav > .open > a {
+      background-color: transparent;
+
+      &:focus, &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .container.messages {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+  }
+}
+
+/* -------------------------------- 
+
+Header
+
+-------------------------------- */
+
+ header {
+  min-height: auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  background-position: center;
+  background-image: url(../img/header.jpg);
+  color: #fff;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 22px;
+
+  .header-content {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 100px 15px;
+
+    .header-content-inner h1 {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (min-width:$grid-float-breakpoint) {
+  header {
+    min-height: 100vh;
+
+    .header-content {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      padding: 0 50px;
+
+      .header-content-inner {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
+
+/* -------------------------------- 
+
+Alerts
+
+-------------------------------- */
+
+.container.messages {
+  margin-top: $navbar-height + 22;
 }
