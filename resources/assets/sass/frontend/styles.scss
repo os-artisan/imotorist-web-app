@@ -1,7 +1,8 @@
-/*
- * Navbar
- * ------
- */
+/* -------------------------------- 
+
+Navbar
+
+-------------------------------- */
 
  .navbar-logo {
 
@@ -14,11 +15,10 @@
 }
 
 // For home page
-#app.home {
+.frontend-index {
   .navbar {
-    z-index: 2;
     background-color: transparent;
-    border-bottom: 0;
+    border: 0;
 
     .navbar-nav > li > a, .navbar-text {
       color: $navbar-default-border;
@@ -38,13 +38,24 @@
       }
     }
   }
+
+  .container.messages {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+  }
 }
 
+/* -------------------------------- 
 
-/*
- * Header
- * ------
- */
+Header
+
+-------------------------------- */
 
  header {
   min-height: auto;
@@ -55,7 +66,6 @@
   background-position: center;
   background-image: url(../img/header.jpg);
   color: #fff;
-  margin-top: -($navbar-height+22);
   position: relative;
   width: 100%;
   text-align: center;
@@ -92,4 +102,14 @@
       }
     }
   }
+}
+
+/* -------------------------------- 
+
+Alerts
+
+-------------------------------- */
+
+.container.messages {
+  margin-top: $navbar-height + 22;
 }

@@ -33,12 +33,12 @@
             ]); ?>
         </script>
     </head>
-    <body id="app-layout">
-        <div id="app" {{ Request::is('/') ? 'class=home' : '' }}>
+    <body id="app-layout" class="{{ str_replace('.', '-', Route::currentRouteName()) }}">
+        <div id="app">
             @include('includes.partials.logged-in-as')
             @include('frontend.includes.nav')
 
-            <div class="container">
+            <div class="container messages">
                 @include('includes.partials.messages')
             </div><!-- container -->
 
