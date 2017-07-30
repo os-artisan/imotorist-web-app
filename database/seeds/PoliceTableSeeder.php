@@ -20,6 +20,9 @@ class PoliceTableSeeder extends Seeder
         $this->disableForeignKeys();
 
         $this->call(RangeTableSeeder::class);
+        $this->call(DivisionTableSeeder::class);
+        $this->call(DistrictTableSeeder::class);
+        $this->call(PoliceStationTableSeeder::class);
 
         $this->enableForeignKeys();
     }

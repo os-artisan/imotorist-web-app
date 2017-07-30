@@ -23,8 +23,8 @@ class RangeTableSeeder extends Seeder
         $this->truncate(config('police.ranges_table'));
 
         $ranges = [
-            ['name'      => 'test1'],
-            ['name'      => 'test2'],
+            ['name'      => 'range 1'],
+            ['name'      => 'range 2'],
         ];
 
         DB::table(config('police.ranges_table'))->insert($ranges);
