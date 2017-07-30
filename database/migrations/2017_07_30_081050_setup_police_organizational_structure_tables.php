@@ -40,7 +40,7 @@ class SetupPoliceOrganizationalStructureTables extends Migration
                 ->onDelete('cascade');
         });
 
-        Schema::create(config('police.police_stations_table'), function (Blueprint $table) {
+        Schema::create(config('police.stations_table'), function (Blueprint $table) {
             $table->increments('id');
             $table->integer('district_id')->unsigned();
             $table->string('name');
@@ -61,7 +61,25 @@ class SetupPoliceOrganizationalStructureTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('police.police_stations_table'));
+        /*
+         * Remove Foreign/Unique/Index
+         */
+        Schema::table(config('police.stations_table'), function (Blueprint $table) {
+            $table->dropForeign(config('police.stations_table').'_district_id_foreign');
+        });
+
+        Schema::table(config('police.districts_table'), function (Blueprint $table) {
+            $table->dropForeign(config('police.districts_table').'_division_id_foreign');
+        });
+
+        Schema::table(config('police.divisions_table'), function (Blueprint $table) {
+            $table->dropForeign(config('police.divisions_table').'_range_id_foreign');
+        });
+
+        /*
+         * Drop tables
+         */
+        Schema::dropIfExists(config('police.stations_table'));
         Schema::dropIfExists(config('police.districts_table'));
         Schema::dropIfExists(config('police.divisions_table'));
         Schema::dropIfExists(config('police.ranges_table'));

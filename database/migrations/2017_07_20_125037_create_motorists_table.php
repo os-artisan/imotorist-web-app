@@ -33,6 +33,16 @@ class CreateMotoristsTable extends Migration
      */
     public function down()
     {
+        /*
+         * Remove Foreign/Unique/Index
+         */
+        Schema::table(config('access.motorists_table'), function (Blueprint $table) {
+            $table->dropForeign(config('access.motorists_table').'_user_id_foreign');
+        });
+
+        /*
+         * Drop tables
+         */
         Schema::dropIfExists(config('access.motorists_table'));
     }
 }

@@ -31,6 +31,16 @@ class CreateOfficersTable extends Migration
      */
     public function down()
     {
+        /*
+         * Remove Foreign/Unique/Index
+         */
+        Schema::table(config('access.officers_table'), function (Blueprint $table) {
+            $table->dropForeign(config('access.officers_table').'_user_id_foreign');
+        });
+
+        /*
+         * Drop tables
+         */
         Schema::dropIfExists(config('access.officers_table'));
     }
 }

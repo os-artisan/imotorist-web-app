@@ -1,10 +1,25 @@
 <?php
 
+use App\Models\Police\Range;
+use App\Models\Police\Station;
+use App\Models\Police\Division;
+use App\Models\Police\District;
+
 return [
+    /*
+     * Range model.
+    */
+    'range' => Range::class,
+
     /*
      * Ranges table used to store police ranges.
      */
     'ranges_table' => 'ranges',
+
+    /*
+     * Division model.
+    */
+    'division' => Division::class,
 
     /*
      * Divisions table used to store provinces.
@@ -12,12 +27,22 @@ return [
     'divisions_table' => 'divisions',
 
     /*
+     * District model.
+    */
+    'district' => District::class,
+
+    /*
      * Districts table used to store districts.
      */
     'districts_table' => 'districts',
 
     /*
+     * Station model.
+    */
+    'station' => Station::class,
+
+    /*
      * Police Stations table used to store police stations.
      */
-    'police_stations_table' => 'police_stations',
+    'stations_table' => 'stations',
 ];

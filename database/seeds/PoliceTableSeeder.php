@@ -22,7 +22,7 @@ class PoliceTableSeeder extends Seeder
         $this->call(RangeTableSeeder::class);
         $this->call(DivisionTableSeeder::class);
         $this->call(DistrictTableSeeder::class);
-        $this->call(PoliceStationTableSeeder::class);
+        $this->call(StationTableSeeder::class);
 
         $this->enableForeignKeys();
     }

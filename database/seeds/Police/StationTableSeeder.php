@@ -6,9 +6,9 @@ use Database\DisableForeignKeys;
 use Illuminate\Support\Facades\DB;
 
 /**
- * Class PoliceStationTableSeeder.
+ * Class StationTableSeeder.
  */
-class PoliceStationTableSeeder extends Seeder
+class StationTableSeeder extends Seeder
 {
     use DisableForeignKeys, TruncateTable;
 
@@ -20,7 +20,7 @@ class PoliceStationTableSeeder extends Seeder
     public function run()
     {
         $this->disableForeignKeys();
-        $this->truncate(config('police.police_stations_table'));
+        $this->truncate(config('police.stations_table'));
 
         $stations = [
             [
@@ -33,7 +33,7 @@ class PoliceStationTableSeeder extends Seeder
             ],
         ];
 
-        DB::table(config('police.police_stations_table'))->insert($stations);
+        DB::table(config('police.stations_table'))->insert($stations);
 
         $this->enableForeignKeys();
     }
