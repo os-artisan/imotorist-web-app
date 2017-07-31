@@ -22,4 +22,12 @@ trait MotoristRelationship
     {
         return $this->belongsToMany(config('license.vehicle_class'), config('license.motorist_vehicle_class_table'), 'motorist_id', 'vehicle_class_id');
     }
+
+    /**
+     * @return mixed
+     */
+    public function tickets()
+    {
+        return $this->hasMany(config('fine.ticket'));
+    }
 }

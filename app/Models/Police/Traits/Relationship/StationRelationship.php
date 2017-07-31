@@ -23,11 +23,19 @@ trait StationRelationship
         return $this->district->division();
     }
 
-        /**
+    /**
      * @return mixed
      */
     public function range()
     {
         return $this->division->range();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function tickets()
+    {
+        return $this->hasMany(config('fine.ticket'));
     }
 }
