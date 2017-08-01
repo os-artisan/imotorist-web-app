@@ -15,7 +15,7 @@ trait DistrictRelationship
         return $this->belongsTo(config('police.division'));
     }
 
-	/**
+    /**
      * @return mixed
      */
     public function stations()

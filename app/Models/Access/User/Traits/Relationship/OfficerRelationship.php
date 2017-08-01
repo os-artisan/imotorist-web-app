@@ -15,7 +15,7 @@ trait OfficerRelationship
         return $this->belongsTo(config('auth.providers.users.model'));
     }
 
-	/**
+    /**
      * @return mixed
      */
     public function tickets()
