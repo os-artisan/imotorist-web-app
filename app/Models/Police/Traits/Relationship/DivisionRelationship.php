@@ -15,7 +15,7 @@ trait DivisionRelationship
         return $this->belongsTo(config('police.range'));
     }
 
-	/**
+    /**
      * @return mixed
      */
     public function districts()

@@ -2,8 +2,8 @@
 
 use App\Models\Police\Range;
 use App\Models\Police\Station;
-use App\Models\Police\Division;
 use App\Models\Police\District;
+use App\Models\Police\Division;
 
 return [
     /*
