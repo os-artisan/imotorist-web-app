@@ -7,7 +7,7 @@ use App\Models\Access\Permission\Permission;
 
 return [
     /*
-     * Users table used to store users
+     * Users table used to store users.
      */
     'users_table' => 'users',
 

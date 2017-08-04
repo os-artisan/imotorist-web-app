@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVehicleClassesTable extends Migration
+class CreateOffencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateVehicleClassesTable extends Migration
      */
     public function up()
     {
-        Schema::create(config('license.vehicle_classes_table'), function (Blueprint $table) {
+        Schema::create(config('fine.offences_table'), function (Blueprint $table) {
             $table->increments('id');
-            $table->string('class', 2)->unique();
-            $table->text('description');
+            $table->string('description');
+            $table->decimal('fine', 8, 2);
+            $table->integer('dip')->unsigned();
         });
     }
 
@@ -27,6 +28,6 @@ class CreateVehicleClassesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists(config('license.vehicle_classes_table'));
+        Schema::dropIfExists(config('fine.offences_table'));
     }
 }
