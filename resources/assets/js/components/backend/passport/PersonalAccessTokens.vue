@@ -11,20 +11,19 @@
 <template>
     <div>
         <div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <div style="display: flex; justify-content: space-between; align-items: center;">
-                        <span>
-                            Personal Access Tokens
-                        </span>
-
-                        <a class="action-link" @click="showCreateTokenForm">
-                            Create New Token
-                        </a>
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Personal Access Tokens</h3>
+                    <div class="box-tools pull-right">
+                        <div class="pull-right mb-10 hidden-sm hidden-xs">
+                            <a class="action-link btn btn-success btn-xs" @click="showCreateTokenForm">
+                                Create New Token
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="panel-body">
+                <div class="box-body">
                     <!-- No Tokens Notice -->
                     <p class="m-b-none" v-if="tokens.length === 0">
                         You have not created any personal access tokens.

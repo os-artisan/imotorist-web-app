@@ -11,10 +11,15 @@
 <template>
     <div>
         <div v-if="tokens.length > 0">
-            <div class="panel panel-default">
-                <div class="panel-heading">Authorized Applications</div>
+            <div class="box box-default">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Authorized Applications</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    </div>
+                </div>
 
-                <div class="panel-body">
+                <div class="box-body">
                     <!-- Authorized Tokens -->
                     <table class="table table-borderless m-b-none">
                         <thead>

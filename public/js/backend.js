@@ -43294,6 +43294,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     /*
@@ -43364,7 +43369,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
-//
 //
 //
 //
@@ -43891,7 +43895,6 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     /*
@@ -44193,22 +44196,22 @@ module.exports = Component.exports
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', [_c('div', {
-    staticClass: "panel panel-default"
+    staticClass: "box box-default"
   }, [_c('div', {
-    staticClass: "panel-heading"
+    staticClass: "box-header with-border"
+  }, [_c('h3', {
+    staticClass: "box-title"
+  }, [_vm._v("Personal Access Tokens")]), _vm._v(" "), _c('div', {
+    staticClass: "box-tools pull-right"
   }, [_c('div', {
-    staticStyle: {
-      "display": "flex",
-      "justify-content": "space-between",
-      "align-items": "center"
-    }
-  }, [_c('span', [_vm._v("\n                        Personal Access Tokens\n                    ")]), _vm._v(" "), _c('a', {
-    staticClass: "action-link",
+    staticClass: "pull-right mb-10 hidden-sm hidden-xs"
+  }, [_c('a', {
+    staticClass: "action-link btn btn-success btn-xs",
     on: {
       "click": _vm.showCreateTokenForm
     }
-  }, [_vm._v("\n                        Create New Token\n                    ")])])]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
+  }, [_vm._v("\n                            Create New Token\n                        ")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "box-body"
   }, [(_vm.tokens.length === 0) ? _c('p', {
     staticClass: "m-b-none"
   }, [_vm._v("\n                    You have not created any personal access tokens.\n                ")]) : _vm._e(), _vm._v(" "), (_vm.tokens.length > 0) ? _c('table', {
@@ -44393,22 +44396,22 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
-    staticClass: "panel panel-default"
+    staticClass: "box box-default"
   }, [_c('div', {
-    staticClass: "panel-heading"
+    staticClass: "box-header with-border"
+  }, [_c('h3', {
+    staticClass: "box-title"
+  }, [_vm._v("OAuth Clients")]), _vm._v(" "), _c('div', {
+    staticClass: "box-tools pull-right"
   }, [_c('div', {
-    staticStyle: {
-      "display": "flex",
-      "justify-content": "space-between",
-      "align-items": "center"
-    }
-  }, [_c('span', [_vm._v("\n                    OAuth Clients\n                ")]), _vm._v(" "), _c('a', {
-    staticClass: "action-link",
+    staticClass: "pull-right mb-10 hidden-sm hidden-xs"
+  }, [_c('a', {
+    staticClass: "action-link btn btn-success btn-xs",
     on: {
       "click": _vm.showCreateClientForm
     }
-  }, [_vm._v("\n                    Create New Client\n                ")])])]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
+  }, [_vm._v("\n                        Create New Client\n                    ")])])])]), _vm._v(" "), _c('div', {
+    staticClass: "box-body"
   }, [(_vm.clients.length === 0) ? _c('p', {
     staticClass: "m-b-none"
   }, [_vm._v("\n                You have not created any OAuth clients.\n            ")]) : _vm._e(), _vm._v(" "), (_vm.clients.length > 0) ? _c('table', {
@@ -44706,14 +44709,12 @@ if (false) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [(_vm.tokens.length > 0) ? _c('div', [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Authorized Applications")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
+    staticClass: "box box-default"
+  }, [_vm._m(0), _vm._v(" "), _c('div', {
+    staticClass: "box-body"
   }, [_c('table', {
     staticClass: "table table-borderless m-b-none"
-  }, [_vm._m(0), _vm._v(" "), _c('tbody', _vm._l((_vm.tokens), function(token) {
+  }, [_vm._m(1), _vm._v(" "), _c('tbody', _vm._l((_vm.tokens), function(token) {
     return _c('tr', [_c('td', {
       staticStyle: {
         "vertical-align": "middle"
@@ -44736,6 +44737,21 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_vm._v("\n                                    Revoke\n                                ")])])])
   }))])])])]) : _vm._e()])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "box-header with-border"
+  }, [_c('h3', {
+    staticClass: "box-title"
+  }, [_vm._v("Authorized Applications")]), _vm._v(" "), _c('div', {
+    staticClass: "box-tools pull-right"
+  }, [_c('button', {
+    staticClass: "btn btn-box-tool",
+    attrs: {
+      "data-widget": "collapse"
+    }
+  }, [_c('i', {
+    staticClass: "fa fa-minus"
+  })])])])
+},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', [_c('tr', [_c('th', [_vm._v("Name")]), _vm._v(" "), _c('th', [_vm._v("Scopes")]), _vm._v(" "), _c('th')])])
 }]}
 module.exports.render._withStripped = true
