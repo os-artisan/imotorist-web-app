@@ -47,6 +47,7 @@ return [
             'dashboard' => 'Dashboard',
             'general'   => 'General',
             'system'    => 'System',
+            'api'       => 'APIs',
         ],
     ],
 
