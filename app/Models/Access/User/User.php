@@ -2,6 +2,7 @@
 
 namespace App\Models\Access\User;
 
+use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use App\Models\Access\User\Traits\UserAccess;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -20,6 +21,7 @@ class User extends Authenticatable
         UserAccess,
         Notifiable,
         SoftDeletes,
+        HasApiTokens,
         UserAttribute,
         UserRelationship,
         UserSendPasswordReset;

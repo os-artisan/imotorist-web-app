@@ -13,12 +13,12 @@ class CreateMotoristVehicleClassTable extends Migration
      */
     public function up()
     {
-        Schema::create('motorist_vehicle_class', function (Blueprint $table) {
+        Schema::create(config('license.motorist_vehicle_class_table'), function (Blueprint $table) {
             $table->increments('id');
             $table->integer('motorist_id')->unsigned();
-            $table->foreign('motorist_id')->references('id')->on('motorists')->onDelete('cascade');
+            $table->foreign('motorist_id')->references('id')->on(config('access.motorists_table'))->onDelete('cascade');
             $table->integer('vehicle_class_id')->unsigned();
-            $table->foreign('vehicle_class_id')->references('id')->on('vehicle_classes')->onDelete('cascade');
+            $table->foreign('vehicle_class_id')->references('id')->on(config('license.vehicle_classes_table'))->onDelete('cascade');
             $table->date('issued_date');
             $table->date('expiry_date');
             $table->string('restrictions')->nullable();
@@ -32,6 +32,17 @@ class CreateMotoristVehicleClassTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('motorist_vehicle_class');
+        /*
+         * Remove Foreign/Unique/Index
+         */
+        Schema::table(config('license.motorist_vehicle_class_table'), function (Blueprint $table) {
+            $table->dropForeign(config('license.motorist_vehicle_class_table').'_motorist_id_foreign');
+            $table->dropForeign(config('license.motorist_vehicle_class_table').'_vehicle_class_id_foreign');
+        });
+
+        /*
+         * Drop tables
+         */
+        Schema::dropIfExists(config('license.motorist_vehicle_class_table'));
     }
 }
