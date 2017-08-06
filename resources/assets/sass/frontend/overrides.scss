@@ -6,6 +6,7 @@ Navbar
 
 .navbar {
   margin-bottom: 0;
+  transition: top 0.2s ease-in-out;
 }
 
 @media (min-width: $grid-float-breakpoint){
