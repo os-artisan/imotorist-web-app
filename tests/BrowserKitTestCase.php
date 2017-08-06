@@ -23,7 +23,7 @@ abstract class BrowserKitTestCase extends BaseTestCase
      *
      * @var string
      */
-    protected $baseUrl = 'http://l5boilerplate.dev';
+    protected $baseUrl = 'http://imotorist.herokuapp.com';
 
     /**
      * @var
@@ -62,7 +62,7 @@ abstract class BrowserKitTestCase extends BaseTestCase
     {
         parent::setUp();
 
-        $this->baseUrl = config('app.url', 'http://l5boilerplate.dev');
+        $this->baseUrl = config('app.url', 'http://imotorist.herokuapp.com');
 
         // Set up the database
         Artisan::call('migrate:refresh');
