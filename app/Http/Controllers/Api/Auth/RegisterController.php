@@ -18,11 +18,13 @@ class RegisterController extends Controller
 
     private $client;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->client = Client::find(1);
     }
 
-    public function register(Request $request){
+    public function register(Request $request)
+    {
 
         $this->validate($request, [
             'surname' => 'required',
