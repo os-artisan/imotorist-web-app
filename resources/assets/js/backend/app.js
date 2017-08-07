@@ -7,27 +7,7 @@
 require('../bootstrap');
 
 // Uncomment to use Vue in backend
-window.Vue = require('vue');
-
-// Vue components from passport
-Vue.component(
-    'passport-clients',
-    require('../components/backend/passport/Clients.vue')
-);
-
-Vue.component(
-    'passport-authorized-clients',
-    require('../components/backend/passport/AuthorizedClients.vue')
-);
-
-Vue.component(
-    'passport-personal-access-tokens',
-    require('../components/backend/passport/PersonalAccessTokens.vue')
-);
-
-const app = new Vue({
-    el: '#app'
-});
+//window.Vue = require('vue');
 
 /**
  * Admin LTE Scripts

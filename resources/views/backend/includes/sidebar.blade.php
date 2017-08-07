@@ -87,13 +87,7 @@
                     </li>
                 </ul>
             </li>
-
-            <li class="{{ active_class(Active::checkUriPattern('admin/api')) }}">
-                <a href="{{ route('admin.api') }}">
-                    <i class="fa fa-cloud"></i>
-                    <span>{{ trans('menus.backend.sidebar.api') }}</span>
-                </a>
-            </li>
+            
         </ul><!-- /.sidebar-menu -->
     </section><!-- /.sidebar -->
 </aside>
