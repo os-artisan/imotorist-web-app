@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers\Api\Auth;
 
-use Laravel\Passport\Client;
 use Illuminate\Http\Request;
+use Laravel\Passport\Client;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\Traits\IssueTokenTrait;
 
 class LoginController extends Controller
 {
-
     use IssueTokenTrait;
 
     private $client;
@@ -24,29 +22,25 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-
         $this->validate($request, [
             'username' => 'required',
-            'password' => 'required'
+            'password' => 'required',
         ]);
 
         return $this->issueToken($request, 'password');
-
     }
 
     public function refresh(Request $request)
     {
         $this->validate($request, [
-            'refresh_token' => 'required'
+            'refresh_token' => 'required',
         ]);
 
         return $this->issueToken($request, 'refresh_token');
-
     }
 
     public function logout(Request $request)
     {
-
         $accessToken = Auth::user()->token();
 
         DB::table('oauth_refresh_tokens')
@@ -56,7 +50,5 @@ class LoginController extends Controller
         $accessToken->revoke();
 
         return response()->json([], 204);
-
     }
 }
-
