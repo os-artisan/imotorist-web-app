@@ -5,11 +5,10 @@ namespace App\Http\Controllers\Api\Auth;
 use Illuminate\Http\Request;
 use Laravel\Passport\Client;
 use Illuminate\Validation\Rule;
-use App\Models\Access\User\User;
 use App\Http\Controllers\Controller;
 use App\Events\Frontend\Auth\UserRegistered;
-use App\Repositories\Frontend\Access\User\UserRepository;
 use App\Http\Controllers\Api\Auth\Traits\IssueTokenTrait;
+use App\Repositories\Frontend\Access\User\UserRepository;
 
 /**
  * Class RegisterController.
@@ -40,11 +39,10 @@ class RegisterController extends Controller
             $user = $this->user->create($request->only('surname', 'other_names', 'email', 'password'));
             event(new UserRegistered($user));
 
-            //$message = ['message' => trans('exceptions.frontend.auth.confirmation.created_confirm'),];
+            //$params['message'] = trans('exceptions.frontend.auth.confirmation.created_confirm');
         } else {
             access()->login($this->user->create($request->only('surname', 'other_names', 'email', 'password')));
             event(new UserRegistered(access()->user()));
-
         }
 
         return $this->issueToken($request, 'password');
