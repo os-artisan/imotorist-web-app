@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Api\Auth;
 
 use Illuminate\Http\Request;
 use Laravel\Passport\Client;
+use Illuminate\Validation\Rule;
 use App\Models\Access\User\User;
 use App\Http\Controllers\Controller;
+use App\Events\Frontend\Auth\UserRegistered;
+use App\Repositories\Frontend\Access\User\UserRepository;
 use App\Http\Controllers\Api\Auth\Traits\IssueTokenTrait;
 
 /**
@@ -17,26 +20,32 @@ class RegisterController extends Controller
 
     private $client;
 
-    public function __construct()
+    public function __construct(UserRepository $user)
     {
         $this->client = Client::find(1);
+
+        $this->user = $user;
     }
 
     public function register(Request $request)
     {
         $this->validate($request, [
-            'surname' => 'required',
-            'other_names' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6',
+            'surname'           => 'required|string|max:191',
+            'other_names'       => 'required|string|max:191',
+            'email'             => ['required', 'string', 'email', 'max:191', Rule::unique('users')],
+            'password'          => 'required|string|min:6',
         ]);
 
-        $user = User::create([
-            'surname' => request('surname'),
-            'other_names' => request('other_names'),
-            'email' => request('email'),
-            'password' => bcrypt(request('password')),
-        ]);
+        if (config('access.users.confirm_email')) {
+            $user = $this->user->create($request->only('surname', 'other_names', 'email', 'password'));
+            event(new UserRegistered($user));
+
+            //$message = ['message' => trans('exceptions.frontend.auth.confirmation.created_confirm'),];
+        } else {
+            access()->login($this->user->create($request->only('surname', 'other_names', 'email', 'password')));
+            event(new UserRegistered(access()->user()));
+
+        }
 
         return $this->issueToken($request, 'password');
     }
