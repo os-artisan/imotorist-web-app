@@ -45,6 +45,6 @@ class RegisterController extends Controller
             event(new UserRegistered(access()->user()));
         }
 
-        return $this->issueToken($request, 'password');
+        return ['alert' => trans('exceptions.frontend.auth.confirmation.created_confirm')];
     }
 }
