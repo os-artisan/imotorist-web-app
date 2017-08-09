@@ -281,8 +281,10 @@ trait UserAttribute
      * @param $identifier email|phone
      * @return mixed
      */
-    public function findForPassport($identifier) {
+    public function findForPassport($identifier)
+    {
         $field = filter_var($identifier, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
+
         return $this->Where($field, $identifier)->first();
     }
 }
