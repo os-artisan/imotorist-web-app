@@ -17,9 +17,9 @@
                             {{csrf_field()}}
         
                             <div class="form-group">
-                                <label for="email" class="control-label col-md-4">{{trans('validation.attributes.frontend.email')}}</label>
+                                <label for="username" class="control-label col-md-4">{{trans('validation.attributes.frontend.username')}}</label>
                                 <div class="col-md-6">
-                                    <input maxlength="191" required="required" autofocus="autofocus" name="email" type="email" class="form-control" placeholder="{{trans('validation.attributes.frontend.email')}}">
+                                    <input maxlength="191" required="required" autofocus="autofocus" name="username" type="text" class="form-control" placeholder="{{trans('validation.attributes.frontend.email_or_phone')}}">
                                 </div><!--col-md-6-->
                             </div><!--form-group-->
         

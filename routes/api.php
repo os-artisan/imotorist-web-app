@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -23,7 +21,3 @@ Route::middleware('auth:api')->group(function () {
 
     //Route::get('posts', 'Api\PostController@index');
 });
-
-/*Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});*/
