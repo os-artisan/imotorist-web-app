@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('other_names');
             $table->string('email')->unique();
             $table->string('password')->nullable();
-            $table->string('mobile', 15)->nullable()->unique();
+            $table->string('phone', 15)->nullable()->unique();
             $table->boolean('verified')->default(config('access.users.verify_mobile') ? false : true);
             $table->string('address', 255)->nullable();
             $table->string('nic', 15)->nullable()->unique();

@@ -9,9 +9,9 @@ $boxed-layout-bg-image-path: "/images/boxed-bg.jpg" !default;
 //COLORS
 //--------------------------------------------------------
 
-$light-blue: #3c8dbc;  //Primary
+$light-blue: #00d1b2;  //Primary
 $red:        #dd4b39;  //Danger
-$green:      #00a65a;  //Success
+$green:      #2ab27b;  //Success
 $aqua:       #00c0ef;  //Info
 $yellow:     #f39c12;  //Warning
 $blue:       #0073b7;
@@ -47,7 +47,7 @@ $body-bg: #ecf0f5;
 //--------------------------------------------------------
 
 //Dark sidebar
-$sidebar-dark-bg:                  #222d32;
+$sidebar-dark-bg:                  #393939;
 $sidebar-dark-hover-bg:            darken($sidebar-dark-bg, 2%);
 $sidebar-dark-color:               lighten($sidebar-dark-bg, 60%);
 $sidebar-dark-hover-color:         #fff;

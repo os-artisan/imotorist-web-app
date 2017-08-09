@@ -161,8 +161,10 @@ return [
 
         'frontend' => [
             'email'                     => 'E-mail Address',
-            'surname'                => 'Surname',
-            'other_names'                 => 'Other Names',
+            'username'                  => 'Username',
+            'email_or_phone'            => 'Email or Phone',
+            'surname'                   => 'Surname',
+            'other_names'               => 'Other Names',
             'password'                  => 'Password',
             'password_confirmation'     => 'Password Confirmation',
             'old_password'              => 'Old Password',

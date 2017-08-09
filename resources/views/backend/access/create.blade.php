@@ -12,7 +12,7 @@
 @section('content')
     {{ Form::open(['route' => 'admin.access.user.store', 'class' => 'form-horizontal', 'role' => 'form', 'method' => 'post']) }}
 
-        <div class="box box-success">
+        <div class="box box-default">
             <div class="box-header with-border">
                 <h3 class="box-title">{{ trans('labels.backend.access.users.create') }}</h3>
 
@@ -128,7 +128,7 @@
             </div><!-- /.box-body -->
         </div><!--box-->
 
-        <div class="box box-info">
+        <div class="box box-default">
             <div class="box-body">
                 <div class="pull-left">
                     {{ link_to_route('admin.access.user.index', trans('buttons.general.cancel'), [], ['class' => 'btn btn-danger btn-xs']) }}

@@ -104,11 +104,11 @@ class LoggedOutFormTest extends BrowserKitTestCase
     public function testLoginRequiredFields()
     {
         $this->visit('/login')
-             ->type('', 'email')
+             ->type('', 'username')
              ->type('', 'password')
              ->press('Login')
              ->seePageIs('/login')
-             ->see('The email field is required.')
+             ->see('The phone field is required.')
              ->see('The password field is required.');
     }
 
@@ -125,7 +125,7 @@ class LoggedOutFormTest extends BrowserKitTestCase
 
         //User Test
         $this->visit('/login')
-             ->type($this->user->email, 'email')
+             ->type($this->user->email, 'username')
              ->type('1234', 'password')
              ->press('Login')
              ->seePageIs('/dashboard')
@@ -135,7 +135,7 @@ class LoggedOutFormTest extends BrowserKitTestCase
 
         //Admin Test
         $this->visit('/login')
-             ->type($this->admin->email, 'email')
+             ->type($this->admin->email, 'username')
              ->type('1234', 'password')
              ->press('Login')
              ->seePageIs('/admin/dashboard')
@@ -217,7 +217,7 @@ class LoggedOutFormTest extends BrowserKitTestCase
         $unconfirmed->attachRole(3); //User
 
         $this->visit('/login')
-             ->type($unconfirmed->email, 'email')
+             ->type($unconfirmed->email, 'username')
              ->type('secret', 'password')
              ->press('Login')
              ->seePageIs('/login')
@@ -234,7 +234,7 @@ class LoggedOutFormTest extends BrowserKitTestCase
         $inactive->attachRole(3); //User
 
         $this->visit('/login')
-             ->type($inactive->email, 'email')
+             ->type($inactive->email, 'username')
              ->type('secret', 'password')
              ->press('Login')
              ->seePageIs('/login')
@@ -247,7 +247,7 @@ class LoggedOutFormTest extends BrowserKitTestCase
     public function testInvalidLoginCredentials()
     {
         $this->visit('/login')
-             ->type($this->user->email, 'email')
+             ->type($this->user->email, 'username')
              ->type('9s8gy8s9diguh4iev', 'password')
              ->press('Login')
              ->seePageIs('/login')

@@ -274,4 +274,15 @@ trait UserAttribute
     {
         return $this->full_name;
     }
+
+    /**
+     * Find the user identified by the given $identifier.
+     *
+     * @param $identifier email|phone
+     * @return mixed
+     */
+    public function findForPassport($identifier) {
+        $field = filter_var($identifier, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
+        return $this->Where($field, $identifier)->first();
+    }
 }

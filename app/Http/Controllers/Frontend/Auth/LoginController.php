@@ -19,6 +19,19 @@ class LoginController extends Controller
     use AuthenticatesUsers;
 
     /**
+     * Override AuthenticatesUsers method so that users can login using either email or mobile.
+     *
+     * @return string
+     */
+    public function username()
+    {
+        $login = request()->input('username');
+        $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'phone';
+        request()->merge([$field => $login]);
+        return $field;
+    }
+
+    /**
      * Where to redirect users after login.
      *
      * @return string
