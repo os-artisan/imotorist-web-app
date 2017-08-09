@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Laravel\Passport\Client;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Exceptions\GeneralException;
 use Illuminate\Support\Facades\Auth;
 use App\Events\Frontend\Auth\UserLoggedIn;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -65,11 +64,9 @@ class LoginController extends Controller
      */
     protected function sendLoginResponse(Request $request)
     {
-
         $this->clearLoginAttempts($request);
-        
-        return $this->authenticated($request, $this->guard()->user());
 
+        return $this->authenticated($request, $this->guard()->user());
     }
 
     protected function authenticated(Request $request, $user)
@@ -79,9 +76,11 @@ class LoginController extends Controller
          */
         if (! $user->isConfirmed()) {
             access()->logout();
+
             return ['alert' => trans('exceptions.frontend.auth.confirmation.resend', ['user_id' => $user->id])];
         } elseif (! $user->isActive()) {
             access()->logout();
+
             return ['alert' => trans('exceptions.frontend.auth.deactivated')];
         }
 
