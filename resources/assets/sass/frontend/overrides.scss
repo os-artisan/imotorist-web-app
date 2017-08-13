@@ -25,11 +25,25 @@ Navbar
   @media (min-width: $grid-float-breakpoint) {
 
     > li:not(.open):hover {
-      border-bottom: 1px solid $brand-primary;
+      border-bottom: $active-border-size solid $brand-primary;
 
       >a {
-        padding-bottom: $navbar-padding-vertical - 1px;
+        padding-bottom: $navbar-padding-vertical - $active-border-size;
       }
     }
   }
+}
+
+/* -------------------------------- 
+
+Dashboard
+
+-------------------------------- */
+
+.profile-picture {
+  max-height: 300px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -14,7 +14,7 @@ class LoggedInRouteTest extends BrowserKitTestCase
      */
     public function testHomePageLoggedIn()
     {
-        $this->actingAs($this->user)->visit('/')->see('Dashboard')->see($this->user->name)->dontSee('Administration');
+        $this->actingAs($this->user)->visit('/')->see('Dashboard')->see($this->user->other_names)->dontSee('Administration');
     }
 
     /**
@@ -48,7 +48,7 @@ class LoggedInRouteTest extends BrowserKitTestCase
      */
     public function testLoggedInAdmin()
     {
-        $this->actingAs($this->admin)->visit('/')->see('Administration')->see($this->admin->name);
+        $this->actingAs($this->admin)->visit('/')->see('Administration')->see($this->admin->other_names);
     }
 
     /**

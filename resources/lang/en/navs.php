@@ -20,6 +20,7 @@ return [
 
     'frontend' => [
         'dashboard' => 'Dashboard',
+        'overview'  => 'Overview',
         'login'     => 'Login',
         'macros'    => 'Macros',
         'register'  => 'Register',
@@ -30,6 +31,7 @@ return [
             'change_password' => 'Change Password',
             'my_information'  => 'My Information',
             'profile'         => 'Profile',
+            'status'          => 'Status',
         ],
     ],
 ];

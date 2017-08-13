@@ -17,6 +17,8 @@ return [
         'all'     => 'All',
         'yes'     => 'Yes',
         'no'      => 'No',
+        'verified' => 'Verified',
+        'unverified' => 'Unverified',
         'custom'  => 'Custom',
         'actions' => 'Actions',
         'active'  => 'Active',
