@@ -25,8 +25,8 @@ class TicketTableSeeder extends Seeder
 
         $tickets = [
             [
-                'motorist_id'       => 1,
-                'officer_id'        => 1,
+                'motorist_id'       => 5,
+                'officer_id'        => 4,
                 'station_id'        => 1,
                 'payment_id'        => 1,
                 'vehicle_no'        => 'CAB-6578',

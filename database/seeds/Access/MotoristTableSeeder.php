@@ -26,7 +26,7 @@ class MotoristTableSeeder extends Seeder
         //Add the motorist, user id of 5
         $motorists = [
             [
-                'id'                => 1,
+                'id'                => 5,
                 'license_no'        => 'B507614',
                 'issued_date'       => '2011-06-21',
                 'expiry_date'       => '2019-06-21',
