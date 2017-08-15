@@ -14,7 +14,7 @@ class CreateMotoristsTable extends Migration
     public function up()
     {
         Schema::create(config('access.motorists_table'), function (Blueprint $table) {
-            $table->integer('id')->unsigned()->primary();
+            $table->integer('id')->unsigned()->unique();
             $table->foreign('id')->references('id')->on(config('access.users_table'))->onDelete('cascade');
             $table->string('license_no', 15)->unique();
             $table->date('issued_date');
