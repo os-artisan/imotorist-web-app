@@ -14,9 +14,8 @@ class CreateMotoristsTable extends Migration
     public function up()
     {
         Schema::create(config('access.motorists_table'), function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on(config('access.users_table'))->onDelete('cascade');
+            $table->integer('id')->unsigned();
+            $table->foreign('id')->references('id')->on(config('access.users_table'))->onDelete('cascade');
             $table->string('license_no', 15)->unique();
             $table->date('issued_date');
             $table->date('expiry_date');
@@ -37,7 +36,7 @@ class CreateMotoristsTable extends Migration
          * Remove Foreign/Unique/Index
          */
         Schema::table(config('access.motorists_table'), function (Blueprint $table) {
-            $table->dropForeign(config('access.motorists_table').'_user_id_foreign');
+            $table->dropForeign(config('access.motorists_table').'_id_foreign');
         });
 
         /*

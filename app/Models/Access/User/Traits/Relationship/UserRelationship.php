@@ -49,6 +49,14 @@ trait UserRelationship
      */
     public function motorists()
     {
-        return $this->hasMany(config('access.motorist'));
+        return $this->hasOne(config('access.motorist'));
+    }
+
+    /**
+     * @return mixed
+     */
+    public function payments()
+    {
+        return $this->hasMany(config('fine.payment'));
     }
 }

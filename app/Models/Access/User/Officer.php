@@ -26,7 +26,7 @@ class Officer extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'badge_no', 'status'];
+    protected $fillable = ['id', 'badge_no', 'status'];
 
     /**
      * @var array

@@ -28,6 +28,7 @@ class TicketTableSeeder extends Seeder
                 'motorist_id'       => 1,
                 'officer_id'        => 1,
                 'station_id'        => 1,
+                'payment_id'        => 1,
                 'vehicle_no'        => 'CAB-6578',
                 'lat'               => 6.841878,
                 'lng'               => 79.963467,

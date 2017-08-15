@@ -22,6 +22,7 @@ class FineTableSeeder extends Seeder
         $this->call(OffenceTableSeeder::class);
         $this->call(TicketTableSeeder::class);
         $this->call(TicketOffenceTableSeeder::class);
+        $this->call(PaymentTableSeeder::class);
 
         $this->enableForeignKeys();
     }

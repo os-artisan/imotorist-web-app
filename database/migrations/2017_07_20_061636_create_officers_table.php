@@ -14,9 +14,8 @@ class CreateOfficersTable extends Migration
     public function up()
     {
         Schema::create(config('access.officers_table'), function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on(config('access.users_table'))->onDelete('cascade');
+            $table->integer('id')->unsigned();
+            $table->foreign('id')->references('id')->on(config('access.users_table'))->onDelete('cascade');
             $table->string('badge_no', 6)->unique();
             $table->tinyInteger('status')->default(1)->unsigned();
             $table->timestamps();
@@ -35,7 +34,7 @@ class CreateOfficersTable extends Migration
          * Remove Foreign/Unique/Index
          */
         Schema::table(config('access.officers_table'), function (Blueprint $table) {
-            $table->dropForeign(config('access.officers_table').'_user_id_foreign');
+            $table->dropForeign(config('access.officers_table').'_id_foreign');
         });
 
         /*
