@@ -30,4 +30,12 @@ trait DivisionRelationship
     {
         return $this->hasManyThrough(config('police.station'), config('police.district'), 'division_id', 'district_id');
     }
+
+    /**
+     * @return mixed
+     */
+    public function officers()
+    {
+        return $this->morphToMany(config('access.officer'), 'employable');
+    }
 }

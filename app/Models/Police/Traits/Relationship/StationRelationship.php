@@ -38,4 +38,12 @@ trait StationRelationship
     {
         return $this->hasMany(config('fine.ticket'));
     }
+
+    /**
+     * @return mixed
+     */
+    public function officers()
+    {
+        return $this->morphToMany(config('access.officer'), 'employable');
+    }
 }

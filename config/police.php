@@ -45,4 +45,9 @@ return [
      * Police Stations table used to store police stations.
      */
     'stations_table' => 'stations',
+
+    /*
+     * Employables table used to store which officer works for which station, district, division or range.
+     */
+    'employables_table' => 'employables',
 ];
