@@ -7,9 +7,9 @@ use Database\DisableForeignKeys;
 use Illuminate\Support\Facades\DB;
 
 /**
- * Class OfficerTableSeeder.
+ * Class PaymentTableSeeder.
  */
-class OfficerTableSeeder extends Seeder
+class PaymentTableSeeder extends Seeder
 {
     use DisableForeignKeys, TruncateTable;
 
@@ -21,19 +21,20 @@ class OfficerTableSeeder extends Seeder
     public function run()
     {
         $this->disableForeignKeys();
-        $this->truncate(config('access.officers_table'));
+        $this->truncate(config('fine.payments_table'));
 
-        //Add the traffic police officer, user id of 4
-        $officers = [
+        $payments = [
             [
-                'id'                => 4,
-                'badge_no'          => '50000',
+                'user_id'           => 1,
+                'amount'            => 500.00,
+                'method'            => 'Credit Card',
+                'status'            => 'Completed',
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),
             ],
         ];
 
-        DB::table(config('access.officers_table'))->insert($officers);
+        DB::table(config('fine.payments_table'))->insert($payments);
 
         $this->enableForeignKeys();
     }

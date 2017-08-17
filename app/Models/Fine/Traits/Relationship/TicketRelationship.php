@@ -38,4 +38,12 @@ trait TicketRelationship
     {
         return $this->belongsTo(config('police.station'));
     }
+
+    /**
+     * @return mixed
+     */
+    public function payment()
+    {
+        return $this->belongsTo(config('fine.payment'));
+    }
 }

@@ -39,12 +39,12 @@ class RegisterController extends Controller
             $user = $this->user->create($request->only('surname', 'other_names', 'email', 'password'));
             event(new UserRegistered($user));
 
-            //$params['message'] = trans('exceptions.frontend.auth.confirmation.created_confirm');
+            return ['alert' => trans('exceptions.frontend.auth.confirmation.created_confirm')];
         } else {
             access()->login($this->user->create($request->only('surname', 'other_names', 'email', 'password')));
             event(new UserRegistered(access()->user()));
-        }
 
-        return ['alert' => trans('exceptions.frontend.auth.confirmation.created_confirm')];
+            return response()->json([], 204);
+        }
     }
 }

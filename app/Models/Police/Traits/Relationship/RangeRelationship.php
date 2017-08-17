@@ -36,4 +36,12 @@ trait RangeRelationship
 
         return $stations; //returns a nested array with empty arrays. Need to fix! Range::first()->stations();
     }
+
+    /**
+     * @return mixed
+     */
+    public function officers()
+    {
+        return $this->morphToMany(config('access.officer'), 'employable');
+    }
 }

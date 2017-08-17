@@ -3,14 +3,14 @@
 namespace App\Models\Fine;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Fine\Traits\Relationship\TicketRelationship;
+use App\Models\Fine\Traits\Relationship\PaymentRelationship;
 
 /**
- * Class Ticket.
+ * Class Payment.
  */
-class Ticket extends Model
+class Payment extends Model
 {
-    use TicketRelationship;
+    use PaymentRelationship;
 
     /**
      * The database table used by the model.
@@ -24,7 +24,7 @@ class Ticket extends Model
      *
      * @var array
      */
-    protected $fillable = ['motorist_id', 'officer_id', 'station_id', 'payment_id', 'vehicle_no', 'lat', 'lng', 'location', 'paid', 'remarks'];
+    protected $fillable = ['user_id', 'total_amount', 'method', 'status'];
 
     /**
      * @param array $attributes
@@ -32,6 +32,6 @@ class Ticket extends Model
     public function __construct(array $attributes = [])
     {
         parent::__construct($attributes);
-        $this->table = config('fine.tickets_table');
+        $this->table = config('fine.payments_table');
     }
 }

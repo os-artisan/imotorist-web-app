@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Laravel\Dusk\DuskServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -16,6 +17,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        /*
+         * define a "morph map" to instruct Eloquent to use a custom name for each model instead of the class name
+         */
+        Relation::morphMap([
+            'station'   => config('police.station'),
+            'district'  => config('police.district'),
+            'division'  => config('police.division'),
+            'range'     => config('police.range'),
+        ]);
+
         /*
          * Application locale defaults for various components
          *

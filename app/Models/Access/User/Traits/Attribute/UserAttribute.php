@@ -48,6 +48,18 @@ trait UserAttribute
     }
 
     /**
+     * @return string
+     */
+    public function getVerifiedLabelAttribute()
+    {
+        if ($this->isVerified()) {
+            return "<label class='label label-success'>".trans('labels.general.verified').'</label>';
+        }
+
+        return "<label class='label label-danger'>".trans('labels.general.unverified').'</label>';
+    }
+
+    /**
      * @return mixed
      */
     public function getPictureAttribute()
@@ -99,6 +111,14 @@ trait UserAttribute
     public function isConfirmed()
     {
         return $this->confirmed == 1;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isVerified()
+    {
+        return $this->verified == 1;
     }
 
     /**

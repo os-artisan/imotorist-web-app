@@ -28,4 +28,14 @@ return [
      * Ticket_Offence table used to store ticket and offence relations in the database.
      */
     'ticket_offence_table' => 'ticket_offence',
+
+    /*
+     * Payment model.
+    */
+    'payment' => Payment::class,
+
+    /*
+     * Payments table used to store payment details.
+     */
+    'payments_table' => 'payments',
 ];

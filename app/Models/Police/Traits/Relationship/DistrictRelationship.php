@@ -30,4 +30,12 @@ trait DistrictRelationship
     {
         return $this->division->range();
     }
+
+    /**
+     * @return mixed
+     */
+    public function officers()
+    {
+        return $this->morphToMany(config('access.officer'), 'employable');
+    }
 }

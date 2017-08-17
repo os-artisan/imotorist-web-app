@@ -22,4 +22,36 @@ trait OfficerRelationship
     {
         return $this->hasMany(config('fine.ticket'));
     }
+
+    /**
+     * @return mixed
+     */
+    public function station()
+    {
+        return $this->morphedByMany(config('police.station'), 'employable');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function district()
+    {
+        return $this->morphedByMany(config('police.district'), 'employable');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function division()
+    {
+        return $this->morphedByMany(config('police.division'), 'employable');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function range()
+    {
+        return $this->morphedByMany(config('police.range'), 'employable');
+    }
 }

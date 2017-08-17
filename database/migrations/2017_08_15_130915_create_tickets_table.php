@@ -21,6 +21,8 @@ class CreateTicketsTable extends Migration
             $table->foreign('officer_id')->references('id')->on(config('access.officers_table'))->onDelete('cascade');
             $table->integer('station_id')->unsigned();
             $table->foreign('station_id')->references('id')->on(config('police.stations_table'))->onDelete('cascade');
+            $table->integer('payment_id')->nullable()->unsigned();
+            $table->foreign('payment_id')->references('id')->on(config('fine.payments_table'))->onDelete('cascade');
             $table->string('vehicle_no', 10);
             $table->float('lat', 10, 6)->nullable();
             $table->float('lng', 10, 6)->nullable();
@@ -46,6 +48,7 @@ class CreateTicketsTable extends Migration
             $table->dropForeign(config('fine.tickets_table').'_motorist_id_foreign');
             $table->dropForeign(config('fine.tickets_table').'_officer_id_foreign');
             $table->dropForeign(config('fine.tickets_table').'_station_id_foreign');
+            $table->dropForeign(config('fine.tickets_table').'_payment_id_foreign');
         });
 
         /*
