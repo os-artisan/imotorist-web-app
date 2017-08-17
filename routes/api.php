@@ -18,6 +18,8 @@ Route::post('refresh', 'Api\Auth\LoginController@refresh');
 
 Route::middleware('auth:api')->group(function () {
     Route::post('logout', 'Api\Auth\LoginController@logout');
+    Route::get('get-user', 'Api\Auth\LoginController@getUser');
+    Route::get('get-all-user', 'Api\Auth\LoginController@getAllUser');
 
     //Route::get('posts', 'Api\PostController@index');
 });
