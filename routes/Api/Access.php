@@ -15,7 +15,7 @@ Route::group(['namespace' => 'Auth'], function () {
     // Request a new access_token using refresh_token
     Route::post('refresh', 'LoginController@refresh');
 
-    /**
+    /*
      * Only logged in users can access these routes
      */
     Route::middleware('auth:api')->group(function () {
