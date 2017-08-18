@@ -12,7 +12,7 @@ trait MotoristRelationship
      */
     public function user()
     {
-        return $this->belongsTo(config('auth.providers.users.model'));
+        return $this->belongsTo(config('auth.providers.users.model'), 'id', 'id');
     }
 
     /**

@@ -120,13 +120,4 @@ class LoginController extends Controller
 
         return response()->json([], 204);
     }
-
-    public function getUser()
-    {
-        return response()->json(['user'=>Auth::user()]);
-    }
-    public function getAllUser()
-    {
-        return response()->json(User::get());
-    }
 }

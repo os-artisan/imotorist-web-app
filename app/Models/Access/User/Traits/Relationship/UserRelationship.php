@@ -41,15 +41,15 @@ trait UserRelationship
      */
     public function officer()
     {
-        return $this->hasOne(config('access.officer'));
+        return $this->hasOne(config('access.officer'), 'id');
     }
 
     /**
      * @return mixed
      */
-    public function motorists()
+    public function motorist()
     {
-        return $this->hasOne(config('access.motorist'));
+        return $this->hasOne(config('access.motorist'), 'id');
     }
 
     /**
