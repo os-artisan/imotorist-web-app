@@ -3,6 +3,8 @@ git:
 
 language: php
 
+dist: precise
+
 cache:
   directories:
     - vendor
@@ -30,10 +32,13 @@ matrix:
       env: DB_CONNECTION=mysql DB_DATABASE=imotorist_test DB_USERNAME=root DB_PASSWORD='' DB_PORT=3306 EXEC_COVERAGE=true
 
 before_install:
+  - if [[ "$DB_CONNECTION" == "pgsql" ]]; then psql -c "DROP DATABASE IF EXISTS imotorist_test;" -U postgres; fi   
+  - if [[ "$DB_CONNECTION" == "pgsql" ]]; then psql -c "create database imotorist_test;" -U postgres; fi
   - if [[ "$DB_CONNECTION" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS imotorist_test;" -uroot; fi
 
 env:
   - DB_CONNECTION=mysql DB_DATABASE=imotorist_test DB_USERNAME=root DB_PASSWORD='' DB_PORT=3306
+  - DB_CONNECTION=pgsql DB_DATABASE=imotorist_test DB_USERNAME=postgres DB_PASSWORD='' DB_PORT=5432
   - DB_CONNECTION=mysql DB_DATABASE=imotorist_test DB_USERNAME=root DB_PASSWORD='' DB_PORT=3306 EXEC_COVERAGE=true
   - DB_DATABASE=sqlite
 
