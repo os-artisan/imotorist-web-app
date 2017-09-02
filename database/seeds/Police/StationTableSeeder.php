@@ -25,10 +25,12 @@ class StationTableSeeder extends Seeder
         $stations = [
             [
                 'district_id'       => 1,
+                'court_id'          => 1,
                 'name'              => 'station 1',
             ],
             [
                 'district_id'       => 1,
+                'court_id'          => 2,
                 'name'              => 'station 2',
             ],
         ];

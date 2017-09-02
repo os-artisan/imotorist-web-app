@@ -46,4 +46,12 @@ trait StationRelationship
     {
         return $this->morphToMany(config('access.officer'), 'employable');
     }
+    
+    /**
+     * @return mixed
+     */
+    public function court()
+    {
+        return $this->belongsTo(config('police.court'));
+    }
 }

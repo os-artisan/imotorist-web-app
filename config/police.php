@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Police\Court;
 use App\Models\Police\Range;
 use App\Models\Police\Station;
 use App\Models\Police\District;
@@ -50,4 +51,13 @@ return [
      * Employables table used to store which officer works for which station, district, division or range.
      */
     'employables_table' => 'employables',
+
+    /*
+     * Court model.
+    */
+    'court' => Court::class,
+    /*
+     * Courts table used to store courts.
+     */
+    'courts_table' => 'courts',
 ];
