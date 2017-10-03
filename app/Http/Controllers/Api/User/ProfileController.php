@@ -40,6 +40,6 @@ class ProfileController extends Controller
             }
         }
 
-        return response()->json(['user' => $user]);
+        return response()->json([$user]);
     }
 }
