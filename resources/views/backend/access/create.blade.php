@@ -2,6 +2,11 @@
 
 @section ('title', trans('labels.backend.access.users.management') . ' | ' . trans('labels.backend.access.users.create'))
 
+@section('before-styles')
+    {{ Html::style('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css') }}
+@endsection
+
+
 @section('page-header')
     <h1>
         {{ trans('labels.backend.access.users.management') }}
@@ -23,7 +28,7 @@
 
             <div class="box-body">
                 <div class="form-group">
-                    {{ Form::label('surname', trans('validation.attributes.backend.access.users.surname'), ['class' => 'col-lg-2 control-label']) }}
+                    {{ Form::label('surname', trans('validation.attributes.backend.access.users.surname'), ['class' => 'col-lg-2 control-label required']) }}
 
                     <div class="col-lg-10">
                         {{ Form::text('surname', null, ['class' => 'form-control', 'maxlength' => '191', 'required' => 'required', 'autofocus' => 'autofocus', 'placeholder' => trans('validation.attributes.backend.access.users.surname')]) }}
@@ -32,7 +37,7 @@
 
                 <div class="form-group">
                     {{ Form::label('other_names', trans('validation.attributes.backend.access.users.other_names'),
-                     ['class' => 'col-lg-2 control-label']) }}
+                     ['class' => 'col-lg-2 control-label required']) }}
 
                     <div class="col-lg-10">
                         {{ Form::text('other_names', null, ['class' => 'form-control', 'maxlength' => '191', 'required' => 'required', 'placeholder' => trans('validation.attributes.backend.access.users.other_names')]) }}
@@ -40,7 +45,7 @@
                 </div><!--form control-->
 
                 <div class="form-group">
-                    {{ Form::label('email', trans('validation.attributes.backend.access.users.email'), ['class' => 'col-lg-2 control-label']) }}
+                    {{ Form::label('email', trans('validation.attributes.backend.access.users.email'), ['class' => 'col-lg-2 control-label required']) }}
 
                     <div class="col-lg-10">
                         {{ Form::email('email', null, ['class' => 'form-control', 'maxlength' => '191', 'required' => 'required', 'placeholder' => trans('validation.attributes.backend.access.users.email')]) }}
@@ -48,7 +53,7 @@
                 </div><!--form control-->
 
                 <div class="form-group">
-                    {{ Form::label('password', trans('validation.attributes.backend.access.users.password'), ['class' => 'col-lg-2 control-label']) }}
+                    {{ Form::label('password', trans('validation.attributes.backend.access.users.password'), ['class' => 'col-lg-2 control-label required']) }}
 
                     <div class="col-lg-10">
                         {{ Form::password('password', ['class' => 'form-control', 'required' => 'required', 'placeholder' => trans('validation.attributes.backend.access.users.password')]) }}
@@ -56,10 +61,55 @@
                 </div><!--form control-->
 
                 <div class="form-group">
-                    {{ Form::label('password_confirmation', trans('validation.attributes.backend.access.users.password_confirmation'), ['class' => 'col-lg-2 control-label']) }}
+                    {{ Form::label('password_confirmation', trans('validation.attributes.backend.access.users.password_confirmation'), ['class' => 'col-lg-2 control-label required']) }}
 
                     <div class="col-lg-10">
                         {{ Form::password('password_confirmation', ['class' => 'form-control', 'required' => 'required', 'placeholder' => trans('validation.attributes.backend.access.users.password_confirmation')]) }}
+                    </div><!--col-lg-10-->
+                </div><!--form control-->
+
+                <div class="form-group">
+                    {{ Form::label('phone', trans('validation.attributes.backend.access.users.phone'), ['class' => 'col-lg-2 control-label']) }}
+
+                    <div class="col-lg-10">
+                        {{ Form::text('phone', null, ['class' => 'form-control', 'maxlength' => '10', 'placeholder' => trans('validation.attributes.backend.access.users.phone')]) }}
+                    </div><!--col-lg-10-->
+                </div><!--form control-->
+
+                <div class="form-group">
+                    {{ Form::label('address', trans('validation.attributes.backend.access.users.address'), ['class' => 'col-lg-2 control-label']) }}
+
+                    <div class="col-lg-10">
+                        {{ Form::text('address', null, ['class' => 'form-control', 'maxlength' => '255', 'placeholder' => trans('validation.attributes.backend.access.users.address')]) }}
+                    </div><!--col-lg-10-->
+                </div><!--form control-->
+
+                <div class="form-group">
+                    {{ Form::label('date_of_birth', trans('validation.attributes.backend.access.users.date_of_birth'), ['class' => 'col-lg-2 control-label']) }}
+
+                    <div class="col-lg-10">
+                        <div class='input-group date'>
+                            {{ Form::text('date_of_birth', null, ['class' => 'form-control', 'data-date-format' => 'yyyy-mm-dd', 'maxlength' => '15', 'id' => 'datepicker', 'placeholder' => trans('validation.attributes.backend.access.users.date_of_birth')]) }}
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div><!--col-lg-10-->
+                </div><!--form control-->
+
+                <div class="form-group">
+                    {{ Form::label('nic', trans('validation.attributes.backend.access.users.nic'), ['class' => 'col-lg-2 control-label']) }}
+
+                    <div class="col-lg-10">
+                        {{ Form::text('nic', null, ['class' => 'form-control', 'maxlength' => '15', 'placeholder' => trans('validation.attributes.backend.access.users.nic')]) }}
+                    </div><!--col-lg-10-->
+                </div><!--form control-->
+
+                <div class="form-group">
+                    {{ Form::label('passport', trans('validation.attributes.backend.access.users.passport'), ['class' => 'col-lg-2 control-label']) }}
+
+                    <div class="col-lg-10">
+                        {{ Form::text('passport', null, ['class' => 'form-control', 'maxlength' => '15', 'placeholder' => trans('validation.attributes.backend.access.users.passport')]) }}
                     </div><!--col-lg-10-->
                 </div><!--form control-->
 
@@ -76,6 +126,14 @@
 
                     <div class="col-lg-1">
                         {{ Form::checkbox('confirmed', '1', true) }}
+                    </div><!--col-lg-1-->
+                </div><!--form control-->
+
+                <div class="form-group">
+                    {{ Form::label('verified', trans('validation.attributes.backend.access.users.verified'), ['class' => 'col-lg-2 control-label']) }}
+
+                    <div class="col-lg-1">
+                        {{ Form::checkbox('verified', '0', false) }}
                     </div><!--col-lg-1-->
                 </div><!--form control-->
 
@@ -147,4 +205,10 @@
 
 @section('after-scripts')
     {{ Html::script('js/backend/access/users/script.js') }}
+    {{ Html::script('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.min.js') }}
+    <script type="text/javascript">
+        $(function() {
+            $( "#datepicker" ).datepicker();
+        });
+    </script>
 @endsection

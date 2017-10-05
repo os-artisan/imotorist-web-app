@@ -28,4 +28,15 @@ trait UserScope
     {
         return $query->where('status', $status);
     }
+
+    /**
+     * @param $query
+     * @param bool $verified
+     *
+     * @return mixed
+     */
+    public function scopeVerified($query, $verified = true)
+    {
+        return $query->where('verified', $verified);
+    }
 }

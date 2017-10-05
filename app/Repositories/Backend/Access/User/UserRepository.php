@@ -355,6 +355,12 @@ class UserRepository extends BaseRepository
         $user->surname = $input['surname'];
         $user->other_names = $input['other_names'];
         $user->email = $input['email'];
+        $user->phone = $input['phone'];
+        $user->verified = isset($input['verified']) ? 1 : 0;
+        $user->address = $input['address'];
+        $user->nic = $input['nic'];
+        $user->passport = $input['passport'];
+        $user->date_of_birth = $input['date_of_birth'];
         $user->password = bcrypt($input['password']);
         $user->status = isset($input['status']) ? 1 : 0;
         $user->confirmation_code = md5(uniqid(mt_rand(), true));
