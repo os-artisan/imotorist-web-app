@@ -46,7 +46,7 @@ trait StationRelationship
     {
         return $this->morphToMany(config('access.officer'), 'employable');
     }
-    
+
     /**
      * @return mixed
      */

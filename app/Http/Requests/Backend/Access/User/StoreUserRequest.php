@@ -32,11 +32,11 @@ class StoreUserRequest extends Request
             'other_names'  => 'required|max:191',
             'email'    => ['required', 'email', 'max:191', Rule::unique('users')],
             'password' => 'required|min:6|confirmed',
-            'phone' => 'numeric',
+            'phone' => 'nullable|numeric',
             'address' => 'max:255',
             'nic' => 'max:10',
             'passport' => 'max:10',
-            'date_of_birth' => 'date',
+            'date_of_birth' => 'nullable|date',
         ];
     }
 }

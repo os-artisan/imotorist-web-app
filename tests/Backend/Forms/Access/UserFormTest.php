@@ -65,6 +65,7 @@ class UserFormTest extends BrowserKitTestCase
              ->type($password, 'password_confirmation')
              ->seeIsChecked('status')
              ->seeIsChecked('confirmed')
+             ->dontSeeIsChecked('verified')
              ->dontSeeIsChecked('confirmation_email')
              ->check('assignees_roles[2]')
              ->check('assignees_roles[3]')
