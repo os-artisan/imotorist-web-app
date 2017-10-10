@@ -6,192 +6,112 @@
         <div class="header-content">
             <div class="header-content-inner text-center">
                 <h1 class="mb-20">New Way of Paying Traffic Fines in Sri Lanka!</h1>
-                <p class="mb-25">Our traffic fine payment service works just like an electronic account payment. It is a simple and secure way to pay traffic fines with very little effort.</p>
-                <a href="#" class="btn btn-primary btn-lg page-scroll">Find Out More</a>
+                <hr class="short">
+                <p class="mb-22 fs-115">Our traffic fine payment service works just like an electronic account payment. It is a simple and secure way to pay traffic fines with very little effort.</p>
+                <a href="#about" class="btn btn-primary btn-lg js-scroll-trigger">Find Out More!</a>
             </div>
         </div>
     </header>
 
-    <div class="container">
+    <section class="bg-primary" id="about">
+        <div class="container">
+            <div class="col-lg-8 col-lg-offset-2 text-center mb-60 mt-35">
+                <h2>Oh, Hi There!</h2>
+                <hr class="short">
+                <p class="fs-115 mb-22">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="input-group col-lg-8 col-lg-offset-2">
+                    <input type="text" class="input-lg form-control" placeholder="Ticket #" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-lg" type="button">
+                        <span class=" glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <div class="row">
-        
-            <example></example>
-        
-            <div class="col-xs-12">
-        
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <i class="fa fa-home"></i> {{ trans('navs.general.home') }}
+    <section id="services" class="services">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Our Services</h2>
+                    <hr class="short panel-primary">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 mb-22">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-cloud fa-stack-1x text-primary"></i>
+                                </span>
+                                <h4>
+                                <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-22">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-compass fa-stack-1x text-primary"></i>
+                                </span>
+                                <h4>
+                                <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-22">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-flask fa-stack-1x text-primary"></i>
+                                </span>
+                                <h4>
+                                <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 mb-22">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-shield fa-stack-1x text-primary"></i>
+                                </span>
+                                <h4>
+                                <strong>Service Name</strong>
+                                </h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
+                            </div>
+                        </div>
                     </div>
-        
-                    <div class="panel-body">
-                        {{ trans('strings.frontend.welcome_to', ['place' => app_name()]) }}
-                    </div>
-                </div><!-- panel -->
-        
-            </div><!-- col-md-10 -->
-        
-            @role('Administrator')
-                {{-- You can also send through the Role ID --}}
-        
-                <div class="col-xs-12">
-        
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.role') . trans('strings.frontend.tests.using_blade_extensions') }}</div>
-        
-                        <div class="panel-body">
-                            {{ trans('strings.frontend.test') . ' 1: ' . trans('strings.frontend.tests.you_can_see_because', ['role' => trans('roles.administrator')]) }}
-                        </div>
-                    </div><!-- panel -->
-        
-                </div><!-- col-md-10 -->
-            @endauth
-        
-            @if (access()->hasRole('Administrator'))
-                <div class="col-xs-12">
-        
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.role') . trans('strings.frontend.tests.using_access_helper.role_name') }}</div>
-        
-                        <div class="panel-body">
-                            {{ trans('strings.frontend.test') . ' 2: ' . trans('strings.frontend.tests.you_can_see_because', ['role' => trans('roles.administrator')]) }}
-                        </div>
-                    </div><!-- panel -->
-        
-                </div><!-- col-md-10 -->
-            @endif
-        
-            @if (access()->hasRole(1))
-                <div class="col-xs-12">
-        
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.role') . trans('strings.frontend.tests.using_access_helper.role_id') }}</div>
-        
-                        <div class="panel-body">
-                            {{ trans('strings.frontend.test') . ' 3: ' . trans('strings.frontend.tests.you_can_see_because', ['role' => trans('roles.administrator')]) }}
-                        </div>
-                    </div><!-- panel -->
-        
-                </div><!-- col-md-10 -->
-            @endif
-        
-            @if (access()->hasRoles(['Administrator', 1]))
-                <div class="col-xs-12">
-        
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.role') . trans('strings.frontend.tests.using_access_helper.array_roles_not') }}</div>
-        
-                        <div class="panel-body">
-                            {{ trans('strings.frontend.test') . ' 4: ' . trans('strings.frontend.tests.you_can_see_because', ['role' => trans('roles.administrator')]) }}
-                        </div>
-                    </div><!-- panel -->
-        
-                </div><!-- col-md-10 -->
-            @endif
-        
-            {{-- The second parameter says the user must have all the roles specified. Administrator does not have the role with an id of 2, so this will not show. --}}
-            @if (access()->hasRoles(['Administrator', 2], true))
-                <div class="col-xs-12">
-        
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.role') . trans('strings.frontend.tests.using_access_helper.array_roles') }}</div>
-        
-                        <div class="panel-body">
-                            {{ trans('strings.frontend.tests.you_can_see_because', ['role' => trans('roles.administrator')]) }}
-                        </div>
-                    </div><!-- panel -->
-        
-                </div><!-- col-md-10 -->
-            @endif
-        
-            @permission('view-backend')
-                <div class="col-xs-12">
-        
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.permission') . trans('strings.frontend.tests.using_access_helper.permission_name') }}</div>
-        
-                        <div class="panel-body">
-                            {{ trans('strings.frontend.test') . ' 5: ' . trans('strings.frontend.tests.you_can_see_because_permission', ['permission' => 'view-backend']) }}
-                        </div>
-                    </div><!-- panel -->
-        
-                </div><!-- col-md-10 -->
-            @endauth
-        
-            @if (access()->hasPermission(1))
-                <div class="col-xs-12">
-        
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.permission') . trans('strings.frontend.tests.using_access_helper.permission_id') }}</div>
-        
-                        <div class="panel-body">
-                            {{ trans('strings.frontend.test') . ' 6: ' . trans('strings.frontend.tests.you_can_see_because_permission', ['permission' => 'view_backend']) }}
-                        </div>
-                    </div><!-- panel -->
-        
-                </div><!-- col-md-10 -->
-            @endif
-        
-            @if (access()->hasPermissions(['view-backend', 1]))
-                <div class="col-xs-12">
-        
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.permission') . trans('strings.frontend.tests.using_access_helper.array_permissions_not') }}</div>
-        
-                        <div class="panel-body">
-                            {{ trans('strings.frontend.test') . ' 7: ' . trans('strings.frontend.tests.you_can_see_because_permission', ['permission' => 'view_backend']) }}
-                        </div>
-                    </div><!-- panel -->
-        
-                </div><!-- col-md-10 -->
-            @endif
-        
-            @if (access()->hasPermissions(['view-backend', 2], true))
-                <div class="col-xs-12">
-        
-                    <div class="panel panel-default">
-                        <div class="panel-heading"><i class="fa fa-home"></i> {{ trans('strings.frontend.tests.based_on.permission') . trans('strings.frontend.tests.using_access_helper.array_permissions') }}</div>
-        
-                        <div class="panel-body">
-                            {{ trans('strings.frontend.tests.you_can_see_because_permission', ['permission' => 'view_backend']) }}
-                        </div>
-                    </div><!-- panel -->
-        
-                </div><!-- col-md-10 -->
-            @endif
-        
-            <div class="col-xs-12">
-        
-                <div class="panel panel-default">
-                    <div class="panel-heading"><i class="fa fa-home"></i> Bootstrap Glyphicon {{ trans('strings.frontend.test') }}</div>
-        
-                    <div class="panel-body">
-                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                        <span class="glyphicon glyphicon glyphicon-euro" aria-hidden="true"></span>
-                        <span class="glyphicon glyphicon glyphicon-cloud" aria-hidden="true"></span>
-                        <span class="glyphicon glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                    </div>
-                </div><!-- panel -->
-        
-            </div><!-- col-md-10 -->
-        
-            <div class="col-xs-12">
-        
-                <div class="panel panel-default">
-                    <div class="panel-heading"><i class="fa fa-home"></i> Font Awesome {{ trans('strings.frontend.test') }}</div>
-        
-                    <div class="panel-body">
-                        <i class="fa fa-home"></i>
-                        <i class="fa fa-facebook"></i>
-                        <i class="fa fa-twitter"></i>
-                        <i class="fa fa-pinterest"></i>
-                    </div>
-                </div><!-- panel -->
-        
-            </div><!-- col-md-10 -->
-        
-        </div><!--row-->
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.col-lg-10 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /.container -->
+    </section>
 
-    </div><!-- container -->
+    <section class="bg-primary download">
+        <div class="container">
+            <div class="col-md-8 col-lg-offset-2 text-center mb-60 mt-35">
+                <h2>Discover what all the buzz is about!</h2>
+                <hr class="short">
+                <p class="fs-115 mb-22">Our app is also available on any mobile device! Download now to get started!</p>
+                <div class="badges">
+                    <a class="badge-link" href="#"><img src="img/google-play-badge.svg" alt=""></a>
+                    <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
 @endsection

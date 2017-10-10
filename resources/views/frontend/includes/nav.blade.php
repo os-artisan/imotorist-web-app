@@ -15,7 +15,29 @@
 
         <div class="collapse navbar-collapse" id="frontend-navbar-collapse">
             <ul class="nav navbar-nav">
-                <li>{{ link_to_route('frontend.macros', trans('navs.frontend.macros'), [], ['class' => active_class(Active::checkRoute('frontend.macros')) ]) }}</li>
+                {{-- <li>{{ link_to_route('frontend.macros', trans('navs.frontend.macros'), [], ['class' => active_class(Active::checkRoute('frontend.macros')) ]) }}</li> --}}
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        {{ trans('menus.frontend.services') }}
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">{{ trans('menus.frontend.ticket-payment') }}</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        {{ trans('menus.frontend.information') }}
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">{{ trans('menus.frontend.signs') }}</a></li>
+                        <li><a href="#">{{ trans('menus.frontend.offences') }}</a></li>
+                        <li><a href="#">{{ trans('menus.frontend.safety') }}</a></li>
+                        <li><a href="#">{{ trans('menus.frontend.statistics') }}</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">{{ trans('menus.frontend.contact') }}</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

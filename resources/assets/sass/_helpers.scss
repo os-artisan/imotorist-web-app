@@ -1,5 +1,5 @@
 // Margin/Padding Helpers
-$margin-padding: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50;
+$margin-padding: 0, 5, 10, 15, 20, 22, 25, 30, 35, 40, 45, 50, 55, 60;
 @each $mp in $margin-padding {
   .mt-#{$mp} {
     margin-top:#{$mp}px !important;
@@ -25,5 +25,13 @@ $margin-padding: 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50;
   }
   .pr-#{$mp} {
     padding-right:#{$mp}px !important;
+  }
+}
+
+// Font Size Helpers
+$font-size: 75, 80, 85, 90, 95, 100, 105, 110, 115;
+@each $fs in $font-size {
+  .fs-#{$fs} {
+    font-size:#{$fs}% !important;
   }
 }

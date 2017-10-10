@@ -51,6 +51,17 @@ return [
         ],
     ],
 
+    'frontend' => [
+        'services' => 'Services',
+        'ticket-payment'  => 'Traffic Ticket Payments',
+        'information' => 'Information',
+        'signs' => 'Traffic Signs & Symbols',
+        'offences' => 'Traffic Offences and Penalties',
+        'safety' => 'Road Safety',
+        'statistics' => 'Statistics',
+        'contact' => 'Contact Us',
+    ],
+
     'language-picker' => [
         'language' => 'Language',
         /*

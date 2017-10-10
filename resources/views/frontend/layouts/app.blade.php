@@ -43,6 +43,8 @@
             </div><!-- container -->
 
             @yield('content')
+
+            @include('frontend.includes.footer')
             
         </div><!--#app-->
 

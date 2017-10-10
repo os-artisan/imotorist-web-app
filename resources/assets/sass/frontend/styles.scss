@@ -73,7 +73,6 @@ Header
   position: relative;
   width: 100%;
   text-align: center;
-  margin-bottom: 22px;
 
   .header-content {
     position: relative;
@@ -106,4 +105,57 @@ Header
       }
     }
   }
+}
+
+/* -------------------------------- 
+
+Footer
+
+-------------------------------- */
+
+footer {
+  background-color: #4F4F4F;
+  color: white;
+  padding: 15px 0 10px;
+
+  .footer-logo {
+    display: block;
+    margin-bottom: 10px;
+
+    img {
+      height: 100%;
+      max-height: 50px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+}
+.footer-bottom {
+  background-color: #393939;
+  color: white;
+  padding: 10px 0;
+}
+
+/* -------------------------------- 
+
+Horizontal ruler
+
+-------------------------------- */
+
+hr.short {
+  max-width: 50px;
+  border-width: 3px;
+}
+
+/* -------------------------------- 
+
+Download section
+
+-------------------------------- */
+
+section.download .badges .badge-link img {
+    height: 60px;
 }
