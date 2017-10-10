@@ -65,6 +65,10 @@ Header
  header {
   min-height: auto;
   background-color: #393939;
+  background-image: url("img/header.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fff;
   position: relative;
   width: 100%;
