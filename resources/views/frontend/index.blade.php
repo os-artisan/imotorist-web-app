@@ -34,7 +34,7 @@
     <section id="services" class="services">
         <div class="container">
             <div class="row text-center">
-                <div class="col-lg-10 col-lg-offset-1">
+                <div class="col-lg-10 col-lg-offset-1 mb-55 mt-35">
                     <h2>Our Services</h2>
                     <hr class="short panel-primary">
                     <div class="row">
@@ -98,6 +98,16 @@
             <!-- /.row -->
         </div>
         <!-- /.container -->
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <div class="container">
+                <h2>Stop waiting.<br>Start Riding.</h2>
+                <a href="#contact" class="btn btn-primary btn-outline btn-lg">Let's Get Started!</a>
+            </div>
+        </div>
+        <div class="overlay"></div>
     </section>
 
     <section class="bg-primary download">

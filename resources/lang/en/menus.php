@@ -59,7 +59,6 @@ return [
         'offences' => 'Traffic Offences and Penalties',
         'safety' => 'Road Safety',
         'statistics' => 'Statistics',
-        'contact' => 'Contact Us',
     ],
 
     'language-picker' => [

@@ -7,6 +7,8 @@
 Route::get('/', 'FrontendController@index')->name('index');
 Route::get('macros', 'FrontendController@macros')->name('macros');
 
+Route::resource('ticket', 'Ticket\TicketController', ['only' => ['index', 'show']]);
+
 /*
  * These frontend controllers require the user to be logged in
  * All route names are prefixed with 'frontend.'

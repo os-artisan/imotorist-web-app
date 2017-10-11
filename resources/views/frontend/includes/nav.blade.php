@@ -37,7 +37,6 @@
                         <li><a href="#">{{ trans('menus.frontend.statistics') }}</a></li>
                     </ul>
                 </li>
-                <li><a href="#">{{ trans('menus.frontend.contact') }}</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
