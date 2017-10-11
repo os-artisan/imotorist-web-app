@@ -6,21 +6,20 @@
         <div class="header-content">
             <div class="header-content-inner text-center">
                 <h1 class="mb-20">New Way of Paying Traffic Fines in Sri Lanka!</h1>
-                <hr class="short">
                 <p class="mb-22 fs-115">Our traffic fine payment service works just like an electronic account payment. It is a simple and secure way to pay traffic fines with very little effort.</p>
-                <a href="#about" class="btn btn-primary btn-lg js-scroll-trigger">Find Out More!</a>
+                <a href="#search" class="btn btn-primary btn-lg js-scroll-trigger">Find Out More!</a>
             </div>
         </div>
     </header>
 
-    <section class="bg-primary" id="about">
+    <section class="bg-primary" id="search">
         <div class="container">
             <div class="col-lg-8 col-lg-offset-2 text-center mb-60 mt-35">
                 <h2>Oh, Hi There!</h2>
                 <hr class="short">
                 <p class="fs-115 mb-22">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 <div class="input-group col-lg-8 col-lg-offset-2">
-                    <input type="text" class="input-lg form-control" placeholder="Ticket #" />
+                    <input type="text" class="input-lg form-control" placeholder="Search by Ticket, D/L or NIC #" />
                     <span class="input-group-btn">
                         <button class="btn btn-default btn-lg" type="button">
                         <span class=" glyphicon glyphicon-search"></span>
@@ -104,7 +103,7 @@
         <div class="cta-content">
             <div class="container">
                 <h2>Stop waiting.<br>Start Riding.</h2>
-                <a href="#contact" class="btn btn-primary btn-outline btn-lg">Let's Get Started!</a>
+                {{ link_to_route('frontend.auth.register', 'Let\'s Get Started!', [], ['class' => 'btn btn-primary btn-lg' ]) }}
             </div>
         </div>
         <div class="overlay"></div>
@@ -112,7 +111,7 @@
 
     <section class="bg-primary download">
         <div class="container">
-            <div class="col-md-8 col-lg-offset-2 text-center mb-60 mt-35">
+            <div class="col-md-8 col-md-offset-2 text-center mb-60 mt-35">
                 <h2>Discover what all the buzz is about!</h2>
                 <hr class="short">
                 <p class="fs-115 mb-22">Our app is also available on any mobile device! Download now to get started!</p>

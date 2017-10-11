@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Frontend\Ticket;
 
 use App\Models\Fine\Ticket;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class TicketController extends Controller
@@ -27,6 +26,7 @@ class TicketController extends Controller
     public function show($id)
     {
         $ticket = Ticket::findOrFail($id);
+
         return view('frontend.ticket.show')->withTicket($ticket);
     }
 }

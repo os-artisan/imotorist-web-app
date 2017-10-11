@@ -4,7 +4,7 @@
 <section>
     <div class="container">
         <div class="col-lg-9">
-            <div class="panel panel-minimal panel-default">
+            <div class="panel panel-minimal panel-default print-section">
                 <div class="panel-heading">
                     <div class="pl-15 pr-15">
                         <h2>Spot Fine Ticket</h2>
@@ -43,24 +43,6 @@
                         </div>
                         <hr class="mt-10">
                         <div class="row">
-                            <div class="col-md-3 col-xs-6">
-                                <label>Valid From:</label>
-                                <p>Dec 11, 2016</p>
-                            </div>
-                            <div class="col-md-3 col-xs-6">
-                                <label>Valid To:</label>
-                                <p>Dec 24, 2016</p>
-                            </div>
-                            <div class="col-md-3 col-xs-6">
-                                <label>Court:</label>
-                                <p>Kuliyapitiya</p>
-                            </div>
-                            <div class="col-md-3 col-xs-6">
-                                <label>Court Date:</label>
-                                <p>Jan 03, 2017</p>
-                            </div>
-                        </div>
-                        <div class="row">
                             <div class="col-sm-6">
                                 <label>Date and Time of Offence:</label>
                                 <p>Dec 11, 2016 2:15 PM</p>
@@ -78,6 +60,24 @@
                             <div class="col-sm-6">
                                 <label>Issuing Officer:</label>
                                 <p>Kosthapel Punyasoma (54600)</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 col-xs-6">
+                                <label>Valid From:</label>
+                                <p>Dec 11, 2016</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <label>Valid To:</label>
+                                <p>Dec 24, 2016</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <label>Court:</label>
+                                <p>Kuliyapitiya</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6">
+                                <label>Court Date:</label>
+                                <p>Jan 03, 2017</p>
                             </div>
                         </div>
                         <div class="row mb-15">
@@ -129,14 +129,13 @@
         <div class="col-lg-3">
             <a href="" class="btn btn-success btn-block mb-22">Pay Now!</a>
             <div class="list-group">
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-cart-plus mr-10" aria-hidden="true"></i>Add to Cart
-                        </a>
-                        <a href="#" class="list-group-item">
-                            <i class="fa fa-print mr-10" aria-hidden="true"></i>Print Ticket
-                        </a>
-
-                    </div>
+                <a href="#" class="list-group-item">
+                    <i class="fa fa-cart-plus mr-10" aria-hidden="true"></i>Add to Cart
+                </a>
+                <a href="" class="list-group-item" onclick="window.print()">
+                    <i class="fa fa-print mr-10" aria-hidden="true"></i>Print Ticket
+                </a>
+            </div>
         </div>
     </div><!-- /.container -->
 </section>

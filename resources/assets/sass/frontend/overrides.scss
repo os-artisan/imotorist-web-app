@@ -47,3 +47,22 @@ Dashboard
   margin-left: auto;
   margin-right: auto;
 }
+
+/* -------------------------------- 
+
+@media only print
+
+-------------------------------- */
+
+@media only print {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      width: #{percentage(round($i*8.33)/100)};
+      float: left;
+    }
+    .col-sm-#{$i} {
+      width: #{percentage(round($i*8.33)/100)};
+      float: left;
+    }
+  }
+}

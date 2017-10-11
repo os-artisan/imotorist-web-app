@@ -209,3 +209,18 @@ section.cta {
     font-size: 70px;
   }
 }
+
+/* -------------------------------- 
+
+@media only print
+
+-------------------------------- */
+
+@media only print {
+  body {
+    visibility: hidden;
+  }
+  .print-section {
+    visibility: visible;
+  }
+}

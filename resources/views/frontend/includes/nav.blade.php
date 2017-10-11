@@ -22,7 +22,7 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">{{ trans('menus.frontend.ticket-payment') }}</a></li>
+                        <li>{{ link_to_route('frontend.ticket.index', trans('menus.frontend.ticket-payment'), [], ['class' => active_class(Active::checkRoute('frontend.ticket.index')) ]) }}</li>
                     </ul>
                 </li>
                 <li class="dropdown">
