@@ -54,13 +54,13 @@
                 <li class="dropdown notifications-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                         <i class="fa fa-shopping-cart fa-lg"></i>
-                        <span class="label label-primary">0</span>
+                        <span class="label label-primary">2</span>
                     </a>
 
                     <ul class="dropdown-menu">
-                        <li class="header"><a href="">You don't have items</a></li>
+                        <li class="header">{{ link_to_route('frontend.cart', 'Your Cart: 2 item') }}</li>
                         <li class="footer">
-                            <a href="#">View all</a>
+                            <a href="#">{{ link_to_route('frontend.cart', 'View All') }}</a>
                         </li>
                     </ul>
                 </li>

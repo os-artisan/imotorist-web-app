@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Frontend\Cart;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class InfoController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,6 +14,6 @@ class InfoController extends Controller
      */
     public function index()
     {
-        return view('frontend.info.index');
+        return view('frontend.cart.cart');
     }
 }

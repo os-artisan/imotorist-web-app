@@ -1,5 +1,5 @@
 <footer>
-    <div class="container">
+    <div class="container print-hidden">
         <div class="row" >
             <div class="col-md-3">
                 <a href="{{route('frontend.index')}}" class="footer-logo">
@@ -21,7 +21,7 @@
                 <div class="col-md-6 pl-0">
                     <ul class="list">
                         <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li>{{ link_to_route('frontend.contact', 'Contact Us', [], ['class' => active_class(Active::checkRoute('frontend.contact')) ]) }}</li>
                         <li><a href="#">Terms & Conditions</a></li>
                         <li><a href="#">Privacy Policy</a></li>
                     </ul>
@@ -50,7 +50,7 @@
     </div><!-- /container -->
 </footer>
 
-<div class="footer-bottom">
+<div class="footer-bottom print-hidden">
     <div class="container">
         <div class="row">
             <div class="copyright text-center">

@@ -4,10 +4,10 @@
 <section>
     <div class="container">
         <div class="col-lg-9">
-            <div class="panel panel-minimal panel-default print-section">
+            <div class="panel panel-minimal panel-default print-visible">
                 <div class="panel-heading">
                     <div class="pl-15 pr-15">
-                        <h2>Spot Fine Ticket</h2>
+                        <h2>Spot Fine Ticket<span class="pull-right">Rs. 2,000.00</span></h2>
                         <h4>8642595<span class="label label-danger pull-right">Unpaid</span></h4>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                                         <!-- foreach ($order->lineItems as $line) or some such thing here -->
                                         <tr>
                                             <td>Speeding</td>
-                                            <td class="text-right">1000.00</td>
+                                            <td class="text-right">1,000.00</td>
                                         </tr>
                                         <tr>
                                             <td>Improper Overtaking</td>
@@ -114,9 +114,9 @@
                                             <td>Fail to keep to left when turning left</td>
                                             <td class="text-right">500.00</td>
                                         </tr>
-                                        <tr>
+                                        <tr class="fs-115">
                                             <td class="text-right"><strong>Subtotal</strong></td>
-                                            <td class="text-right">2000.00</td>
+                                            <td class="text-right">2,000.00</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -126,8 +126,8 @@
                 </div><!--panel body-->
             </div><!-- panel -->
         </div>
-        <div class="col-lg-3">
-            <a href="" class="btn btn-success btn-block mb-22">Pay Now!</a>
+        <div class="col-lg-3 print-hidden">
+            <a href="" class="btn btn-primary btn-block mb-22">Pay Now!</a>
             <div class="panel panel-minimal">
                 <div class="list-group">
                     <a href="#" class="list-group-item">

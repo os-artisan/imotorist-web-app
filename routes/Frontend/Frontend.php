@@ -7,6 +7,8 @@
 Route::get('/', 'FrontendController@index')->name('index');
 Route::get('macros', 'FrontendController@macros')->name('macros');
 Route::get('info', 'InfoController@index')->name('info');
+Route::get('contact', 'ContactController@index')->name('contact');
+Route::get('cart', 'Cart\CartController@index')->name('cart');
 Route::resource('ticket', 'Ticket\TicketController', ['only' => ['index', 'show']]);
 
 /*

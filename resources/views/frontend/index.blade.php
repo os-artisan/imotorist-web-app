@@ -33,7 +33,7 @@
     <section id="services" class="services">
         <div class="container">
             <div class="row text-center">
-                <div class="col-lg-10 col-lg-offset-1 mb-55 mt-35">
+                <div class="col-lg-10 col-lg-offset-1 mb-45 mt-35">
                     <h2>Our Services</h2>
                     <hr class="short panel-primary">
                     <div class="row">
@@ -102,11 +102,49 @@
     <section class="cta">
         <div class="cta-content">
             <div class="container">
-                <h2>Stop waiting.<br>Start Riding.</h2>
+                <h2>Stop Waiting.<br>Start Riding.</h2>
                 {{ link_to_route('frontend.auth.register', 'Let\'s Get Started!', [], ['class' => 'btn btn-primary btn-lg' ]) }}
             </div>
         </div>
         <div class="overlay"></div>
+    </section>
+
+
+    <section class="bg-dark pt-30 pb-10">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <div class="col-md-3 col-sm-6 mb-15">
+                        <div class="single_counter">
+                            <i class="fa fa-3x fa-users"></i>
+                            <h2 class="statistic-counter">14,876</h2>
+                            <h4>Users</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-15">
+                        <div class="single_counter">
+                            <i class="fa fa-3x fa-file-text"></i>
+                            <h2 class="statistic-counter">407,301</h2>
+                            <h4>Issued Tickets</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-15">
+                        <div class="single_counter">
+                            <i class="fa fa-3x fa-credit-card"></i>
+                            <h2 class="statistic-counter">127,922</h2>
+                            <h4>Ticket Payments</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-15">
+                        <div class="single_counter">
+                            <i class="fa fa-3x fa-heart"></i>
+                            <h2 class="statistic-counter">7,346</h2>
+                            <h4>Positive Reviews</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="bg-primary download">
