@@ -6,7 +6,7 @@
  */
 Route::get('/', 'FrontendController@index')->name('index');
 Route::get('macros', 'FrontendController@macros')->name('macros');
-
+Route::get('info', 'InfoController@index')->name('info');
 Route::resource('ticket', 'Ticket\TicketController', ['only' => ['index', 'show']]);
 
 /*

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default main-header navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#frontend-navbar-collapse">
@@ -31,10 +31,10 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">{{ trans('menus.frontend.signs') }}</a></li>
-                        <li><a href="#">{{ trans('menus.frontend.offences') }}</a></li>
-                        <li><a href="#">{{ trans('menus.frontend.safety') }}</a></li>
-                        <li><a href="#">{{ trans('menus.frontend.statistics') }}</a></li>
+                        <li><a href="/info">{{ trans('menus.frontend.signs') }}</a></li>
+                        <li><a href="/info">{{ trans('menus.frontend.offences') }}</a></li>
+                        <li><a href="/info">{{ trans('menus.frontend.safety') }}</a></li>
+                        <li><a href="/info">{{ trans('menus.frontend.statistics') }}</a></li>
                     </ul>
                 </li>
             </ul>
@@ -50,6 +50,20 @@
                         @include('includes.partials.lang')
                     </li>
                 @endif
+
+                <li class="dropdown notifications-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                        <i class="fa fa-shopping-cart fa-lg"></i>
+                        <span class="label label-primary">0</span>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <li class="header"><a href="">You don't have items</a></li>
+                        <li class="footer">
+                            <a href="#">View all</a>
+                        </li>
+                    </ul>
+                </li>
 
                 @if ($logged_in_user)
                     <li>{{ link_to_route('frontend.user.dashboard', trans('navs.frontend.dashboard'), [], ['class' => active_class(Active::checkRoute('frontend.user.dashboard')) ]) }}</li>

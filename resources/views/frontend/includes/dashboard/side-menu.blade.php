@@ -34,6 +34,11 @@
                     <i class="glyphicon glyphicon-user"></i>
                     {{ trans('navs.frontend.user.account') }}</a>
                 </li>
+                <li class="">
+                    <a href="">
+                    <i class="fa fa-id-card"></i>
+                    License</a>
+                </li>
                 @permission('view-backend')
                 <li>
                     <a href="{{ route('admin.dashboard') }}">
@@ -44,12 +49,12 @@
                 <li>
                     <a href="#" target="_blank">
                     <i class="glyphicon glyphicon-ok"></i>
-                    Tasks </a>
+                    History</a>
                 </li>
                 <li>
                     <a href="#">
-                    <i class="glyphicon glyphicon-flag"></i>
-                    Help </a>
+                    <i class="glyphicon glyphicon-cog"></i>
+                    Settings</a>
                 </li>
             </ul>
         </div>

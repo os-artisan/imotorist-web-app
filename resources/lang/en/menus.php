@@ -56,7 +56,7 @@ return [
         'ticket-payment'  => 'Traffic Ticket Payments',
         'information' => 'Information',
         'signs' => 'Traffic Signs & Symbols',
-        'offences' => 'Traffic Offences and Penalties',
+        'offences' => 'Offences and Penalties',
         'safety' => 'Road Safety',
         'statistics' => 'Statistics',
     ],

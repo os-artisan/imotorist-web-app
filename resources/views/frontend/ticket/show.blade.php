@@ -128,13 +128,15 @@
         </div>
         <div class="col-lg-3">
             <a href="" class="btn btn-success btn-block mb-22">Pay Now!</a>
-            <div class="list-group">
-                <a href="#" class="list-group-item">
-                    <i class="fa fa-cart-plus mr-10" aria-hidden="true"></i>Add to Cart
-                </a>
-                <a href="" class="list-group-item" onclick="window.print()">
-                    <i class="fa fa-print mr-10" aria-hidden="true"></i>Print Ticket
-                </a>
+            <div class="panel panel-minimal">
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <i class="fa fa-cart-plus mr-10" aria-hidden="true"></i>Add to Cart
+                    </a>
+                    <a href="" class="list-group-item" onclick="window.print()">
+                        <i class="fa fa-print mr-10" aria-hidden="true"></i>Print Ticket
+                    </a>
+                </div>
             </div>
         </div>
     </div><!-- /.container -->
