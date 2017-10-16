@@ -49,6 +49,7 @@ trait UserObject
         foreach ($this->user_except as $key => $except) {
             unset($user->$except);
         }
+
         return $user;
     }
 
@@ -59,6 +60,7 @@ trait UserObject
                 unset($user->motorist->$except);
             }
         }
+
         return $user;
     }
 
@@ -69,6 +71,7 @@ trait UserObject
                 unset($user->officer->$except);
             }
         }
+
         return $user;
     }
 }
