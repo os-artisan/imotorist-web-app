@@ -21,8 +21,12 @@ class UserController extends Controller
 
         $license = $request->input('license_no');
 
-        $user = Motorist::where('license_no', '=', $license)->first()->user;
+        $motorist = Motorist::where('license_no', '=', $license)->first();
 
-        return $this->sendUserWithMotorist($user);
+        if(isset($motorist)){
+        	return $this->sendUserWithMotorist($motorist->user);
+        }
+
+        return response()->json([], 404);
 	}
 }

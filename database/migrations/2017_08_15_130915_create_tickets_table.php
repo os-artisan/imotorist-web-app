@@ -27,11 +27,11 @@ class CreateTicketsTable extends Migration
             $table->float('lat', 10, 6)->nullable();
             $table->float('lng', 10, 6)->nullable();
             $table->string('location')->nullable();
-            $table->datetime('created_at');
             $table->date('court_date');
             $table->decimal('total_amount', 8, 2);
             $table->boolean('paid')->default(false);
             $table->text('remarks')->nullable();
+            $table->timestamps();
         });
     }
 

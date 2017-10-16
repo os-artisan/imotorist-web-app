@@ -6,7 +6,6 @@
         <div class="col-lg-8 col-lg-offset-2 text-center mb-40">
             <h2>Let's Find Your Ticket!</h2>
             <hr class="short panel-primary">
-            <p class="fs-115 mb-22">Start by typing your Ticket number, NIC number or Driving License number.</p>
             <div class="input-group col-lg-8 col-lg-offset-2">
                 <input type="text" class="input-lg form-control" placeholder="Enter Your Ticket Number" />
                 <span class="input-group-btn">
