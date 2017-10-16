@@ -22,15 +22,11 @@ class UserController extends Controller
 
         $motorist = Motorist::where('license_no', '=', $license)->first();
 
-<<<<<<< HEAD
+
         if(isset($motorist)){
         	return $this->sendUserWithMotorist($motorist->user);
         }
 
         return response()->json([], 404);
 	}
-=======
-        return $this->sendUserWithMotorist($user);
-    }
->>>>>>> 189c06da420557b88a37e31ad0a1c71cb6efb906
 }
