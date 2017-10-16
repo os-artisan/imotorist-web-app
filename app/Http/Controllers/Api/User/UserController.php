@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Api\User;
 
 use Illuminate\Http\Request;
-use App\Models\Access\User\Motorist;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Models\Access\User\Motorist;
 use App\Http\Controllers\Api\User\Traits\UserObject;
 
 /**
@@ -23,10 +22,15 @@ class UserController extends Controller
 
         $motorist = Motorist::where('license_no', '=', $license)->first();
 
+<<<<<<< HEAD
         if(isset($motorist)){
         	return $this->sendUserWithMotorist($motorist->user);
         }
 
         return response()->json([], 404);
 	}
+=======
+        return $this->sendUserWithMotorist($user);
+    }
+>>>>>>> 189c06da420557b88a37e31ad0a1c71cb6efb906
 }
