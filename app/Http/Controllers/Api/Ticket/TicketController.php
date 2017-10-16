@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api\Ticket;
 
-use Illuminate\Http\Request;
 use App\Models\Fine\Ticket;
 use Carbon\Carbon as Carbon;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Access\User\Motorist;
+use Illuminate\Support\Facades\Auth;
 
 class TicketController extends Controller
 {
