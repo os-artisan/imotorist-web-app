@@ -8,7 +8,7 @@
             <hr class="short panel-primary">
             <p class="fs-115 mb-22">Start by typing your Ticket number, NIC number or Driving License number.</p>
             <div class="input-group col-lg-8 col-lg-offset-2">
-                <input type="text" class="input-lg form-control" placeholder="Ticket, D/L or NIC #" />
+                <input type="text" class="input-lg form-control" placeholder="Enter Your Ticket Number" />
                 <span class="input-group-btn">
                     <button class="btn btn-default btn-lg" type="button">
                     <span class=" glyphicon glyphicon-search"></span>
@@ -22,7 +22,7 @@
             <div class="col-md-9 col-md-push-3">
                 <div class="panel panel-minimal panel-primary">
                     <!-- Default panel contents -->
-                    <div class="panel-heading"><strong>Search results for: </strong>912921542v</div>
+                    <div class="panel-heading"><strong>Search results for: </strong>645876</div>
                     <!-- Table -->
                     <div class="table-responsive">
                         <table class="table">
@@ -40,12 +40,6 @@
                                     <td class="pl-15">645876</td>
                                     <td>Oct 10, 2017</td>
                                     <td class="text-right">1,000.00</td>
-                                    <td class="text-right pr-15"><span class="label label-danger fs-100">Unpaid</span></td>
-                                </tr>
-                                <tr>
-                                    <td class="pl-15">687534</td>
-                                    <td>Jun 05, 2017</td>
-                                    <td class="text-right">25,000.00</td>
                                     <td class="text-right pr-15"><span class="label label-danger fs-100">Unpaid</span></td>
                                 </tr>
                             </tbody>
