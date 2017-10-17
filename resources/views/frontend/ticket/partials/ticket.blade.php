@@ -43,6 +43,8 @@
                         </div>
                     </div>
                     <hr class="mt-10">
+                @else
+                    <div class="alert alert-info mt-10" role="alert"><span class="glyphicon glyphicon-info-sign"></span> Details of the offender are hidden for privacy concerns. If this is your ticket, please log in to your account to see the full ticket.</div>
                 @endif
                 <div class="row">
                     <div class="col-sm-6">

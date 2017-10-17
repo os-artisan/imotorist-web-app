@@ -53,6 +53,6 @@ class TicketController extends Controller
             return view('frontend.ticket.index', compact('ticket', 'keyword'));
         }
 
-        return redirect('/ticket')->withFlashDanger('Sorry, we didn\'t find any records matching that ticket number.');
+        return redirect()->back()->withFlashDanger('Sorry, we didn\'t find any records matching that ticket number.');
     }
 }

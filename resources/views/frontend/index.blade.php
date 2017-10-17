@@ -18,14 +18,17 @@
                 <h2>Oh, Hi There!</h2>
                 <hr class="short">
                 <p class="fs-115 mb-22">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                <div class="input-group col-lg-8 col-lg-offset-2">
-                    <input type="text" class="input-lg form-control" placeholder="Enter Your Ticket Number" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-default btn-lg" type="button">
-                        <span class=" glyphicon glyphicon-search"></span>
-                        </button>
-                    </span>
-                </div>
+                <form action="{{route('frontend.ticket.post')}}" method="POST" accept-charset="utf-8">
+                    {{csrf_field()}}
+                    <div class="input-group col-lg-8 col-lg-offset-2">
+                        <input type="text" class="input-lg form-control" placeholder="Enter Your Ticket Number" name="ticket_number" required="required" value="{{ isset($keyword) ? $keyword : ''}}" />
+                        <span class="input-group-btn">
+                            <button class="btn btn-default btn-lg" type="submit">
+                            <span class=" glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
