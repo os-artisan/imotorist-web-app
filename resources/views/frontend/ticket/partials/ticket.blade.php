@@ -128,7 +128,11 @@
     </div><!-- panel -->
 </div>
 <div class="col-lg-3 print-hidden">
-    <a href="#" class="btn btn-primary btn-block mb-22" {{ ($ticket->isPaid()) ? 'disabled' : ''}}>Pay Now!</a>
+    <form action="{{route('api.make-payment')}}" method="POST" accept-charset="utf-8">
+        {{csrf_field()}}
+        <input type="hidden" name="ticket_id" value="{{ $ticket->id }}">
+        <button class="btn btn-primary btn-block mb-22" type="submit">Pay Now!</button>
+    </form>
     <div class="panel panel-minimal">
         <div class="list-group">
             <a href="#" class="list-group-item">

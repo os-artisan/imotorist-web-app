@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\Ticket;
+namespace App\Http\Controllers\Api\Fine;
 
 use App\Models\Fine\Ticket;
 use Carbon\Carbon as Carbon;
@@ -36,6 +36,7 @@ class TicketController extends Controller
         $this->validate($request, [
             'license_no' => 'required',
             'vehicle_no' => 'required',
+            'offences'   => 'required',
             'lat' => 'required',
             'lng' => 'required',
             'location' => 'required',
