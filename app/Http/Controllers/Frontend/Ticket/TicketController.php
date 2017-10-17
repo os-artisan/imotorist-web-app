@@ -39,18 +39,18 @@ class TicketController extends Controller
      */
     public function search(Request $request)
     {
-        
         $this->validate($request, [
             'ticket_number' => 'required|numeric',
         ]);
 
         $keyword = $request->input('ticket_number');
 
-        $ticket = Ticket::where('id','=', $keyword)->first();
+        $ticket = Ticket::where('id', '=', $keyword)->first();
 
-        if($ticket) {
-            $ticket->load('motorist','officer', 'station', 'offences');
-            return view('frontend.ticket.index', compact('ticket', 'keyword'));     
+        if ($ticket) {
+            $ticket->load('motorist', 'officer', 'station', 'offences');
+
+            return view('frontend.ticket.index', compact('ticket', 'keyword'));
         }
 
         return redirect('/ticket')->withFlashDanger('Sorry, we didn\'t find any records matching that ticket number.');
