@@ -23,10 +23,10 @@ class PaymentController extends Controller
 
         // will handle the top part later
 
-        $request = Request::create('http://DummyPaymentGateway.somee.com/Payment/visa', 'POST', array(
+        $request = Request::create('http://DummyPaymentGateway.somee.com/Payment/visa', 'POST', [
              'ReturnURL'     => 'https://www.google.lk/',
              'PayAmount'    => '450',
-        ));
+        ]);
 
         Route::dispatch($request);
     }
