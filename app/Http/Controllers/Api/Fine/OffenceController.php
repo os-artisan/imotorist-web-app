@@ -21,6 +21,5 @@ class OffenceController extends Controller
         $Offences = Offence::all();
 
         return response()->json($Offences);
-
     }
 }
