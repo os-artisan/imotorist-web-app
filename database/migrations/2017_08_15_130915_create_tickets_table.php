@@ -28,7 +28,7 @@ class CreateTicketsTable extends Migration
             $table->float('lng', 10, 6)->nullable();
             $table->string('location')->nullable();
             $table->date('court_date');
-            $table->decimal('total_amount', 8, 2);
+            $table->decimal('total_amount', 8, 2)->nullable();
             $table->boolean('paid')->default(false);
             $table->text('remarks')->nullable();
             $table->timestamps();

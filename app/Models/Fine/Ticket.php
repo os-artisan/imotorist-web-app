@@ -3,6 +3,7 @@
 namespace App\Models\Fine;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Fine\Traits\TicketAccess;
 use App\Models\Fine\Traits\Attribute\TicketAttribute;
 use App\Models\Fine\Traits\Relationship\TicketRelationship;
 
@@ -12,6 +13,7 @@ use App\Models\Fine\Traits\Relationship\TicketRelationship;
 class Ticket extends Model
 {
     use TicketAttribute,
+        TicketAccess,
         TicketRelationship;
 
     /**

@@ -7,6 +7,8 @@
 Route::group(['namespace' => 'Fine', 'middleware' => 'auth:api'], function () {
     Route::post('store-ticket', 'TicketController@store');
 
+    Route::post('get-ticket', 'TicketController@show');
+
     Route::get('offences', 'OffenceController@index');
 });
 

@@ -127,6 +127,7 @@
         </div><!--panel body-->
     </div><!-- panel -->
 </div>
+
 <div class="col-lg-3 print-hidden">
     <form action="{{route('api.make-payment')}}" method="POST" accept-charset="utf-8">
         {{csrf_field()}}
@@ -142,5 +143,5 @@
                 <i class="fa fa-print mr-10" aria-hidden="true"></i>Print Ticket
             </a>
         </div>
-    </div>
+    </div><!-- panel -->
 </div>
