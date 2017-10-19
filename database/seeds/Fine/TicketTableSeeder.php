@@ -34,7 +34,7 @@ class TicketTableSeeder extends Seeder
                 'lng'               => 79.963467,
                 'location'          => 'Kottawa town',
                 'court_date'        => Carbon::today()->addDays(14),
-                'total_amount'      => 500.00,
+                'total_amount'      => 1000.00,
                 'paid'              => true,
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),

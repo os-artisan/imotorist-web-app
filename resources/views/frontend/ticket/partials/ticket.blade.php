@@ -44,7 +44,11 @@
                     </div>
                     <hr class="mt-10">
                 @else
-                    <div class="alert alert-info mt-10" role="alert"><span class="glyphicon glyphicon-info-sign"></span> Details of the offender are hidden for privacy concerns. If this is your ticket, please log in to your account to see the full ticket.</div>
+                    <div class="alert alert-info mt-10" role="alert"><span class="glyphicon glyphicon-info-sign"></span> Details of the offender are hidden for privacy concerns. 
+                        @if(!$logged_in_user)
+                        If this is your ticket, please log in to your account to see the full ticket.
+                        @endif
+                    </div>
                 @endif
                 <div class="row">
                     <div class="col-sm-6">
@@ -53,7 +57,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label>Place:</label>
-                        <p>{{ $ticket->location }} (<a href="#">6.825513, 79.958611</a>)</p>
+                        <p>{{ $ticket->location }} (<a href="#" data-toggle="modal" data-target="#googleMap">{{ $ticket->lat }}, {{ $ticket->lng }}</a>)</p>
                     </div>
                 </div>
                 <div class="row">
@@ -128,11 +132,29 @@
     </div><!-- panel -->
 </div>
 
+<div class="modal fade" id="googleMap" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="col-lg-3 print-hidden">
     <form action="{{route('api.make-payment')}}" method="POST" accept-charset="utf-8">
         {{csrf_field()}}
         <input type="hidden" name="ticket_id" value="{{ $ticket->id }}">
-        <button class="btn btn-primary btn-block mb-22" type="submit">Pay Now!</button>
+        <button class="btn btn-primary btn-block mb-22" {{ ($ticket->paid) ? 'disabled' : '' }} type="submit">Pay Now!</button>
     </form>
     <div class="panel panel-minimal">
         <div class="list-group">
