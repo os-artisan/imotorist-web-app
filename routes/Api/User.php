@@ -11,4 +11,7 @@ Route::group(['namespace' => 'User', 'middleware' => 'auth:api'], function () {
 
     // Get user by D/L number
     Route::post('get-user', 'UserController@getUser');
+
+    // Register Firebase token
+    Route::post('register-firebase', 'UserController@updateFirebaseToken');
 });

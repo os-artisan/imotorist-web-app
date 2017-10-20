@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Access\User\Motorist;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Api\User\Traits\UserObject;
 
 /**
@@ -27,5 +28,19 @@ class UserController extends Controller
         }
 
         return response()->json([], 404);
+    }
+
+    public function updateFirebaseToken(Request $request)
+    {
+        $this->validate($request, [
+            'firebase_token' => 'required|unique:users',
+        ]);
+
+        $user = Auth::user();
+        $user->firebase_token = $request->firebase_token;
+
+        if ($user->save()) {
+            return response()->json([], 204);
+        }
     }
 }

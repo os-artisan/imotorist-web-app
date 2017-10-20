@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration
             $table->string('passport', 15)->nullable()->unique();
             $table->date('date_of_birth')->nullable();
             $table->rememberToken();
-            $table->string('firebase_id', 100)->nullable();
+            $table->string('firebase_token')->nullable()->unique();
             $table->timestamps();
         });
     }
