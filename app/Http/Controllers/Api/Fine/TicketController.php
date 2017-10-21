@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Api\Fine;
 
-use App\Http\Controllers\Controller;
-use App\Models\Access\User\Motorist;
 use App\Models\Fine\Ticket;
-use App\Notifications\Api\Fine\UserReceivesTicket;
 use Carbon\Carbon as Carbon;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Access\User\Motorist;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\Api\Fine\UserReceivesTicket;
 
 class TicketController extends Controller
 {
