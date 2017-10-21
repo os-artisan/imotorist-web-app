@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api\Fine;
 use App\Models\Fine\Ticket;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Redirect;
 
 class PaymentController extends Controller
 {
@@ -23,11 +23,11 @@ class PaymentController extends Controller
 
         // will handle the top part later
 
-        $request = Request::create('http://DummyPaymentGateway.somee.com/Payment/visa', 'POST', [
-             'ReturnURL'     => 'https://www.google.lk/',
-             'PayAmount'    => '450',
-        ]);
+        $url = 'http://DummyPaymentGateway.somee.com/Payment/visa';
 
-        Route::dispatch($request);
+        //Redirect::away('http://DummyPaymentGateway.somee.com/Payment/visa')->withInputs(Input::all());
+
+        return Redirect::to($url, array('PayAmount'=>'500', 'ReturnURL'=>'http://DummyPaymentGateway.somee.com/Payment/index'));
+
     }
 }

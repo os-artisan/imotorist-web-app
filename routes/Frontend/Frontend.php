@@ -10,8 +10,7 @@ Route::get('info', 'InfoController@index')->name('info');
 Route::get('contact', 'ContactController@index')->name('contact');
 Route::get('cart', 'Cart\CartController@index')->name('cart');
 
-//Route::resource('ticket', 'Ticket\TicketController', ['only' => ['index', 'show']]);
-
+Route::resource('ticket', 'Ticket\TicketController', ['only' => ['show']]);
 Route::get('ticket', 'Ticket\TicketController@index')->name('ticket');
 Route::post('ticket', 'Ticket\TicketController@search')->name('ticket.post');
 

@@ -33,7 +33,7 @@ class UserController extends Controller
     public function updateFirebaseToken(Request $request)
     {
         $this->validate($request, [
-            'firebase_token' => 'required|unique:users',
+            'firebase_token' => 'required',
         ]);
 
         $user = Auth::user();

@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Api\Fine;
 
-use App\Models\Fine\Ticket;
-use Carbon\Carbon as Carbon;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Access\User\Motorist;
+use App\Models\Fine\Ticket;
+use App\Notifications\Api\Fine\UserReceivesTicket;
+use Carbon\Carbon as Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class TicketController extends Controller
@@ -69,6 +70,11 @@ class TicketController extends Controller
         // Add total to the new ticket
         Ticket::find($ticket->id)->update(['total_amount' => $total]);
 
+        $user = $motorist->user;
+        $ticket = Ticket::find($ticket->id);
+
+        $user->notify(new UserReceivesTicket($ticket));
+
         return response()->json($this->showTicket($ticket->id));
     }
 
@@ -81,7 +87,7 @@ class TicketController extends Controller
     public function show(Request $request)
     {
         // Make sure the logged in user has permission.
-        //Auth::user()->hasPermission('create-ticket')
+        //Auth::user()->hasPermission('read-ticket')
 
         // validate request
         $this->validate($request, [

@@ -66,6 +66,9 @@
                 </li>
 
                 @if ($logged_in_user)
+
+                    @include('includes.partials.notifications')
+                    
                     <li>{{ link_to_route('frontend.user.dashboard', trans('navs.frontend.dashboard'), [], ['class' => active_class(Active::checkRoute('frontend.user.dashboard')) ]) }}</li>
                 @endif
 
