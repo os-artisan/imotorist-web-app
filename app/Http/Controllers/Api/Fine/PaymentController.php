@@ -27,7 +27,6 @@ class PaymentController extends Controller
 
         //Redirect::away('http://DummyPaymentGateway.somee.com/Payment/visa')->withInputs(Input::all());
 
-        return Redirect::to($url, array('PayAmount'=>'500', 'ReturnURL'=>'http://DummyPaymentGateway.somee.com/Payment/index'));
-
+        return Redirect::to($url, ['PayAmount'=>'500', 'ReturnURL'=>'http://DummyPaymentGateway.somee.com/Payment/index']);
     }
 }
