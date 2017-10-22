@@ -13,5 +13,9 @@ Route::group(['namespace' => 'Fine', 'middleware' => 'auth:api'], function () {
 
     Route::post('get-ticket', 'TicketController@show');
 
+    Route::get('get-motorist-ticket', 'TicketController@showMotoristTicket');
+
+    Route::get('get-officer-ticket', 'TicketController@showOfficerTicket');
+
     Route::get('offences', 'OffenceController@index');
 });

@@ -100,6 +100,42 @@ class TicketController extends Controller
     }
 
     /**
+     * Show tickets for motorist.
+     *
+     * @return Collection
+     */
+    public function showMotoristTicket()
+    {
+        $tickets = Auth::user()->motorist->tickets->sortByDesc('created_at');
+
+        $ticketArray = [];
+
+        foreach ($tickets as $ticket) {
+            array_push($ticketArray, $this->formatTicket($ticket));
+        }
+
+        return response()->json($ticketArray);
+    }
+
+    /**
+     * Show tickets for officer.
+     *
+     * @return Collection
+     */
+    public function showOfficerTicket()
+    {
+        $tickets = Auth::user()->officer->tickets->sortByDesc('created_at');
+
+        $ticketArray = [];
+
+        foreach ($tickets as $ticket) {
+            array_push($ticketArray, $this->formatTicket($ticket));
+        }
+
+        return response()->json($ticketArray);
+    }
+
+    /**
      * Show the specified resource.
      *
      * @param  int  $id
@@ -107,35 +143,50 @@ class TicketController extends Controller
      */
     public function showTicket($id)
     {
-        $t = Ticket::find($id)->load('motorist', 'officer', 'station', 'offences');
+        $ticket = Ticket::find($id)->load('motorist', 'officer', 'station', 'offences');
 
+        return $this->formatTicket($ticket);
+    }
+
+        /**
+     * Show the specified resource.
+     *
+     * @param  Collection Ticket
+     * @return Collection
+     */
+    public function formatTicket($ticket)
+    {
         // make ticket object
-        $response['id'] = $t->id;
-        $response['total_amount'] = $t->total_amount;
-        $response['paid'] = $t->paid;
-        $response['motorist_name'] = $t->motorist->user->name;
-        $response['motorist_address'] = $t->motorist->user->address;
-        $response['vehicle_no'] = $t->vehicle_no;
-        $response['motorist_nic'] = $t->motorist->user->nic;
-        $response['motorist_vehicle_classes'] = [];
+        $response['id'] = $ticket->id;
+        $response['total_amount'] = $ticket->total_amount;
+        $response['paid'] = $ticket->paid;
 
-        foreach ($t->motorist->vehicleClasses as $class) {
-            array_push($response['motorist_vehicle_classes'], $class->class);
+        if (Auth::user()->id == $ticket->motorist->user->id || Auth::user()->id == $ticket->officer->user->id) {
+            $response['motorist_name'] = $ticket->motorist->user->name;
+            $response['motorist_address'] = $ticket->motorist->user->address;
+            $response['vehicle_no'] = $ticket->vehicle_no;
+            $response['license_no'] = $ticket->motorist->license_no;
+            $response['motorist_nic'] = $ticket->motorist->user->nic;
+            $response['motorist_vehicle_classes'] = [];
+
+            foreach ($ticket->motorist->vehicleClasses as $class) {
+                array_push($response['motorist_vehicle_classes'], $class->class);
+            }
         }
 
-        $response['offence_datetime'] = $t->created_at->toDayDateTimeString();
-        $response['location'] = $t->location;
-        $response['lat'] = $t->lat;
-        $response['lng'] = $t->lng;
-        $response['station'] = $t->station->name;
-        $response['officer_name'] = $t->officer->user->name;
-        $response['officer_badge_no'] = $t->officer->badge_no;
-        $response['valid_from'] = $t->created_at->toFormattedDateString();
-        $response['valid_to'] = $t->created_at->addDays(14)->toFormattedDateString();
-        $response['court_name'] = $t->station->court->name;
-        $response['court_date'] = $t->created_at->addDays(24)->toFormattedDateString();
-        $response['remarks'] = $t->remarks;
-        $response['offences'] = $t->offences->makeHidden(['id', 'pivot', 'dip']);
+        $response['offence_datetime'] = $ticket->created_at->toDayDateTimeString();
+        $response['location'] = $ticket->location;
+        $response['lat'] = $ticket->lat;
+        $response['lng'] = $ticket->lng;
+        $response['station'] = $ticket->station->name;
+        $response['officer_name'] = $ticket->officer->user->name;
+        $response['officer_badge_no'] = $ticket->officer->badge_no;
+        $response['valid_from'] = $ticket->created_at->toFormattedDateString();
+        $response['valid_to'] = $ticket->created_at->addDays(14)->toFormattedDateString();
+        $response['court_name'] = $ticket->station->court->name;
+        $response['court_date'] = $ticket->created_at->addDays(24)->toFormattedDateString();
+        $response['remarks'] = $ticket->remarks;
+        $response['offences'] = $ticket->offences->makeHidden(['id', 'pivot', 'dip']);
 
         return $response;
     }
