@@ -148,7 +148,7 @@ class TicketController extends Controller
         return $this->formatTicket($ticket);
     }
 
-        /**
+    /**
      * Show the specified resource.
      *
      * @param  Collection Ticket
