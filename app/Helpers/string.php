@@ -1,10 +1,9 @@
 <?php
 
-if( ! function_exists('unique_random') ){
+if (! function_exists('unique_random')) {
     /**
-     *
      * Generate a unique random string of characters
-     * uses str_random() helper for generating the random string
+     * uses str_random() helper for generating the random string.
      *
      * @param     $table - name of the table
      * @param     $col - name of the column that needs to be tested
@@ -12,8 +11,8 @@ if( ! function_exists('unique_random') ){
      *
      * @return string
      */
-    function unique_random($table, $col, $chars = 8){
-
+    function unique_random($table, $col, $chars = 8)
+    {
         $unique = false;
 
         // Store tested results in array to not test them again
@@ -21,7 +20,7 @@ if( ! function_exists('unique_random') ){
 
         $characters = '123456789ABCDEFGHIJKLMNPQRSTUVWXYZ';
 
-        do{
+        do {
 
             // Generate random string of characters
             //$random = strtoupper(str_random($chars));
@@ -37,7 +36,7 @@ if( ! function_exists('unique_random') ){
 
             // Check if it's already testing
             // If so, don't query the database again
-            if( in_array($random, $tested) ){
+            if (in_array($random, $tested)) {
                 continue;
             }
 
@@ -49,7 +48,7 @@ if( ! function_exists('unique_random') ){
             $tested[] = $random;
 
             // String appears to be unique
-            if( $count == 0){
+            if ($count == 0) {
                 // Set unique to true to break the loop
                 $unique = true;
             }
@@ -57,12 +56,8 @@ if( ! function_exists('unique_random') ){
             // If unique is still false at this point
             // it will just repeat all the steps until
             // it has generated a random string of characters
-
-        }
-        while(!$unique);
-
+        } while (! $unique);
 
         return $random;
     }
-
 }
