@@ -49,10 +49,16 @@ class TicketController extends Controller
 
         $motorist = Motorist::where('license_no', $input['license_no'])->first();
 
-        $input['motorist_id'] = $motorist->id;
-        $input['officer_id'] = $officer->id;
-        $input['station_id'] = $officer->station->first()->id;
-        $input['court_date'] = Carbon::today()->addDays(24)->toDateString();
+        // Other attributs needed to create a ticket
+        $attribute = [
+            'ticket_no'     => unique_random(config('fine.tickets_table'), 'ticket_no'),
+            'motorist_id'   => $motorist->id,
+            'officer_id'    => $officer->id,
+            'station_id'    => $officer->station->first()->id,
+            'court_date'    => Carbon::today()->addDays(24)->toDateString(),
+        ];
+
+        $input = array_merge($input, $attribute);
 
         // Create Ticket
         $ticket = Ticket::create($input);
@@ -60,7 +66,7 @@ class TicketController extends Controller
         // Sync offences
         Ticket::find($ticket->id)->attachOffences($request->offences);
 
-        // Cal Total amount
+        // Calculate Total amount
         $total = 0;
 
         foreach ($ticket->offences as $offence) {
@@ -91,10 +97,10 @@ class TicketController extends Controller
 
         // validate request
         $this->validate($request, [
-            'id'           => 'nullable|numeric|min:1',
+            'ticket_no'  => 'nullable|alpha_num',
         ]);
 
-        $ticket = Ticket::find($request->id);
+        $ticket = Ticket::where('ticket_no', '=', $request->ticket_no)->first();
 
         return response()->json($this->showTicket($ticket->id));
     }
@@ -157,7 +163,7 @@ class TicketController extends Controller
     public function formatTicket($ticket)
     {
         // make ticket object
-        $response['id'] = $ticket->id;
+        $response['ticket_no'] = $ticket->ticket_no;
         $response['total_amount'] = $ticket->total_amount;
         $response['paid'] = $ticket->paid;
 

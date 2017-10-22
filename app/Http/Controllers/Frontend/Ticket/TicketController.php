@@ -21,12 +21,12 @@ class TicketController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $ticket_no
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($ticket_no)
     {
-        $ticket = Ticket::findOrFail($id);
+        $ticket = Ticket::where('ticket_no', '=', $ticket_no)->firstOrFail();
 
         return view('frontend.ticket.show')->withTicket($ticket);
     }
@@ -40,12 +40,12 @@ class TicketController extends Controller
     public function search(Request $request)
     {
         $this->validate($request, [
-            'ticket_number' => 'required|numeric',
+            'ticket_no' => 'required|alpha_num',
         ]);
 
-        $keyword = $request->input('ticket_number');
+        $keyword = $request->input('ticket_no');
 
-        $ticket = Ticket::where('id', '=', $keyword)->first();
+        $ticket = Ticket::where('ticket_no', '=', $keyword)->first();
 
         if ($ticket) {
             $ticket->load('motorist', 'officer', 'station', 'offences');

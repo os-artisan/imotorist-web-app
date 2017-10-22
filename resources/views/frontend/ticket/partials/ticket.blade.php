@@ -2,8 +2,14 @@
     <div class="panel panel-minimal panel-default print-visible">
         <div class="panel-heading">
             <div class="pl-15 pr-15">
-                <h2>Spot Fine Ticket<span class="pull-right">Rs. {{ $ticket->total_amount }}</span></h2>
-                <h4>{{ $ticket->id }}<span class="pull-right">{!! $ticket->getPaidLabelAttribute() !!}</span></h4>
+                <div class="row mt-22">
+                    <div class="col-sm-6 col-xs-12"><h2 class="mt-0">Spot Fine Ticket</h2></div>
+                    <div class="col-sm-6 col-xs-12"><h2 class="pull-right mt-0">Rs. {{ $ticket->total_amount }}</h2></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6"><h4 class="mt-0">{{ $ticket->ticket_no }}</h4></div>
+                    <div class="col-xs-6"><h4 class="pull-right mt-0">{!! $ticket->getPaidLabelAttribute() !!}</h4></div>
+                </div>
             </div>
         </div>
         <div class="panel-body">

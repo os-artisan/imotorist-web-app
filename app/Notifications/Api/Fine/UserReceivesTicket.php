@@ -43,7 +43,7 @@ class UserReceivesTicket extends Notification
         return (new MailMessage)
             ->subject('You Just received a Traffic Ticket')
             ->line('You have received a traffic ticket and you need to take action by '.$this->ticket->created_at->addDays(14)->toFormattedDateString().'.')
-            ->action('View My Ticket', route('frontend.ticket.show', $this->ticket->id))
+            ->action('View My Ticket', route('frontend.ticket.show', $this->ticket->ticket_no))
             ->line(trans('strings.emails.auth.thank_you_for_using_app'));
     }
 
@@ -56,7 +56,7 @@ class UserReceivesTicket extends Notification
     public function toDatabase($notifiable)
     {
         return [
-            'ticket_id' => $this->ticket->id,
+            'ticket_no' => $this->ticket->ticket_no,
         ];
     }
 

@@ -9,7 +9,7 @@
             <form action="{{route('frontend.ticket.post')}}" method="POST" accept-charset="utf-8">
                 {{csrf_field()}}
                 <div class="input-group col-lg-8 col-lg-offset-2">
-                    <input type="text" class="input-lg form-control" placeholder="Enter Your Ticket Number" name="ticket_number" required="required" value="{{ isset($keyword) ? $keyword : ''}}" />
+                    <input type="text" class="input-lg form-control" placeholder="Enter Your Ticket Number" name="ticket_no" required="required" value="{{ isset($keyword) ? $keyword : ''}}" />
                     <span class="input-group-btn">
                         <button class="btn btn-default btn-lg" type="submit">
                         <span class=" glyphicon glyphicon-search"></span>

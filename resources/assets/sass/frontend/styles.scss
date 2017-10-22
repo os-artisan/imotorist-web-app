@@ -7,7 +7,11 @@ Navbar
 .navbar-logo {
 
   float: left;
-  margin: 5px 15px 5px 0px;
+  margin: 5px 15px;
+
+  @media (min-width:$grid-float-breakpoint) {
+    margin: 5px 15px 5px 0px;
+  }
 
   img {
     height: 50px;

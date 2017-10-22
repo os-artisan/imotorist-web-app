@@ -28,7 +28,7 @@ class Ticket extends Model
      *
      * @var array
      */
-    protected $fillable = ['motorist_id', 'officer_id', 'station_id', 'payment_id', 'vehicle_no', 'lat', 'lng', 'location', 'paid', 'remarks', 'court_date', 'total_amount'];
+    protected $fillable = ['ticket_no', 'motorist_id', 'officer_id', 'station_id', 'payment_id', 'vehicle_no', 'lat', 'lng', 'location', 'paid', 'remarks', 'court_date', 'total_amount'];
 
     /**
      * @param array $attributes
