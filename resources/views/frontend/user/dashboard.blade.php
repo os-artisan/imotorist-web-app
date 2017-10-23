@@ -4,21 +4,17 @@
 
     <div class="container">
 
-        <div class="row">
+        <div class="col-md-3">
 
-            <div class="col-md-3">
+            @include('frontend.includes.dashboard.side-menu')
 
-                @include('frontend.includes.dashboard.side-menu')
+        </div><!-- col-md-3 -->
 
-            </div><!-- col-md-3 -->
+        <div class="col-md-9">
 
-            <div class="col-md-9">
+            @yield('user-content')
 
-                @yield('user-content')
-
-            </div><!-- col-md-9 -->
-
-        </div><!-- row -->
+        </div><!-- col-md-9 -->
 
     </div><!-- container -->
 @endsection

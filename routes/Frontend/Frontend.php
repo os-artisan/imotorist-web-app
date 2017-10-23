@@ -19,6 +19,10 @@ Route::post('ticket', 'Ticket\TicketController@search')->name('ticket.post');
  * All route names are prefixed with 'frontend.'
  */
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/notification/{id}','NotificationController@markSpecificAsRead')->name('notification.markspecificasread');
+    Route::get('/notifications/mark-all-as-read','NotificationController@markAllAsRead')->name('notification.markallasread');
+
     Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
         /*
          * User Dashboard Specific

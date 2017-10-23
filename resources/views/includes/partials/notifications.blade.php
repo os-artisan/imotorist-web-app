@@ -18,7 +18,7 @@
         @foreach($logged_in_user->unreadNotifications as $notification)
 
             <li class="alert mb-0">
-                <div class="col-xs-12"><a href="" data-dismiss="alert" aria-label="close" class="close">×</a>
+                <div class="col-xs-12"><a href="{{ route('frontend.notification.markspecificasread', $notification->id) }}" data-dismiss="alert" aria-label="close" class="close">×</a>
                     @include('notifications.' . snake_case(class_basename($notification->type)))
                 </div>
             </li>
@@ -28,7 +28,7 @@
         </div><!-- drop content -->
 
         <div class="notify-drop-footer text-center">
-            <a href=""><i class="fa fa-eye"></i> Mark all as read</a>
+            <a href="{{ route('frontend.notification.markallasread')}}"><i class="fa fa-eye"></i> Mark all as read</a>
         </div>
     </ul>
 </li>
