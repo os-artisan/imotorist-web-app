@@ -316,6 +316,7 @@ trait UserAttribute
         if ($this->motorist) {
             return count($this->motorist->tickets->where('paid', '=', false));
         }
+
         return 0;
     }
 
@@ -327,6 +328,7 @@ trait UserAttribute
         if ($this->motorist) {
             return count($this->motorist->tickets);
         }
+
         return 0;
     }
 }
