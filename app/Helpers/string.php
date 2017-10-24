@@ -11,7 +11,7 @@ if (! function_exists('unique_random')) {
      *
      * @return string
      */
-    function unique_random($table, $col, $chars = 8)
+    function unique_random($table, $col, $chars = 6)
     {
         $unique = false;
 

@@ -307,4 +307,26 @@ trait UserAttribute
 
         return $this->Where($field, $identifier)->first();
     }
+
+    /**
+     * @return int
+     */
+    public function countUnpaidTickets()
+    {
+        if ($this->motorist) {
+            return count($this->motorist->tickets->where('paid', '=', false));
+        }
+        return 0;
+    }
+
+    /**
+     * @return int
+     */
+    public function countTickets()
+    {
+        if ($this->motorist) {
+            return count($this->motorist->tickets);
+        }
+        return 0;
+    }
 }

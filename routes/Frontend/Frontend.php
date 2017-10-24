@@ -8,7 +8,6 @@ Route::get('/', 'FrontendController@index')->name('index');
 Route::get('macros', 'FrontendController@macros')->name('macros');
 Route::get('info', 'InfoController@index')->name('info');
 Route::get('contact', 'ContactController@index')->name('contact');
-Route::get('cart', 'Cart\CartController@index')->name('cart');
 
 Route::resource('ticket', 'Ticket\TicketController', ['only' => ['show']]);
 Route::get('ticket', 'Ticket\TicketController@index')->name('ticket');
@@ -22,6 +21,9 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/notification/{id}','NotificationController@markSpecificAsRead')->name('notification.markspecificasread');
     Route::get('/notifications/mark-all-as-read','NotificationController@markAllAsRead')->name('notification.markallasread');
+   
+    Route::get('cart', 'Cart\CartController@index')->name('cart');
+    Route::get('checkout', 'Cart\CheckoutController@index')->name('checkout');
 
     Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
         /*

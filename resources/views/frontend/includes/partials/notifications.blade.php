@@ -7,7 +7,7 @@
         @endif
     </a>
     <ul class="dropdown-menu notify-drop">
-        <div class="notify-drop-title">
+        <div class="notify-drop-title bg-primary">
             <div class="row">
                 <div class="col-xs-12">Notifications</div>
             </div>
@@ -28,7 +28,11 @@
         </div><!-- drop content -->
 
         <div class="notify-drop-footer text-center">
-            <a href="{{ route('frontend.notification.markallasread')}}"><i class="fa fa-eye"></i> Mark all as read</a>
+            <div class="row">
+                <div class="col-xs-12">
+                    <a href="{{ route('frontend.notification.markallasread')}}" class="btn btn-sm btn-link"><i class="fa fa-eye"></i> Mark as read</a>
+                </div>
+            </div>
         </div>
     </ul>
 </li>

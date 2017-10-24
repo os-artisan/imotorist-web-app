@@ -51,24 +51,14 @@
                     </li>
                 @endif
 
-                <li class="dropdown notifications-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                        <i class="fa fa-shopping-cart fa-lg"></i>
-                        <span class="label label-primary">2</span>
-                    </a>
-
-                    <ul class="dropdown-menu">
-                        <li class="header">{{ link_to_route('frontend.cart', 'Your Cart: 2 item') }}</li>
-                        <li class="footer">
-                            <a href="#">{{ link_to_route('frontend.cart', 'View All') }}</a>
-                        </li>
-                    </ul>
-                </li>
-
                 @if ($logged_in_user)
 
-                    @include('includes.partials.notifications')
-                    
+                    <!-- Shopping Cart -->
+                    @include('frontend.includes.partials.cart')
+
+                    <!-- Notifications -->
+                    @include('frontend.includes.partials.notifications')
+
                     <li>{{ link_to_route('frontend.user.dashboard', trans('navs.frontend.dashboard'), [], ['class' => active_class(Active::checkRoute('frontend.user.dashboard')) ]) }}</li>
                 @endif
 
