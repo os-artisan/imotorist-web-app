@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class NotificationController.
@@ -15,8 +15,8 @@ class NotificationController extends Controller
      *
      * @return http/request
      */
-    public function markAllAsRead() {
-
+    public function markAllAsRead()
+    {
         Auth::user()->unreadNotifications->markAsRead(); // or delete() ?
 
         return back();
@@ -27,8 +27,8 @@ class NotificationController extends Controller
      *
      * @return http/request
      */
-    public function markSpecificAsRead($id) {
-
+    public function markSpecificAsRead($id)
+    {
         $notification = Auth::user()->notifications()->findOrFail($id);
 
         $notification->markAsRead(); // or delete() ?
