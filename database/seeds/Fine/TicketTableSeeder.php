@@ -25,7 +25,7 @@ class TicketTableSeeder extends Seeder
 
         $tickets = [
             [
-                'ticket_no'         => unique_random(config('fine.tickets_table'), 'ticket_no'),
+                'ticket_no'         => unique_random(config('fine.tickets_table'), 'ticket_no', config('fine.ticket_no.length')),
                 'motorist_id'       => 5,
                 'officer_id'        => 4,
                 'station_id'        => 1,

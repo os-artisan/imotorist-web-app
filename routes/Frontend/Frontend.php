@@ -22,7 +22,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/notifications/mark-all-as-read', 'NotificationController@markAllAsRead')->name('notification.markallasread');
 
     Route::get('cart', 'Cart\CartController@index')->name('cart');
-    Route::get('checkout', 'Cart\CheckoutController@index')->name('checkout');
+
+    Route::resource('checkout', 'Cart\CheckoutController', ['only' => ['show', 'store']]);
+
+    Route::post('payment', 'Cart\PaymentController@postToGateway')->name('payment');
 
     Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
         /*

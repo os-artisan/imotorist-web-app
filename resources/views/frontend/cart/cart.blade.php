@@ -44,7 +44,12 @@
         </div>
     </div>
     <div class="col-lg-3">
-        <button type="button" class="btn btn-primary btn-lg btn-block mb-22">Checkout</button>
+        <form action="{{route('frontend.checkout.store')}}" method="POST" accept-charset="utf-8">
+            {{csrf_field()}}
+            <input type="hidden" name="ticket_no[]" value="QI2RU7">
+            <input type="hidden" name="ticket_no[]" value="2UKWMK">
+            <button type="submit" class="btn btn-primary btn-lg btn-block mb-22">Checkout</button>
+        </form>
     </div>
 </div>
 

@@ -62,3 +62,10 @@ function hasScrolled() {
     
     lastScrollTop = st;
 }
+
+/*
+ * Make Ticket number uppercase.
+ */
+$("input#ticket_no").bind("input",function(){
+        this.value= this.value.toUpperCase();
+});

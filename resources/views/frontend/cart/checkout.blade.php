@@ -17,12 +17,12 @@
                         <h4>Order Summary</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Subtotal<span class="pull-right">Rs. 1,500.00</span></p>
+                        <p>Subtotal<span class="pull-right">Rs. {{ $payment->subtotal }}</span></p>
                         <p>Tax<span class="pull-right">-</span></p>
-                        <p>Convenience Fee<span class="pull-right">Rs. 25.00</span></p>
+                        <p>Convenience Fee<span class="pull-right">Rs. {{ $payment->convenience }}</span></p>
                         <hr class="mt-0 mb-0">
                         <p class="fs-115 mb-0 mt-10">
-                            <strong>Total<span class="pull-right">Rs. <span>1,525.00</span></span></strong>
+                            <strong>Total<span class="pull-right">Rs. {{ $payment->total }}</span></strong>
                         </p>
                     </div>
                     <div class="panel-footer text-center">
@@ -56,21 +56,23 @@
                         <h4>Payment Details</h4>
                     </div>
                     <div class="panel-body">
-                        <form role="form" id="payment-form">
+                        <form action="{{route('frontend.payment')}}" method="POST" accept-charset="utf-8">
+                            {{csrf_field()}}
+                            <input type="hidden" name="token" value="{{ $payment->token }}">
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label for="couponCode">Card Holder Name</label>
-                                        <input type="text" class="form-control" name="couponCode" />
+                                        <label for="name">Card Holder Name</label>
+                                        <input type="text" class="form-control" name="name" />
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-xs-12">
                                     <div class="form-group">
-                                        <label for="cardNumber">Card Number</label>
+                                        <label for="card_number">Card Number</label>
                                         <div class="input-group">
-                                            <input type="tel" class="form-control" name="cardNumber" placeholder="Card Number" required autofocus />
+                                            <input type="tel" class="form-control" name="card_number" placeholder="Card Number" required autofocus maxlength="16" />
                                             <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
                                         </div>
                                     </div>
@@ -79,14 +81,17 @@
                             <div class="row">
                                 <div class="col-xs-7 col-md-7">
                                     <div class="form-group">
-                                        <label for="cardExpiry"><span class="hidden-xs">Expiration</span><span class="visible-xs-inline">Exp</span> Date</label>
-                                        <input type="tel" class="form-control" name="cardExpiry" placeholder="MM/YY" required />
+                                        <label for="card_expiry"><span class="hidden-xs">Expiration</span><span class="visible-xs-inline">Exp</span> Date</label>
+                                        <div class="form-group form-inline">
+                                            <input type="tel" name="exp_month" class="form-control" placeholder="MM" required maxlength="2"> 
+                                            <input type="tel" name="exp_year" class="form-control" placeholder="YY" required maxlength="2"> 
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-xs-5 col-md-5 pull-right">
                                     <div class="form-group">
-                                        <label for="cardCVC">CV Code</label>
-                                        <input type="tel" class="form-control" name="cardCVC" placeholder="CVC" autocomplete="cc-csc" required />
+                                        <label for="cvv">CV Code</label>
+                                        <input type="tel" class="form-control" name="cvv" placeholder="CVC" required maxlength="4"/>
                                     </div>
                                 </div>
                             </div>

@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <a href="{{ route('frontend.cart') }}" class="btn btn-sm btn-link pl-0"><i class="fa fa-shopping-cart mr-5"></i>View Cart</a>
-                    <a href="{{ route('frontend.checkout') }}" class="btn btn-sm btn-primary pull-right">Checkout</a>
+                    <a href="{{ route('frontend.checkout.store') }}" class="btn btn-sm btn-primary pull-right">Checkout</a>
                 </div>
             </div>
         </div>

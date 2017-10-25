@@ -17,9 +17,13 @@ class CreatePaymentsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->nullable()->unsigned();
             $table->foreign('user_id')->references('id')->on(config('access.users_table'))->onDelete('cascade');
-            $table->decimal('amount', 8, 2);
-            $table->string('method');
-            $table->string('status');
+            $table->string('token', config('fine.payment_token.length'));
+            $table->decimal('subtotal', 8, 2);
+            $table->decimal('convenience', 8, 2);
+            $table->decimal('total', 8, 2);
+            $table->string('method')->nullable();
+            $table->string('transaction_id')->nullable();
+            $table->tinyInteger('status')->default(0)->unsigned();
             $table->timestamps();
         });
     }

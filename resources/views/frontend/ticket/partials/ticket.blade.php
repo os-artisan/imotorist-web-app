@@ -157,9 +157,9 @@
 </div>
 
 <div class="col-lg-3 print-hidden">
-    <form action="{{route('api.make-payment')}}" method="POST" accept-charset="utf-8">
+    <form action="{{route('frontend.checkout.store')}}" method="POST" accept-charset="utf-8">
         {{csrf_field()}}
-        <input type="hidden" name="ticket_id" value="{{ $ticket->id }}">
+        <input type="hidden" name="ticket_no[]" value="{{ $ticket->ticket_no }}">
         <button class="btn btn-primary btn-block mb-22" {{ ($ticket->paid) ? 'disabled' : '' }} type="submit">Pay Now!</button>
     </form>
     <div class="panel panel-minimal">

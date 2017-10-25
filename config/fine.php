@@ -38,4 +38,20 @@ return [
      * Payments table used to store payment details.
      */
     'payments_table' => 'payments',
+
+    /*
+     * Ticket attributes.
+     */
+    'ticket_no' => [
+        'length' => 6,
+    ],
+
+    'convenience_fee' => 25,
+
+    /*
+     * Payment attributes.
+     */
+    'payment_token' => [
+        'length' => 20,
+    ],
 ];

@@ -51,7 +51,7 @@ class TicketController extends Controller
 
         // Other attributs needed to create a ticket
         $attribute = [
-            'ticket_no'     => unique_random(config('fine.tickets_table'), 'ticket_no'),
+            'ticket_no'     => unique_random(config('fine.tickets_table'), 'ticket_no', config('fine.ticket_no.length')),
             'motorist_id'   => $motorist->id,
             'officer_id'    => $officer->id,
             'station_id'    => $officer->station->first()->id,
