@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Api\Fine;
 
-use App\Http\Controllers\Controller;
 use App\Models\Fine\Payment;
-use App\Models\Fine\Ticket;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class PaymentController extends Controller
 {
@@ -45,7 +44,7 @@ class PaymentController extends Controller
         ];
 
         $header = [
-            'Accept' => 'application/json'
+            'Accept' => 'application/json',
         ];
 
         $response = $client->request('POST', $url, [
