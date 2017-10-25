@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Frontend\Cart;
 
 use App\Models\Fine\Ticket;
-use Illuminate\Http\Request;
 use App\Models\Fine\Payment;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
@@ -17,7 +17,6 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        
     }
 
     /**
@@ -48,14 +47,14 @@ class CheckoutController extends Controller
 
         $subtotal = 0;
         $convenience = 0;
-        
-        foreach($tickets as $ticket) {
+
+        foreach ($tickets as $ticket) {
             $subtotal += $ticket->total_amount;
             $convenience += config('fine.convenience_fee');
         }
 
         $total = $subtotal + $convenience;
-        
+
         $input = [
             'user_id'       => Auth::user()->id,
             'token'         => unique_random(config('fine.payments_table'), 'token', config('fine.payment_token.length')),
