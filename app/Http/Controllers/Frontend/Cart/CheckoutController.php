@@ -36,7 +36,6 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-
         $checkout = new \App\Http\Controllers\Api\Fine\PaymentController();
 
         // Valid and unpaid tickets.

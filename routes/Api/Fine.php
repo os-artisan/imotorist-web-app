@@ -15,7 +15,7 @@ Route::group(['namespace' => 'Fine', 'middleware' => 'auth:api'], function () {
 
     Route::get('offences', 'OffenceController@index');
 
-	Route::post('checkout', 'PaymentController@checkout')->name('checkout');
+    Route::post('checkout', 'PaymentController@checkout')->name('checkout');
 
     Route::post('payment', 'PaymentController@completePayment')->name('payment');
 });

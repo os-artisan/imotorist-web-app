@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Api\Fine;
 use App\Models\Fine\Ticket;
 use App\Models\Fine\Payment;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
@@ -21,7 +21,7 @@ class PaymentController extends Controller
         // Valid and unpaid tickets.
         $this->validate($request, [
             'ticket_no'      => 'required|array|exists:tickets,ticket_no,paid,0',
-        ],[
+        ], [
             'ticket_no.exists' => 'This ticket is not found or has already been paid.',
         ]);
 
@@ -72,8 +72,6 @@ class PaymentController extends Controller
         ], [
             'token.exists' => 'There was an error processing your order. Please contact us or try again later.',
         ]);
-
-
 
         $total = Payment::where('token', $request->token)->first()->total;
 
