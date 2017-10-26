@@ -24,14 +24,6 @@ class PaymentController extends Controller
         }
         elseif ($response->error) {
             return redirect()->back()->withErrors($response->error);
-
-        $success = isset($response['success']) ? $response['success'] : '';
-        $error = isset($response['error']) ? $response['error'] : '';
-
-        if ($success) {
-            return redirect()->route('frontend.user.dashboard')->withFlashSuccess($success);
-        } elseif ($error) {
-            return redirect()->back()->withErrors($error);
         }
     }
 }

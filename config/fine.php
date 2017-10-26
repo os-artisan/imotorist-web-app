@@ -52,6 +52,6 @@ return [
      * Payment attributes.
      */
     'payment_token' => [
-        'length' => 20,
+        'length' => 32,
     ],
 ];
