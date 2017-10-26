@@ -6,7 +6,6 @@ use App\Models\Fine\Ticket;
 use App\Models\Fine\Payment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
@@ -37,39 +36,17 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        // Valid and unpaid tickets.
-        $this->validate($request, [
-            'ticket_no'      => 'required|array|exists:tickets,ticket_no,paid,0',
-        ],[
-            'ticket_no.exists' => 'This ticket has already been paid.',
-        ]);
+        $checkout = new \App\Http\Controllers\Api\Fine\PaymentController();
 
-        // Get Ticket(s)
-        $tickets = Ticket::whereIn('ticket_no', $request->ticket_no)->get();
+        $response = json_decode($checkout->checkout($request)->content());
 
-        $subtotal = 0;
-        $convenience = 0;
+        $token = $response->token;
 
-        foreach ($tickets as $ticket) {
-            $subtotal += $ticket->total_amount;
-            $convenience += config('fine.convenience_fee');
+        if ($token) {
+            return redirect()->route('frontend.checkout.show', $token);
         }
 
-        $total = $subtotal + $convenience;
-
-        $input = [
-            'user_id'       => Auth::user()->id,
-            'token'         => unique_random(config('fine.payments_table'), 'token', config('fine.payment_token.length')),
-            'subtotal'      => $subtotal,
-            'convenience'   => $convenience,
-            'total'         => $total,
-        ];
-
-        $payment = Payment::create($input);
-
-        Ticket::whereIn('ticket_no', $request->ticket_no)->update(['payment_id' => $payment->id]);
-
-        return redirect()->route('frontend.checkout.show', $payment->token);
+        return $response;
     }
 
     /**

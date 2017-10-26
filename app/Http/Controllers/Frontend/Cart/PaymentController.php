@@ -17,16 +17,13 @@ class PaymentController extends Controller
     {
         $pay = new \App\Http\Controllers\Api\Fine\PaymentController();
 
-        $response = json_decode($pay->completePayment($request), true);
+        $response = json_decode($pay->completePayment($request)->content());
 
-        $success = isset($response['success']) ? $response['success'] : '';
-        $error = isset($response['error']) ? $response['error'] : '';
-
-        if ($success) {
-            return redirect()->route('frontend.user.dashboard')->withFlashSuccess($success);
+        if ($response->success) {
+            return redirect()->route('frontend.user.dashboard')->withFlashSuccess($response->success);
         }
-        elseif ($error) {
-            return redirect()->back()->withErrors($error);
+        elseif ($response->error) {
+            return redirect()->back()->withErrors($response->error);
         }
     }
 }

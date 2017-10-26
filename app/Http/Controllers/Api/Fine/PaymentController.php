@@ -6,9 +6,53 @@ use App\Http\Controllers\Controller;
 use App\Models\Fine\Payment;
 use App\Models\Fine\Ticket;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PaymentController extends Controller
 {
+    /**
+     * complete payment.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function checkout(Request $request)
+    {
+        // Valid and unpaid tickets.
+        $this->validate($request, [
+            'ticket_no'      => 'required|array|exists:tickets,ticket_no,paid,0',
+        ],[
+            'ticket_no.exists' => 'This ticket is not found or has already been paid.',
+        ]);
+
+        // Get Ticket(s)
+        $tickets = Ticket::whereIn('ticket_no', $request->ticket_no)->get();
+
+        $subtotal = 0;
+        $convenience = 0;
+
+        foreach ($tickets as $ticket) {
+            $subtotal += $ticket->total_amount;
+            $convenience += config('fine.convenience_fee');
+        }
+
+        $total = $subtotal + $convenience;
+
+        $input = [
+            'user_id'       => Auth::user()->id,
+            'token'         => unique_random(config('fine.payments_table'), 'token', config('fine.payment_token.length')),
+            'subtotal'      => $subtotal,
+            'convenience'   => $convenience,
+            'total'         => $total,
+        ];
+
+        $payment = Payment::create($input);
+
+        Ticket::whereIn('ticket_no', $request->ticket_no)->update(['payment_id' => $payment->id]);
+
+        return response()->json(['token' => $payment->token]);
+    }
+
     /**
      * complete payment.
      *
@@ -28,6 +72,8 @@ class PaymentController extends Controller
         ], [
             'token.exists' => 'There was an error processing your order. Please contact us or try again later.',
         ]);
+
+
 
         $total = Payment::where('token', $request->token)->first()->total;
 
@@ -56,8 +102,6 @@ class PaymentController extends Controller
         ]);
 
         $json = json_decode($response->getBody(), true);
-
-        //return $json;
 
         return $this->markAsPaid($json);
     }
@@ -90,6 +134,6 @@ class PaymentController extends Controller
             $return = ['error' => 'There was an error processing your order. Please contact us or try again later.'];
         }
 
-        return json_encode($return);
+        return response()->json($return);
     }
 }
