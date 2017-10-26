@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api\Fine;
 
-use App\Http\Controllers\Controller;
-use App\Models\Fine\Payment;
 use App\Models\Fine\Ticket;
+use App\Models\Fine\Payment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 
 class PaymentController extends Controller
 {
@@ -115,11 +115,9 @@ class PaymentController extends Controller
 
         $return = [];
 
-        if (!$is_success && !is_null($error)) {
+        if (! $is_success && ! is_null($error)) {
             $return = ['error' => $error];
-        }
-        elseif ($is_success) {
-
+        } elseif ($is_success) {
             $payment = Payment::where('token', '=', $token)->first();
 
             $payment->status = true;
@@ -129,8 +127,7 @@ class PaymentController extends Controller
             Ticket::where('payment_id', '=', $payment->id)->update(['paid' => true]);
 
             $return = ['success' => 'Your payment was successful. Thank you for using iMotorist!'];
-        }
-        else {
+        } else {
             $return = ['error' => 'There was an error processing your order. Please contact us or try again later.'];
         }
 
