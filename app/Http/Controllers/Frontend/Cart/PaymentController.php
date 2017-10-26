@@ -24,8 +24,7 @@ class PaymentController extends Controller
 
         if ($success) {
             return redirect()->route('frontend.user.dashboard')->withFlashSuccess($success);
-        }
-        elseif ($error) {
+        } elseif ($error) {
             return redirect()->back()->withErrors($error);
         }
     }
