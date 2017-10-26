@@ -16,17 +16,17 @@ class PaymentController extends Controller
     public function postToGateway(Request $request)
     {
         $pay = new \App\Http\Controllers\Api\Fine\PaymentController();
-        $response = $pay->completePayment($request);
 
-        $is_success = $response['is_success'];
-        $token = $response['token'];
-        $transaction_id = $response['transaction_id'];
-        $error = $response['error'];
+        $response = json_decode($pay->completePayment($request), true);
 
-        if (! $is_success) {
+        $success = isset($response['success']) ? $response['success'] : '';
+        $error = isset($response['error']) ? $response['error'] : '';
+
+        if ($success) {
+            return redirect()->route('frontend.user.dashboard')->withFlashSuccess($success);
+        }
+        elseif ($error) {
             return redirect()->back()->withErrors($error);
         }
-
-        return redirect()->route('frontend.user.dashboard')->withFlashSuccess('Your payment was successful. Thank you for using iMotorist!');
     }
 }

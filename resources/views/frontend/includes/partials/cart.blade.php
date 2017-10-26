@@ -26,7 +26,12 @@
             <div class="row">
                 <div class="col-xs-12">
                     <a href="{{ route('frontend.cart') }}" class="btn btn-sm btn-link pl-0"><i class="fa fa-shopping-cart mr-5"></i>View Cart</a>
-                    <a href="{{ route('frontend.checkout.store') }}" class="btn btn-sm btn-primary pull-right">Checkout</a>
+                    <form action="{{route('frontend.checkout.store')}}" method="POST" accept-charset="utf-8" class="pull-right">
+                        {{csrf_field()}}
+                        <input type="hidden" name="ticket_no[]" value="QI2RU7">
+                        <input type="hidden" name="ticket_no[]" value="2UKWMK">
+                        <button type="submit" class="btn btn-sm btn-primary">Checkout</button>
+                    </form>
                 </div>
             </div>
         </div>

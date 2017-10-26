@@ -63,7 +63,7 @@
                                 <div class="col-xs-12">
                                     <div class="form-group">
                                         <label for="name">Card Holder Name</label>
-                                        <input type="text" class="form-control" name="name" />
+                                        <input type="text" class="form-control" name="name" required autofocus/>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +72,7 @@
                                     <div class="form-group">
                                         <label for="card_number">Card Number</label>
                                         <div class="input-group">
-                                            <input type="tel" class="form-control" name="card_number" placeholder="Card Number" required autofocus maxlength="16" />
+                                            <input type="tel" class="form-control" name="card_number" placeholder="Card Number" required maxlength="16" />
                                             <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
                                         </div>
                                     </div>

@@ -40,6 +40,8 @@ class CheckoutController extends Controller
         // Valid and unpaid tickets.
         $this->validate($request, [
             'ticket_no'      => 'required|array|exists:tickets,ticket_no,paid,0',
+        ],[
+            'ticket_no.exists' => 'This ticket has already been paid.',
         ]);
 
         // Get Ticket(s)

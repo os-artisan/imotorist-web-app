@@ -32,10 +32,9 @@
         
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <div class="checkbox">
-                                        <label>
-                                            {{ Form::checkbox('remember') }} {{ trans('labels.frontend.auth.remember_me') }}
-                                        </label>
+                                    <div class="checkbox checkbox-primary">
+                                        <input name="remember" type="checkbox" value="1">
+                                        <label for="remember">{{ trans('labels.frontend.auth.remember_me') }}</label>
                                     </div>
                                 </div><!--col-md-6-->
                             </div><!--form-group-->
