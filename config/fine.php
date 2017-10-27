@@ -1,9 +1,9 @@
 <?php
 
 use App\Models\Fine\Cart;
+use App\Models\Fine\Ticket;
 use App\Models\Fine\Offence;
 use App\Models\Fine\Payment;
-use App\Models\Fine\Ticket;
 
 return [
     /*
