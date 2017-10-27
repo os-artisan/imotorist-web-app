@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers\Frontend\Cart;
 
-use App\Http\Controllers\Controller;
 use App\Models\Fine\Cart;
 use App\Models\Fine\Ticket;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\Rule;
 
 class CartController extends Controller
 {
@@ -23,7 +21,7 @@ class CartController extends Controller
 
         $total = $carts->sum('total');
 
-        $total = number_format((float)$total, 2, '.', '');
+        $total = number_format((float) $total, 2, '.', '');
 
         return view('frontend.cart.cart', compact('carts', 'total'));
     }
@@ -35,7 +33,7 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         $this->validate($request, [
             'ticket_no'      => 'required|array|exists:tickets,ticket_no,paid,0',
         ], [
@@ -68,6 +66,7 @@ class CartController extends Controller
         if ($cart->delete()) {
             return redirect()->back()->withFlashSuccess('The ticket is successfully removed from the cart.');
         }
+
         return redirect()->back()->withFlashDanger('Sorry, we didn\'t find any records matching that ticket.');
     }
 }
