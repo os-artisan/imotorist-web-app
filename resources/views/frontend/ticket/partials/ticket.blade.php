@@ -138,6 +138,7 @@
     </div><!-- panel -->
 </div>
 
+<!-- Google map -->
 <div class="modal fade" id="googleMap" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -146,8 +147,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                ...
+            <div class="modal-body" id="map" style="width: 100%; max-height: 100%; padding: 30vh 50%;">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn" data-dismiss="modal">Close</button>
