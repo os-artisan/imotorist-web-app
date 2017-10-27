@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\Fine;
 
+use App\Models\Fine\Cart;
 use App\Models\Fine\Ticket;
 use App\Models\Fine\Payment;
 use Illuminate\Http\Request;
@@ -122,7 +123,14 @@ class PaymentController extends Controller
             $payment->transaction_id = $transaction_id;
             $payment->save();
 
-            Ticket::where('payment_id', '=', $payment->id)->update(['paid' => true]);
+            $tickets = Ticket::where('payment_id', '=', $payment->id)->get();
+
+            foreach ($tickets as $ticket) {
+                $ticket->paid = true;
+                $ticket->save();
+
+                Cart::where('ticket_id', '=', $ticket->id)->delete();
+            }
 
             $return = ['success' => 'Your payment was successful. Thank you for using iMotorist!'];
         } else {
