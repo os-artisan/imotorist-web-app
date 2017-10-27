@@ -21,7 +21,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/notification/{id}', 'NotificationController@markSpecificAsRead')->name('notification.markspecificasread');
     Route::get('/notifications/mark-all-as-read', 'NotificationController@markAllAsRead')->name('notification.markallasread');
 
-    Route::get('cart', 'Cart\CartController@index')->name('cart');
+    Route::resource('cart', 'Cart\CartController', ['only' => ['index', 'store', 'destroy']]);
 
     Route::resource('checkout', 'Cart\CheckoutController', ['only' => ['show', 'store']]);
 

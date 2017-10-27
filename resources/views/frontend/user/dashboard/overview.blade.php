@@ -9,7 +9,7 @@
                 <i class="fa fa-smile-o fa-5x"></i>
                 <div class="pull-right text-right">
                     <h2 class="mt-5">24</h2>
-                    <h4><strong>Driver Points</strong></h4>
+                    <h4 class="mb-0"><strong>Driver Points</strong></h4>
                 </div>
             </div><!--panel body-->
         </div><!-- panel -->
@@ -20,7 +20,7 @@
                 <i class="fa fa-file-text-o fa-5x"></i>
                 <div class="pull-right text-right">
                     <h2 class="mt-5">{{ $logged_in_user->countUnpaidTickets() }}</h2>
-                    <h4><strong>Unpaid Tickets</strong></h4>
+                    <h4 class="mb-0"><strong>Unpaid Tickets</strong></h4>
                 </div>
             </div><!--panel body-->
         </div><!-- panel -->
@@ -31,7 +31,7 @@
                 <i class="fa fa-pagelines fa-5x"></i>
                 <div class="pull-right text-right">
                     <h2 class="mt-5">50</h2>
-                    <h4><strong>Green Points</strong></h4>
+                    <h4 class="mb-0"><strong>Green Points</strong></h4>
                 </div>
             </div><!--panel body-->
         </div><!-- panel -->
@@ -67,9 +67,16 @@
                                     <th class="text-center">{{ $ticket->total_amount }}</th>
                                     <th class="text-center">{!! $ticket->getPaidLabelAttribute() !!}</th>
                                     <th class="text-right">
-                                        <a href="{{ route('frontend.ticket.show', $ticket->ticket_no) }}" class="btn btn-xs btn-link btn-info">
+                                        <a href="{{ route('frontend.ticket.show', $ticket->ticket_no) }}" class="btn btn-xs btn-default">
                                             <i class="fa fa-search" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></i>
                                         </a>
+                                        <form action="{{route('frontend.cart.store')}}" method="POST" accept-charset="utf-8" class="pull-right">
+                                            {{csrf_field()}}
+                                            <input type="hidden" name="ticket_no[]" value="{{ $ticket->ticket_no }}">
+                                            <button type="submit" class="btn btn-xs btn-primary ml-10 {{ ($ticket->inCart() || $ticket->isPaid()) ? 'disabled' : ''}}">
+                                                <i class="fa fa-cart-plus" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart"></i>
+                                            </button>
+                                        </form>
                                     </th>   
                                 </tr>
                                 @endforeach

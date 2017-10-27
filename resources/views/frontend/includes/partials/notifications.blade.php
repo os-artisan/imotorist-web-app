@@ -30,7 +30,11 @@
         <div class="notify-drop-footer text-center">
             <div class="row">
                 <div class="col-xs-12">
+                    @if(count($logged_in_user->unreadNotifications) > 0)
                     <a href="{{ route('frontend.notification.markallasread')}}" class="btn btn-sm btn-link"><i class="fa fa-eye"></i> Mark as read</a>
+                    @else
+                    <p class="mb-5 mt-5">No new notifications</p>
+                    @endif
                 </div>
             </div>
         </div>

@@ -164,9 +164,13 @@
     </form>
     <div class="panel panel-minimal">
         <div class="list-group">
-            <a href="#" class="list-group-item">
-                <i class="fa fa-cart-plus mr-10" aria-hidden="true"></i>Add to Cart
-            </a>
+            <form action="{{route('frontend.cart.store')}}" method="POST" accept-charset="utf-8">
+                {{csrf_field()}}
+                <input type="hidden" name="ticket_no[]" value="{{ $ticket->ticket_no }}">
+                <button type="submit" class="list-group-item {{ ($ticket->inCart() || $ticket->isPaid()) ? 'disabled' : ''}}">
+                    <i class="fa fa-cart-plus mr-10" aria-hidden="true"></i>Add to Cart
+                </button>
+            </form>
             <a href="" class="list-group-item" onclick="window.print()">
                 <i class="fa fa-print mr-10" aria-hidden="true"></i>Print Ticket
             </a>

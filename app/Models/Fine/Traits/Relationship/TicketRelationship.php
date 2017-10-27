@@ -46,4 +46,12 @@ trait TicketRelationship
     {
         return $this->belongsTo(config('fine.payment'));
     }
+
+    /**
+     * @return mixed
+     */
+    public function carts()
+    {
+        return $this->hasMany(config('fine.cart'));
+    }
 }
