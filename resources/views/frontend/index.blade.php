@@ -171,7 +171,8 @@
         $(document).ready(function(){
             $(window).scroll(function(){
                 var scroll = $(window).scrollTop();
-                if (scroll < 500) {
+                var windowsize = $(window).width();
+                if (scroll < 500 && windowsize > 768) {
                     $(".navbar-fixed-top").addClass("transparent-nav");
                     $("#header-brand").attr("src","img/imotorist-logo-light.svg");
                 }

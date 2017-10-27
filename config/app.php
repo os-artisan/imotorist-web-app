@@ -188,6 +188,7 @@ return [
         Yajra\Datatables\DatatablesServiceProvider::class,
 
         Laravel\Passport\PassportServiceProvider::class,
+        Riverskies\Laravel\MobileDetect\MobileDetectServiceProvider::class,
 
         /*
          * Application Service Providers...
