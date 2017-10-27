@@ -114,6 +114,5 @@
             map.setCenter( coordinates );
         });
     </script>
-    </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ3sVI--2Wyufx7Px5SdtFO02ePS_QyxE&callback=initMap"></script>
 @endsection

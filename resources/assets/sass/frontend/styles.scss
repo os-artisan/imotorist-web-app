@@ -35,8 +35,11 @@ Navbar
 }
 
 // For home page
-.frontend-index {
-  .navbar {
+.navbar {
+  transition: all 0.5s;
+}
+@media (min-width:$grid-float-breakpoint) {
+  .navbar.transparent-nav {
     background-color: transparent;
     border: 0;
 
@@ -58,7 +61,10 @@ Navbar
       }
     }
   }
+}
 
+
+.frontend-index {
   .container.messages {
     position: absolute;
     z-index: 2;

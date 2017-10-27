@@ -165,3 +165,21 @@
     </section>
 
 @endsection
+
+@section('after-scripts')
+    <script>
+        $(document).ready(function(){
+            $(window).scroll(function(){
+                var scroll = $(window).scrollTop();
+                if (scroll < 500) {
+                    $(".navbar-fixed-top").addClass("transparent-nav");
+                    $("#header-brand").attr("src","img/imotorist-logo-light.svg");
+                }
+                else {
+                    $('.navbar-fixed-top').removeClass("transparent-nav");
+                    $("#header-brand").attr("src","img/imotorist-logo.svg");
+                }
+            })
+        })
+    </script>
+@endsection
