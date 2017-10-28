@@ -140,9 +140,9 @@ class PaymentController extends Controller
                 Cart::where('ticket_id', '=', $ticket->id)->delete();
             }
 
-            $return = ['success' => 'Your payment was successful. Thank you for using iMotorist!'];
+            $return = ['success' => 'Your payment was successful. Thank you for using iMotorist!', 'is_success' => true];
         } else {
-            $return = ['error' => 'There was an error processing your order. Please contact us or try again later.'];
+            $return = ['error' => 'There was an error processing your order. Please contact us or try again later.', 'is_success' => false];
         }
 
         return response()->json($return);

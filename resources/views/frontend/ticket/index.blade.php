@@ -21,7 +21,7 @@
 
         <div id="results">
             @if(isset($ticket))
-                @include('frontend.ticket/partials.ticket')
+                @include('frontend.ticket.partials.ticket')
             @endif
         </div>
     </div>
@@ -37,4 +37,10 @@
         </div>
     </section>
 
+@endsection
+
+@section('after-scripts')
+    @if(isset($ticket))
+        @include('frontend.ticket.partials.map-script')
+    @endif
 @endsection
