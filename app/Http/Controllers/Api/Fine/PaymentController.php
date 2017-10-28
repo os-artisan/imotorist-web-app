@@ -51,7 +51,12 @@ class PaymentController extends Controller
 
         Ticket::whereIn('ticket_no', $request->ticket_no)->update(['payment_id' => $payment->id]);
 
-        return response()->json(['token' => $payment->token]);
+        return response()->json([
+            'token' => $payment->token,
+            'subtotal' => $payment->subtotal,
+            'convenience' => $payment->convenience,
+            'total' => $payment->total,
+        ]);
     }
 
     /**
