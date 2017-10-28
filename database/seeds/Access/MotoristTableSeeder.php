@@ -28,6 +28,22 @@ class MotoristTableSeeder extends Seeder
             [
                 'id'                => 5,
                 'license_no'        => 'B507614',
+                'issued_date'       => '2010-08-14',
+                'expiry_date'       => '2018-08-14',
+                'created_at'        => Carbon::now(),
+                'updated_at'        => Carbon::now(),
+            ],
+            [
+                'id'                => 6,
+                'license_no'        => 'B112233',
+                'issued_date'       => '2011-06-21',
+                'expiry_date'       => '2019-06-21',
+                'created_at'        => Carbon::now(),
+                'updated_at'        => Carbon::now(),
+            ],
+            [
+                'id'                => 7,
+                'license_no'        => 'B223344',
                 'issued_date'       => '2011-06-21',
                 'expiry_date'       => '2019-06-21',
                 'created_at'        => Carbon::now(),

@@ -31,6 +31,18 @@ class OfficerTableSeeder extends Seeder
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),
             ],
+            [
+                'id'                => 8,
+                'badge_no'          => '64512',
+                'created_at'        => Carbon::now(),
+                'updated_at'        => Carbon::now(),
+            ],
+            [
+                'id'                => 9,
+                'badge_no'          => '24766',
+                'created_at'        => Carbon::now(),
+                'updated_at'        => Carbon::now(),
+            ],
         ];
 
         DB::table(config('access.officers_table'))->insert($officers);

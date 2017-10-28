@@ -24,10 +24,10 @@ class CourtTableSeeder extends Seeder
 
         $courts = [
             [
-                'name'              => 'court 1',
+                'name'              => 'Nugegoda',
             ],
             [
-                'name'              => 'court 2',
+                'name'              => 'Homagama',
             ],
         ];
 

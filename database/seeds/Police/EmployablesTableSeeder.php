@@ -31,6 +31,20 @@ class EmployablesTableSeeder extends Seeder
                 'created_at'        => Carbon::now(),
                 'updated_at'        => Carbon::now(),
             ],
+            [
+                'officer_id'        => 7,
+                'employable_id'     => 2,
+                'employable_type'   => 'station',
+                'created_at'        => Carbon::now(),
+                'updated_at'        => Carbon::now(),
+            ],
+            [
+                'officer_id'        => 8,
+                'employable_id'     => 3,
+                'employable_type'   => 'station',
+                'created_at'        => Carbon::now(),
+                'updated_at'        => Carbon::now(),
+            ],            
         ];
 
         DB::table(config('police.employables_table'))->insert($employables);
