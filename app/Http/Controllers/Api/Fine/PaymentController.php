@@ -80,7 +80,7 @@ class PaymentController extends Controller
 
         $card_no = str_replace(' ', '', $request->number);
 
-        list($month, $year) = explode("/",str_replace(' ', '', $request->expiry));
+        list($month, $year) = explode('/', str_replace(' ', '', $request->expiry));
 
         $total = Payment::where('token', $request->token)->first()->total;
 
@@ -115,7 +115,7 @@ class PaymentController extends Controller
 
     public function markAsPaid($response)
     {
-        $is_success = isset($response['is_success']) ? $response['is_success'] : false ;
+        $is_success = isset($response['is_success']) ? $response['is_success'] : false;
         $token = $response['token'];
         $transaction_id = $response['transaction_id'];
         $error = $response['error'];
