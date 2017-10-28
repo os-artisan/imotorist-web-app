@@ -30,19 +30,15 @@
                         <div class="paymentWrap mb-10">
                             <div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
                                 <label class="btn paymentMethod active">
-                                    <div class="method visa"></div>
+                                    <div class="method card"></div>
                                     <input type="radio" name="options" checked> 
                                 </label>
                                 <label class="btn paymentMethod">
-                                    <div class="method master-card"></div>
+                                    <div class="method ez-cash"></div>
                                     <input type="radio" name="options"> 
                                 </label>
                                 <label class="btn paymentMethod">
-                                    <div class="method amex"></div>
-                                    <input type="radio" name="options">
-                                </label>
-                                <label class="btn paymentMethod">
-                                    <div class="method ez-cash"></div>
+                                    <div class="method m-cash"></div>
                                     <input type="radio" name="options"> 
                                 </label>
                             </div>        
@@ -56,42 +52,42 @@
                         <h4>Payment Details</h4>
                     </div>
                     <div class="panel-body">
-                        <form action="{{route('frontend.payment')}}" method="POST" accept-charset="utf-8">
+                        <form action="{{route('frontend.payment')}}" method="POST" accept-charset="utf-8" id="card-form">
                             {{csrf_field()}}
                             <input type="hidden" name="token" value="{{ $payment->token }}">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label for="name">Card Holder Name</label>
-                                        <input type="text" class="form-control" name="name" required autofocus/>
-                                    </div>
-                                </div>
+                            <div class="col-lg-12">
+                                <div class="card-wrapper mb-40 mt-20"></div>
                             </div>
                             <div class="row">
-                                <div class="col-xs-12">
+                                <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="card_number">Card Number</label>
                                         <div class="input-group">
-                                            <input type="tel" class="form-control" name="card_number" placeholder="Card Number" required maxlength="16" />
+                                            <input type="text" class="form-control" name="number" required placeholder="Card Number" />
                                             <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <label for="name">Full Name</label>
+                                        <input type="text" class="form-control" name="name" required placeholder="Full Name" />
+                                    </div>
+                                </div>
                             </div>
                             <div class="row">
-                                <div class="col-xs-7 col-md-7">
+                                <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="card_expiry"><span class="hidden-xs">Expiration</span><span class="visible-xs-inline">Exp</span> Date</label>
-                                        <div class="form-group form-inline">
-                                            <input type="tel" name="exp_month" class="form-control" placeholder="MM" required maxlength="2"> 
-                                            <input type="tel" name="exp_year" class="form-control" placeholder="YY" required maxlength="2"> 
+                                        <label for="expiry"><span class="hidden-xs">Expiration</span><span class="visible-xs-inline">Exp</span> Date</label>
+                                        <div class="form-group">
+                                            <input type="text" name="expiry" class="form-control" required placeholder="mm/yy" /> 
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xs-5 col-md-5 pull-right">
+                                <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label for="cvv">CV Code</label>
-                                        <input type="tel" class="form-control" name="cvv" placeholder="CVC" required maxlength="4"/>
+                                        <label for="cvc">CV Code</label>
+                                        <input type="text" class="form-control" name="cvc" required placeholder="CV Code" />
                                     </div>
                                 </div>
                             </div>
@@ -108,4 +104,10 @@
     </div>
 </div>
 
+@endsection
+
+@section('after-scripts')
+    <script>
+    new Card({ form: '#card-form', container: '.card-wrapper'});
+    </script>
 @endsection

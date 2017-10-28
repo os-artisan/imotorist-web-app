@@ -53,9 +53,9 @@ class PaymentController extends Controller
 
         return response()->json([
             'token' => $payment->token,
-            'subtotal' => $payment->subtotal,
-            'convenience' => $payment->convenience,
-            'total' => $payment->total,
+            'subtotal' => number_format((float) $payment->subtotal, 2, '.', ''),
+            'convenience' => number_format((float) $payment->convenience, 2, '.', ''),
+            'total' => number_format((float) $payment->total, 2, '.', ''),
         ]);
     }
 
@@ -71,13 +71,16 @@ class PaymentController extends Controller
         $this->validate($request, [
             'token'         => 'required|exists:payments,token,status,0',
             'name'          => 'required',
-            'card_number'   => 'numeric|digits:16',
-            'exp_month'     => 'numeric|digits_between:1,2',
-            'exp_year'      => 'numeric|digits_between:1,2',
-            'cvv'           => 'numeric|digits_between:3,4',
+            'number'        => 'required',
+            'expiry'        => 'required',
+            'cvc'           => 'numeric|digits_between:3,4',
         ], [
             'token.exists' => 'There was an error processing your order. Please contact us or try again later.',
         ]);
+
+        $card_no = str_replace(' ', '', $request->number);
+
+        list($month, $year) = explode("/",str_replace(' ', '', $request->expiry));
 
         $total = Payment::where('token', $request->token)->first()->total;
 
@@ -88,11 +91,11 @@ class PaymentController extends Controller
         $params = [
                 'token'         => $request->token,
                 'card_type'     => 'VISA',
-                'card_no'       => $request->card_number,
-                'cvv'           => $request->cvv,
+                'card_no'       => $card_no,
+                'cvv'           => $request->cvc,
                 'card_name'     => $request->name,
-                'exp_year'      => $request->exp_year,
-                'exp_month'     => $request->exp_month,
+                'exp_year'      => $year,
+                'exp_month'     => $month,
                 'amount'        => $total,
         ];
 
@@ -112,7 +115,7 @@ class PaymentController extends Controller
 
     public function markAsPaid($response)
     {
-        $is_success = $response['is_success'];
+        $is_success = isset($response['is_success']) ? $response['is_success'] : false ;
         $token = $response['token'];
         $transaction_id = $response['transaction_id'];
         $error = $response['error'];

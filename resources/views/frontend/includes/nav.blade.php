@@ -10,9 +10,9 @@
 
             <a href="{{route('frontend.index')}}" class="navbar-logo">
                 @desktop
-                    <img src="{{ Request::is('/') ? 'img/imotorist-logo-light.svg' : 'img/imotorist-logo.svg' }}" alt="{{app_name()}} Logo" id="header-brand">
+                    <img src="{{ Request::is('/') ? asset('img/imotorist-logo-light.svg') : asset('img/imotorist-logo.svg') }}" alt="{{app_name()}} Logo" id="header-brand">
                 @elsedesktop
-                    <img src="img/imotorist-logo.svg" alt="{{app_name()}} Logo" id="header-brand">
+                    <img src="{{ asset('img/imotorist-logo.svg') }}" alt="{{app_name()}} Logo" id="header-brand">
                 @enddesktop
             </a>
         </div><!--navbar-header-->

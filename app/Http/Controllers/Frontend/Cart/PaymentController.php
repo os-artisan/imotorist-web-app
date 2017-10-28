@@ -19,10 +19,10 @@ class PaymentController extends Controller
 
         $response = json_decode($pay->completePayment($request)->content());
 
-        if ($response->success) {
+        if (isset($response->success)) {
             return redirect()->route('frontend.user.dashboard')->withFlashSuccess($response->success);
-        } elseif ($response->error) {
-            return redirect()->back()->withErrors($response->error);
+        } elseif (isset($response->error)) {
+            return redirect()->route('frontend.user.dashboard')->withErrors($response->error);
         }
     }
 }

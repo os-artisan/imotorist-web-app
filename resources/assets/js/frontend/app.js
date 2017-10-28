@@ -7,6 +7,9 @@
 
 require('../bootstrap');
 
+// The current card.js code does not explictly require jQuery, but instead uses the global, so this line is needed.
+var card = require("card");
+
 window.Vue = require('vue');
 
 /**

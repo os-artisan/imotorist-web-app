@@ -26,10 +26,13 @@
                             <td class="pl-15">{{ $cart->ticket->ticket_no }}</td>
                             <td class="text-right">{{ $cart->ticket->total_amount }}</td>
                             <td class="text-right pr-15">
-                                <form action="{{route('frontend.cart.destroy', $cart->ticket->ticket_no)}}" method="POST" accept-charset="utf-8">
+                                <a href="{{ route('frontend.ticket.show', $cart->ticket->ticket_no) }}" class="btn btn-xs btn-default">
+                                    <i class="fa fa-search" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></i>
+                                </a>
+                                <form action="{{route('frontend.cart.destroy', $cart->ticket->ticket_no)}}" method="POST" accept-charset="utf-8" class="pull-right">
                                     {{ method_field('DELETE') }}
                                     {{csrf_field()}}
-                                    <button type="submit" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-danger btn-xs ml-10"><i class="fa fa-trash"></i></button>
                                 </form>
                             </td>
                         </tr>
@@ -61,5 +64,16 @@
         </form>
     </div>
 </div>
+
+<section class="bg-primary download">
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2 text-center mb-60 mt-35">
+            <h2>Earn Green Points!</h2>
+            <hr class="short">
+            <p class="fs-115 mb-22">Sri Lanka is always at forefront when it comes to green living regulations. Another great initiative by Sri Lankan Roads and Transport Authority (RTA) green point system. RTA launched reward schemes for public transport commuters and users of its apps.</p>
+            <a href="#" class="btn btn-lg btn-default">Find Out More!</a>
+        </div>
+    </div>
+</section>
 
 @endsection

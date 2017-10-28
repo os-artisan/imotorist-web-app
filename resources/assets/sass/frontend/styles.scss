@@ -320,17 +320,14 @@ Payment Options
           outline: none !important;
         }
       }
-      .method.visa {
-        background-image: url("img/payment/visa.svg");
-      }
-      .method.master-card {
-        background-image: url("img/payment/mastercard.svg");
-      }
-      .method.amex {
-        background-image: url("img/payment/amex.svg");
+      .method.card {
+        background-image: url("img/payment/card.svg");
       }
       .method.ez-cash {
         background-image: url("img/payment/ezcash.svg");
+      }
+      .method.m-cash {
+        background-image: url("img/payment/m-cash.png");
       }
     }
     .paymentMethod.active {
