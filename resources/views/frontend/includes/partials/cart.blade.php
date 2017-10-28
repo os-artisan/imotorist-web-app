@@ -22,7 +22,7 @@
                 <div class="col-xs-12">
                     @if(count($logged_in_user->carts) > 0)
                     <span>{{ count($logged_in_user->carts) }}</span>
-                    <span class="pull-right">Rs. {{ number_format((float)$logged_in_user->carts->sum('total'), 2, '.', '') }}</span>
+                    <span class="pull-right">Rs. {{ number_format((float)$logged_in_user->carts->sum('total'), 2) }}</span>
                     @else
                     <span>Your cart is empty</span>
                     @endif

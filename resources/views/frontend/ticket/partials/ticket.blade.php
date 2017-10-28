@@ -4,7 +4,7 @@
             <div class="pl-15 pr-15">
                 <div class="row mt-22">
                     <div class="col-sm-6 col-xs-12"><h2 class="mt-0">Spot Fine Ticket</h2></div>
-                    <div class="col-sm-6 col-xs-12"><h2 class="pull-right mt-0">Rs. {{ $ticket->total_amount }}</h2></div>
+                    <div class="col-sm-6 col-xs-12"><h2 class="pull-right mt-0">Rs. {{ number_format($ticket->total_amount, 2) }}</h2></div>
                 </div>
                 <div class="row">
                     <div class="col-xs-6"><h4 class="mt-0">{{ $ticket->ticket_no }}</h4></div>
@@ -121,13 +121,13 @@
                                 @foreach($ticket->offences as $offence)
                                 <tr>
                                     <td>{{ $offence->description }}</td>
-                                    <td class="text-right">{{ $offence->fine }}</td>
+                                    <td class="text-right">{{ number_format($offence->fine, 2) }}</td>
                                 </tr>
                                 @endforeach
 
                                 <tr class="fs-115">
                                     <td class="text-right"><strong>Subtotal</strong></td>
-                                    <td class="text-right">{{ $ticket->total_amount }}</td>
+                                    <td class="text-right">{{ number_format($ticket->total_amount, 2) }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -167,7 +167,7 @@
             <form action="{{route('frontend.cart.store')}}" method="POST" accept-charset="utf-8">
                 {{csrf_field()}}
                 <input type="hidden" name="ticket_no[]" value="{{ $ticket->ticket_no }}">
-                <button type="submit" class="list-group-item {{ ($ticket->inCart() || $ticket->isPaid()) ? 'disabled' : ''}}">
+                <button type="submit" class="list-group-item {{ ($ticket->inCart() || $ticket->isPaid()) ? 'disabled' : ''}}" {{ ($ticket->inCart() || $ticket->isPaid()) ? 'disabled' : ''}}>
                     <i class="fa fa-cart-plus mr-10" aria-hidden="true"></i>Add to Cart
                 </button>
             </form>

@@ -19,9 +19,7 @@ class CartController extends Controller
     {
         $carts = Auth::user()->carts;
 
-        $total = $carts->sum('total');
-
-        $total = number_format((float) $total, 2, '.', '');
+        $total = number_format((float) $carts->sum('total'), 2);
 
         return view('frontend.cart.cart', compact('carts', 'total'));
     }

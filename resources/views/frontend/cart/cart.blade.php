@@ -24,7 +24,7 @@
                         @foreach($carts as $cart)
                         <tr>
                             <td class="pl-15">{{ $cart->ticket->ticket_no }}</td>
-                            <td class="text-right">{{ $cart->ticket->total_amount }}</td>
+                            <td class="text-right">{{ number_format($cart->ticket->total_amount, 2) }}</td>
                             <td class="text-right pr-15">
                                 <a href="{{ route('frontend.ticket.show', $cart->ticket->ticket_no) }}" class="btn btn-xs btn-default">
                                     <i class="fa fa-search" data-toggle="tooltip" data-placement="top" title="" data-original-title="View"></i>
@@ -32,7 +32,7 @@
                                 <form action="{{route('frontend.cart.destroy', $cart->ticket->ticket_no)}}" method="POST" accept-charset="utf-8" class="pull-right">
                                     {{ method_field('DELETE') }}
                                     {{csrf_field()}}
-                                    <button type="submit" class="btn btn-danger btn-xs ml-10"><i class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn btn-danger btn-xs ml-10"><i class="fa fa-trash" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete"></i></button>
                                 </form>
                             </td>
                         </tr>

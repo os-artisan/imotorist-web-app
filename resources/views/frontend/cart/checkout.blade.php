@@ -6,7 +6,12 @@
     <div class="col-lg-8 col-lg-offset-2 text-center">
         <h1>Checkout</h1>
         <hr class="short panel-primary">
-        <p class="fs-115 mb-30"><i class="fa fa-lock mr-5"></i>You are completely safe with our secure 128 bit TLS 1.2 encrypted payment solution.</p>
+        <p class="fs-115 mb-30">
+            <span class="fa-stack fa-lg" data-toggle="tooltip" data-placement="right" title="" data-original-title="We DO NOT keep your card details with us. The details are DIRECTLY sent to VISA via Commercial Bank's Payment Gateway provider-Paycorp and stored at Paycorp's Secure Vaults.">
+            <i class="fa fa-circle fa-stack-2x text-primary"></i>
+            <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+        </span>
+        You are completely safe with our secure 128 bit TLS 1.2 encrypted payment solution.</p>
     </div>
     <div class="row mb-50">
         <div class="col-md-12">
@@ -17,12 +22,12 @@
                         <h4>Order Summary</h4>
                     </div>
                     <div class="panel-body">
-                        <p>Subtotal<span class="pull-right">Rs. {{ $payment->subtotal }}</span></p>
+                        <p>Subtotal<span class="pull-right">Rs. {{ number_format($payment->subtotal, 2) }}</span></p>
                         <p>Tax<span class="pull-right">-</span></p>
-                        <p>Convenience Fee<span class="pull-right">Rs. {{ $payment->convenience }}</span></p>
+                        <p>Convenience Fee<span class="pull-right">Rs. {{ number_format($payment->convenience, 2) }}</span></p>
                         <hr class="mt-0 mb-0">
                         <p class="fs-115 mb-0 mt-10">
-                            <strong>Total<span class="pull-right">Rs. {{ $payment->total }}</span></strong>
+                            <strong>Total<span class="pull-right">Rs. {{ number_format($payment->total, 2) }}</span></strong>
                         </p>
                     </div>
                     <div class="panel-footer text-center">
@@ -30,15 +35,15 @@
                         <div class="paymentWrap mb-10">
                             <div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
                                 <label class="btn paymentMethod active">
-                                    <div class="method card"></div>
+                                    <div class="method card" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Card Payment"></div>
                                     <input type="radio" name="options" checked> 
                                 </label>
                                 <label class="btn paymentMethod">
-                                    <div class="method ez-cash"></div>
+                                    <div class="method ez-cash" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="eZCash"></div>
                                     <input type="radio" name="options"> 
                                 </label>
                                 <label class="btn paymentMethod">
-                                    <div class="method m-cash"></div>
+                                    <div class="method m-cash" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="mCash"></div>
                                     <input type="radio" name="options"> 
                                 </label>
                             </div>        

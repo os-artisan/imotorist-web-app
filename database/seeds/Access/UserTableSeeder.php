@@ -106,7 +106,7 @@ class UserTableSeeder extends Seeder
                 'updated_at'        => Carbon::now(),
             ],
             [
-                'surname'           => 'Kuruppu',
+                'surname'           => 'Pathagama Kuruppuge',
                 'other_names'       => 'Tharindu',
                 'email'             => 'pktharindu@outlook.com',
                 'password'          => bcrypt('1234'),

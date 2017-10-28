@@ -11,6 +11,7 @@ trait UserObject
         $this->user_except = ['confirmation_code', 'created_at', 'updated_at', 'deleted_at'];
         $this->motorist_except = ['id', 'created_at', 'updated_at', 'deleted_at'];
         $this->officer_except = ['id', 'created_at', 'updated_at', 'deleted_at'];
+        $this->vehicle_classes = ['id', 'description', 'pivot'];
     }
 
     public function sendUser(User $user)
@@ -55,12 +56,17 @@ trait UserObject
 
     public function unsetMotoristAttributes(User $user)
     {
+        $user->motorist->load('vehicleClasses');
         if (isset($user->motorist)) {
             foreach ($this->motorist_except as $key => $except) {
                 unset($user->motorist->$except);
             }
+            foreach ($user->motorist->vehicleClasses as $vclass) {
+                foreach ($this->vehicle_classes as $except) {
+                    unset($vclass->$except);
+                }
+            }
         }
-
         return $user;
     }
 
