@@ -80,8 +80,8 @@ class UserFormTest extends BrowserKitTestCase
                      'status' => 1,
                      'confirmed' => 1,
                  ])
-             ->seeInDatabase(config('access.role_user_table'), ['user_id' => 6, 'role_id' => 2])
-             ->seeInDatabase(config('access.role_user_table'), ['user_id' => 6, 'role_id' => 3]);
+             ->seeInDatabase(config('access.role_user_table'), ['user_id' => 6, 'role_id' => 3])
+             ->seeInDatabase(config('access.role_user_table'), ['user_id' => 7, 'role_id' => 3]);
 
         Event::assertDispatched(UserCreated::class);
     }
@@ -124,8 +124,8 @@ class UserFormTest extends BrowserKitTestCase
                      'status' => 1,
                      'confirmed' => 0,
                  ])
-             ->seeInDatabase(config('access.role_user_table'), ['user_id' => 6, 'role_id' => 2])
-             ->seeInDatabase(config('access.role_user_table'), ['user_id' => 6, 'role_id' => 3]);
+             ->seeInDatabase(config('access.role_user_table'), ['user_id' => 6, 'role_id' => 3])
+             ->seeInDatabase(config('access.role_user_table'), ['user_id' => 7, 'role_id' => 3]);
 
         // Get the user that was inserted into the database
         $user = User::where('email', $email)->first();
