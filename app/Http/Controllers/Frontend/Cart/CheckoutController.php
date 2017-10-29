@@ -53,6 +53,7 @@ class CheckoutController extends Controller
         if ($token) {
             return redirect()->route('frontend.checkout.show', $token);
         }
+
         return $response;
     }
 
