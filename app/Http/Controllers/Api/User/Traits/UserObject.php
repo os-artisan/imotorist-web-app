@@ -67,6 +67,7 @@ trait UserObject
                 }
             }
         }
+
         return $user;
     }
 
