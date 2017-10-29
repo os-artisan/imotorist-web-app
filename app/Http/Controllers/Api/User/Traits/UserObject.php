@@ -55,9 +55,9 @@ trait UserObject
     }
 
     public function unsetMotoristAttributes(User $user)
-    {
-        $user->motorist->load('vehicleClasses');
+    {   
         if (isset($user->motorist)) {
+            $user->motorist->load('vehicleClasses');
             foreach ($this->motorist_except as $key => $except) {
                 unset($user->motorist->$except);
             }
