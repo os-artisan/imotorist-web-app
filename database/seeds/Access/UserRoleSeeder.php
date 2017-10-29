@@ -41,14 +41,6 @@ class UserRoleSeeder extends Seeder
         $user_model = new $user_model();
         $user_model::find(4)->attachRole(4);
 
-        $user_model = config('auth.providers.users.model');
-        $user_model = new $user_model();
-        $user_model::find(8)->attachRole(4);
-
-        $user_model = config('auth.providers.users.model');
-        $user_model = new $user_model();
-        $user_model::find(9)->attachRole(4);
-
         //Attach user role to motorist
         $user_model = config('auth.providers.users.model');
         $user_model = new $user_model();
@@ -61,6 +53,15 @@ class UserRoleSeeder extends Seeder
         $user_model = config('auth.providers.users.model');
         $user_model = new $user_model();
         $user_model::find(7)->attachRole(3);
+
+        //Officer roles
+        $user_model = config('auth.providers.users.model');
+        $user_model = new $user_model();
+        $user_model::find(8)->attachRole(4);
+
+        $user_model = config('auth.providers.users.model');
+        $user_model = new $user_model();
+        $user_model::find(9)->attachRole(4);
 
         $this->enableForeignKeys();
     }
