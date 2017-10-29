@@ -23,7 +23,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('cart', 'Cart\CartController', ['only' => ['index', 'store', 'destroy']]);
 
-    Route::resource('checkout', 'Cart\CheckoutController', ['only' => ['show', 'store']]);
+    Route::resource('checkout', 'Cart\CheckoutController', ['only' => ['index', 'show', 'store']]);
 
     Route::post('payment', 'Cart\PaymentController@postToGateway')->name('payment');
 

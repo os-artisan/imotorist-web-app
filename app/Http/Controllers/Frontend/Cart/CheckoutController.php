@@ -16,6 +16,7 @@ class CheckoutController extends Controller
      */
     public function index()
     {
+        return redirect()->route('frontend.user.dashboard');
     }
 
     /**
@@ -52,7 +53,6 @@ class CheckoutController extends Controller
         if ($token) {
             return redirect()->route('frontend.checkout.show', $token);
         }
-
         return $response;
     }
 

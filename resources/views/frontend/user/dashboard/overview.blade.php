@@ -73,7 +73,7 @@
                                         <form action="{{route('frontend.cart.store')}}" method="POST" accept-charset="utf-8" class="pull-right">
                                             {{csrf_field()}}
                                             <input type="hidden" name="ticket_no[]" value="{{ $ticket->ticket_no }}">
-                                            <button type="submit" class="btn btn-xs btn-primary ml-10 {{ ($ticket->inCart() || $ticket->isPaid()) ? 'disabled' : ''}}">
+                                            <button type="submit" class="btn btn-xs btn-primary ml-10 {{ ($ticket->inCart() || $ticket->isPaid()) ? 'disabled' : ''}}" {{ ($ticket->inCart() || $ticket->isPaid()) ? 'disabled' : ''}}>
                                                 <i class="fa fa-cart-plus" data-toggle="tooltip" data-placement="top" title="" data-original-title="Add to cart"></i>
                                             </button>
                                         </form>
