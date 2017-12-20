@@ -86,7 +86,7 @@ class PaymentController extends Controller
 
         $client = new \GuzzleHttp\Client();
 
-        $url = 'http://www.dummypaymentgateway.somee.com/payment';
+        $url = 'http://www.dummypaymentgateway2.somee.com/payment';
 
         $params = [
                 'token'         => $request->token,
