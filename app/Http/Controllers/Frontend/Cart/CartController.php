@@ -38,7 +38,7 @@ class CartController extends Controller
             'ticket_no.exists' => 'This ticket has already been paid.',
         ]);
 
-        $ticket = Ticket::where('ticket_no', '=', $request->ticket_no)->first();
+        $ticket = Ticket::where('ticket_no', $request->ticket_no)->first();
 
         if ($ticket->inCart()) {
             return redirect()->back()->withFlashDanger('This ticket is already in the cart.');
@@ -57,7 +57,7 @@ class CartController extends Controller
      */
     public function destroy($ticket_no)
     {
-        $ticket_id = Ticket::where('ticket_no', '=', $ticket_no)->first()->id;
+        $ticket_id = Ticket::where('ticket_no', $ticket_no)->first()->id;
 
         $cart = Cart::where(['ticket_id' => $ticket_id, 'user_id' => Auth::id()]);
 
