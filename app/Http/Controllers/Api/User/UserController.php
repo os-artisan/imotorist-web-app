@@ -19,9 +19,7 @@ class UserController extends Controller
     {
         // Make sure the logged in user has permission.
 
-        $license = $request->input('license_no');
-
-        $motorist = Motorist::where('license_no', '=', $license)->first();
+        $motorist = Motorist::where('license_no', $request->input('license_no'))->first();
 
         if (isset($motorist)) {
             return $this->sendUserWithMotorist($motorist->user);
