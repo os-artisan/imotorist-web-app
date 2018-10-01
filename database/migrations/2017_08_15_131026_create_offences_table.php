@@ -16,6 +16,7 @@ class CreateOffencesTable extends Migration
         Schema::create(config('fine.offences_table'), function (Blueprint $table) {
             $table->increments('id');
             $table->string('description');
+            $table->string('description_si');
             $table->decimal('fine', 8, 2);
             $table->integer('dip')->unsigned();
         });

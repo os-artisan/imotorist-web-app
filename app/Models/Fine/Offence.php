@@ -24,7 +24,7 @@ class Offence extends Model
      *
      * @var array
      */
-    protected $fillable = ['description', 'fine', 'dip'];
+    protected $fillable = ['description', 'description_si', 'fine', 'dip'];
 
     /**
      * @param array $attributes

@@ -86,7 +86,7 @@ class PaymentController extends Controller
 
         $client = new \GuzzleHttp\Client();
 
-        $url = 'http://www.dummypaymentgateway.somee.com/payment';
+        $url = 'http://www.dummypaymentgateway2.somee.com/payment';
 
         $params = [
                 'token'         => $request->token,
@@ -125,19 +125,19 @@ class PaymentController extends Controller
         if (! $is_success && ! is_null($error)) {
             $return = ['error' => $error];
         } elseif ($is_success) {
-            $payment = Payment::where('token', '=', $token)->first();
+            $payment = Payment::where('token', $token)->first();
 
             $payment->status = true;
             $payment->transaction_id = $transaction_id;
             $payment->save();
 
-            $tickets = Ticket::where('payment_id', '=', $payment->id)->get();
+            $tickets = Ticket::where('payment_id', $payment->id)->get();
 
             foreach ($tickets as $ticket) {
                 $ticket->paid = true;
                 $ticket->save();
 
-                Cart::where('ticket_id', '=', $ticket->id)->delete();
+                Cart::where('ticket_id', $ticket->id)->delete();
             }
 
             $return = ['success' => 'Your payment was successful. Thank you for using iMotorist!', 'is_success' => true];
