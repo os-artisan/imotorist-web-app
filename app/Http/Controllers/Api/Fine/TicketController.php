@@ -100,7 +100,7 @@ class TicketController extends Controller
             'ticket_no'  => 'nullable|alpha_num',
         ]);
 
-        $ticket = Ticket::where('ticket_no', '=', $request->ticket_no)->first();
+        $ticket = Ticket::where('ticket_no', $request->ticket_no)->first();
 
         return response()->json($this->showTicket($ticket->id));
     }
