@@ -135,7 +135,7 @@ class TicketController extends Controller
         $ticketArray = [];
 
         foreach ($tickets as $ticket) {
-            array_push($ticketArray, $this->formatTicket($ticket));
+            $ticketArray[] = $this->formatTicket($ticket);
         }
 
         return response()->json($ticketArray);
