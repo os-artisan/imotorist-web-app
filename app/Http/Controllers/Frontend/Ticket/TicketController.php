@@ -26,7 +26,7 @@ class TicketController extends Controller
      */
     public function show($ticket_no)
     {
-        $ticket = Ticket::where('ticket_no', '=', $ticket_no)->firstOrFail();
+        $ticket = Ticket::where('ticket_no', $ticket_no)->firstOrFail();
 
         return view('frontend.ticket.show')->withTicket($ticket);
     }
@@ -45,7 +45,7 @@ class TicketController extends Controller
 
         $keyword = $request->input('ticket_no');
 
-        $ticket = Ticket::where('ticket_no', '=', $keyword)->first();
+        $ticket = Ticket::where('ticket_no', $keyword)->first();
 
         if ($ticket) {
             $ticket->load('motorist', 'officer', 'station', 'offences');
