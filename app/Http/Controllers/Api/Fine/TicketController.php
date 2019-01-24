@@ -100,7 +100,7 @@ class TicketController extends Controller
             'ticket_no'  => 'nullable|alpha_num',
         ]);
 
-        $ticket = Ticket::where('ticket_no', '=', $request->ticket_no)->first();
+        $ticket = Ticket::where('ticket_no', $request->ticket_no)->first();
 
         return response()->json($this->showTicket($ticket->id));
     }
@@ -135,7 +135,7 @@ class TicketController extends Controller
         $ticketArray = [];
 
         foreach ($tickets as $ticket) {
-            array_push($ticketArray, $this->formatTicket($ticket));
+            $ticketArray[] = $this->formatTicket($ticket);
         }
 
         return response()->json($ticketArray);
