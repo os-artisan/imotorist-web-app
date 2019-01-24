@@ -2,6 +2,7 @@
 
 namespace App\Models\Fine;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Fine\Traits\TicketAccess;
 use App\Models\Fine\Traits\Attribute\TicketAttribute;
@@ -37,5 +38,19 @@ class Ticket extends Model
     {
         parent::__construct($attributes);
         $this->table = config('fine.tickets_table');
+    }
+
+    public static function count()
+    {
+        return Cache::remember('count_tickets', 15, function () {
+            return static::query()->count();
+        });
+    }
+
+    public static function revenue()
+    {
+        return Cache::remember('sum_revenue', 15, function () {
+            return static::query()->sum('total_amount');
+        });
     }
 }

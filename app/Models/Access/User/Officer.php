@@ -2,6 +2,7 @@
 
 namespace App\Models\Access\User;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Access\User\Traits\Relationship\OfficerRelationship;
@@ -40,5 +41,12 @@ class Officer extends Model
     {
         parent::__construct($attributes);
         $this->table = config('access.officers_table');
+    }
+
+    public static function count()
+    {
+        return Cache::remember('count_officers', 15, function () {
+            return static::query()->count();
+        });
     }
 }

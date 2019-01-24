@@ -2,6 +2,7 @@
 
 namespace App\Models\Access\User;
 
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Access\User\Traits\Relationship\MotoristRelationship;
@@ -40,5 +41,12 @@ class Motorist extends Model
     {
         parent::__construct($attributes);
         $this->table = config('access.motorists_table');
+    }
+
+    public static function count()
+    {
+        return Cache::remember('count_motorists', 15, function () {
+            return static::query()->count();
+        });
     }
 }
