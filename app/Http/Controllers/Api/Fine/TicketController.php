@@ -19,13 +19,13 @@ class TicketController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -35,12 +35,12 @@ class TicketController extends Controller
 
         // validate request
         $this->validate($request, [
-            'license_no'    => 'required|exists:motorists',
-            'vehicle_no'    => 'required',
-            'lat'           => 'nullable|numeric|between:-90,90',
-            'lng'           => 'nullable|numeric|between:-180,180',
-            'location'      => 'required_if:lat,null|required_if:lng,null',
-            'offences'      => 'required|array|exists:offences,id',
+            'license_no' => 'required|exists:motorists',
+            'vehicle_no' => 'required',
+            'lat' => 'nullable|numeric|between:-90,90',
+            'lng' => 'nullable|numeric|between:-180,180',
+            'location' => 'required_if:lat,null|required_if:lng,null',
+            'offences' => 'required|array|exists:offences,id',
         ]);
 
         $officer = Auth::user()->officer->load('station');
@@ -51,11 +51,11 @@ class TicketController extends Controller
 
         // Other attributs needed to create a ticket
         $attribute = [
-            'ticket_no'     => unique_random(config('fine.tickets_table'), 'ticket_no', config('fine.ticket_no.length')),
-            'motorist_id'   => $motorist->id,
-            'officer_id'    => $officer->id,
-            'station_id'    => $officer->station->first()->id,
-            'court_date'    => Carbon::today()->addDays(24)->toDateString(),
+            'ticket_no' => unique_random(config('fine.tickets_table'), 'ticket_no', config('fine.ticket_no.length')),
+            'motorist_id' => $motorist->id,
+            'officer_id' => $officer->id,
+            'station_id' => $officer->station->first()->id,
+            'court_date' => Carbon::today()->addDays(24)->toDateString(),
         ];
 
         $input = array_merge($input, $attribute);
@@ -87,7 +87,8 @@ class TicketController extends Controller
     /**
      * Display specified resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Request $request)
@@ -97,7 +98,7 @@ class TicketController extends Controller
 
         // validate request
         $this->validate($request, [
-            'ticket_no'  => 'nullable|alpha_num',
+            'ticket_no' => 'nullable|alpha_num',
         ]);
 
         $ticket = Ticket::where('ticket_no', $request->ticket_no)->first();
@@ -144,7 +145,8 @@ class TicketController extends Controller
     /**
      * Show the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return Collection
      */
     public function showTicket($id)
@@ -158,6 +160,7 @@ class TicketController extends Controller
      * Show the specified resource.
      *
      * @param  Collection Ticket
+     *
      * @return Collection
      */
     public function formatTicket($ticket)
@@ -167,7 +170,7 @@ class TicketController extends Controller
         $response['total_amount'] = $ticket->total_amount;
         $response['paid'] = $ticket->paid;
 
-        if (Auth::user()->id == $ticket->motorist->user->id || Auth::user()->id == $ticket->officer->user->id) {
+        if (Auth::user()->id === $ticket->motorist->user->id || Auth::user()->id === $ticket->officer->user->id) {
             $response['motorist_name'] = $ticket->motorist->user->name;
             $response['motorist_address'] = $ticket->motorist->user->address;
             $response['vehicle_no'] = $ticket->vehicle_no;

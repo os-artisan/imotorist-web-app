@@ -50,7 +50,7 @@ class Ticket extends Model
     public static function revenue()
     {
         return Cache::remember('sum_revenue', 15, function () {
-            return static::query()->sum('total_amount');
+            return static::query()->where('paid', true)->sum('total_amount');
         });
     }
 }

@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Alert Language Lines
@@ -21,14 +20,14 @@ return [
         ],
 
         'users' => [
-            'confirmation_email'  => 'Eine Aktivierungsmail wurde an die angegebene E-Mailadresse gesendet.',
-            'created'             => 'Benutzer erstellt.',
-            'deleted'             => 'Benutzer gelöscht.',
+            'confirmation_email' => 'Eine Aktivierungsmail wurde an die angegebene E-Mailadresse gesendet.',
+            'created' => 'Benutzer erstellt.',
+            'deleted' => 'Benutzer gelöscht.',
             'deleted_permanently' => 'Benutzer permanent gelöscht.',
-            'restored'            => 'Benutzer wiederhergestellt.',
-            'session_cleared'      => "The user's session was successfully cleared.",
-            'updated'             => 'Benutzer aktualisiert.',
-            'updated_password'    => 'Kennwort des Benutzers aktualisiert.',
+            'restored' => 'Benutzer wiederhergestellt.',
+            'session_cleared' => "The user's session was successfully cleared.",
+            'updated' => 'Benutzer aktualisiert.',
+            'updated_password' => 'Kennwort des Benutzers aktualisiert.',
         ],
     ],
 ];

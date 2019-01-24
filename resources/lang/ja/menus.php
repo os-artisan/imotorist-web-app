@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Menus Language Lines
@@ -59,24 +58,24 @@ return [
          * Be sure to add the new language in alphabetical order.
          */
         'langs' => [
-            'ar'    => 'アラビア語（Arabic）',
-            'zh'    => '中国語（Chinese Simplified）',
+            'ar' => 'アラビア語（Arabic）',
+            'zh' => '中国語（Chinese Simplified）',
             'zh-TW' => '中国語（Chinese Traditional）',
-            'da'    => 'デンマーク語（Danish）',
-            'de'    => 'ドイツ人（German）',
-            'el'    => 'ギリシャ語（Greek）',
-            'en'    => '英語（English）',
-            'es'    => 'スペイン語（Spanish）',
-            'fr'    => 'フランス語（French）',
-            'id'    => 'インドネシア語（Indonesian）',
-            'it'    => 'イタリア語（Italian）',
-            'ja'    => '日本語（Japanese）',
-            'nl'    => 'オランダ語（Dutch）',
+            'da' => 'デンマーク語（Danish）',
+            'de' => 'ドイツ人（German）',
+            'el' => 'ギリシャ語（Greek）',
+            'en' => '英語（English）',
+            'es' => 'スペイン語（Spanish）',
+            'fr' => 'フランス語（French）',
+            'id' => 'インドネシア語（Indonesian）',
+            'it' => 'イタリア語（Italian）',
+            'ja' => '日本語（Japanese）',
+            'nl' => 'オランダ語（Dutch）',
             'pt_BR' => 'ブラジルポルトガル語（Brazilian Portuguese）',
-            'ru'    => 'ロシア語（Russian）',
-            'sv'    => 'スウェーデン語（Swedish）',
-            'th'    => 'タイ語（Thai）',
-            'tr'    => '(Turkish)',
+            'ru' => 'ロシア語（Russian）',
+            'sv' => 'スウェーデン語（Swedish）',
+            'th' => 'タイ語（Thai）',
+            'tr' => '(Turkish)',
         ],
     ],
 ];

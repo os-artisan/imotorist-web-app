@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Labels Language Lines
@@ -100,7 +99,6 @@ return [
     ],
 
     'frontend' => [
-
         'auth' => [
             'login_box_title' => '登錄',
             'login_button' => '登錄',
@@ -158,6 +156,5 @@ return [
                 'update_information' => '更新信息',
             ],
         ],
-
     ],
 ];

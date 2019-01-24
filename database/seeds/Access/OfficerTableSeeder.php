@@ -26,22 +26,22 @@ class OfficerTableSeeder extends Seeder
         //Add the traffic police officer, user id of 4
         $officers = [
             [
-                'id'                => 4,
-                'badge_no'          => '50000',
-                'created_at'        => Carbon::now(),
-                'updated_at'        => Carbon::now(),
+                'id' => 4,
+                'badge_no' => '50000',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ],
             [
-                'id'                => 8,
-                'badge_no'          => '64512',
-                'created_at'        => Carbon::now(),
-                'updated_at'        => Carbon::now(),
+                'id' => 8,
+                'badge_no' => '64512',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ],
             [
-                'id'                => 9,
-                'badge_no'          => '24766',
-                'created_at'        => Carbon::now(),
-                'updated_at'        => Carbon::now(),
+                'id' => 9,
+                'badge_no' => '24766',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
             ],
         ];
 

@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | History Language Lines
@@ -13,10 +12,10 @@ return [
     */
 
     'backend' => [
-        'none'            => '没有最近的历史。',
-        'none_for_type'   => '没有此类型的历史。',
+        'none' => '没有最近的历史。',
+        'none_for_type' => '没有此类型的历史。',
         'none_for_entity' => '没有 :entity 的历史。',
-        'recent_history'  => '最近的历史',
+        'recent_history' => '最近的历史',
 
         'roles' => [
             'created' => '创建了角色',
@@ -24,14 +23,14 @@ return [
             'updated' => '更新了角色',
         ],
         'users' => [
-            'changed_password'    => '更改了用户密码',
-            'created'             => '创建了用户',
-            'deactivated'         => '停用了用户',
-            'deleted'             => '删除了用户',
+            'changed_password' => '更改了用户密码',
+            'created' => '创建了用户',
+            'deactivated' => '停用了用户',
+            'deleted' => '删除了用户',
             'permanently_deleted' => '永久删除了用户',
-            'updated'             => '更新了用户',
-            'reactivated'         => '重新激活了用户',
-            'restored'            => '还原了用户',
+            'updated' => '更新了用户',
+            'reactivated' => '重新激活了用户',
+            'restored' => '还原了用户',
         ],
     ],
 ];

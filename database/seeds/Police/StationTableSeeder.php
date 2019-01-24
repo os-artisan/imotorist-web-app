@@ -24,19 +24,19 @@ class StationTableSeeder extends Seeder
 
         $stations = [
             [
-                'district_id'       => 9,
-                'court_id'          => 1,
-                'name'              => 'Maharagama',
+                'district_id' => 9,
+                'court_id' => 1,
+                'name' => 'Maharagama',
             ],
             [
-                'district_id'       => 9,
-                'court_id'          => 2,
-                'name'              => 'Kottawa',
+                'district_id' => 9,
+                'court_id' => 2,
+                'name' => 'Kottawa',
             ],
             [
-                'district_id'       => 9,
-                'court_id'          => 1,
-                'name'              => 'Mirihana',
+                'district_id' => 9,
+                'court_id' => 1,
+                'name' => 'Mirihana',
             ],
         ];
 

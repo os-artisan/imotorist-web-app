@@ -49,7 +49,7 @@ class UserRepository extends BaseRepository
      */
     public function getByPermission($permissions, $by = 'name')
     {
-        if (! is_array($permissions)) {
+        if (! \is_array($permissions)) {
             $permissions = [$permissions];
         }
 
@@ -66,7 +66,7 @@ class UserRepository extends BaseRepository
      */
     public function getByRole($roles, $by = 'name')
     {
-        if (! is_array($roles)) {
+        if (! \is_array($roles)) {
             $roles = [$roles];
         }
 
@@ -101,7 +101,7 @@ class UserRepository extends BaseRepository
                 config('access.users_table').'.deleted_at',
             ]);
 
-        if ($trashed == 'true') {
+        if ('true' === $trashed) {
             return $dataTableQuery->onlyTrashed();
         }
 
@@ -122,7 +122,7 @@ class UserRepository extends BaseRepository
         DB::transaction(function () use ($user, $data, $roles) {
             if ($user->save()) {
                 //User Created, Validate Roles
-                if (! count($roles['assignees_roles'])) {
+                if (! \count($roles['assignees_roles'])) {
                     throw new GeneralException(trans('exceptions.backend.access.users.role_needed_create'));
                 }
 
@@ -130,7 +130,7 @@ class UserRepository extends BaseRepository
                 $user->attachRoles($roles['assignees_roles']);
 
                 //Send confirmation email if requested
-                if (isset($data['confirmation_email']) && $user->confirmed == 0) {
+                if (isset($data['confirmation_email']) && 0 === $user->confirmed) {
                     $user->notify(new UserNeedsConfirmation($user->confirmation_code));
                 }
 
@@ -147,8 +147,9 @@ class UserRepository extends BaseRepository
      * @param Model $user
      * @param array $input
      *
-     * @return bool
      * @throws GeneralException
+     *
+     * @return bool
      */
     public function update(Model $user, array $input)
     {
@@ -207,11 +208,11 @@ class UserRepository extends BaseRepository
      */
     public function delete(Model $user)
     {
-        if (access()->id() == $user->id) {
+        if (access()->id() === $user->id) {
             throw new GeneralException(trans('exceptions.backend.access.users.cant_delete_self'));
         }
 
-        if ($user->id == 1) {
+        if (1 === $user->id) {
             throw new GeneralException(trans('exceptions.backend.access.users.cant_delete_admin'));
         }
 
@@ -231,7 +232,7 @@ class UserRepository extends BaseRepository
      */
     public function forceDelete(Model $user)
     {
-        if (is_null($user->deleted_at)) {
+        if (null === $user->deleted_at) {
             throw new GeneralException(trans('exceptions.backend.access.users.delete_first'));
         }
 
@@ -255,7 +256,7 @@ class UserRepository extends BaseRepository
      */
     public function restore(Model $user)
     {
-        if (is_null($user->deleted_at)) {
+        if (null === $user->deleted_at) {
             throw new GeneralException(trans('exceptions.backend.access.users.cant_restore'));
         }
 
@@ -278,7 +279,7 @@ class UserRepository extends BaseRepository
      */
     public function mark(Model $user, $status)
     {
-        if (access()->id() == $user->id && $status == 0) {
+        if (access()->id() === $user->id && 0 === $status) {
             throw new GeneralException(trans('exceptions.backend.access.users.cant_deactivate_self'));
         }
 
@@ -310,7 +311,7 @@ class UserRepository extends BaseRepository
     protected function checkUserByEmail($input, $user)
     {
         //Figure out if email is not the same
-        if ($user->email != $input['email']) {
+        if ($user->email !== $input['email']) {
             //Check to see if email exists
             if ($this->query()->where('email', '=', $input['email'])->first()) {
                 throw new GeneralException(trans('exceptions.backend.access.users.email_error'));
@@ -338,7 +339,7 @@ class UserRepository extends BaseRepository
     {
         //User Updated, Update Roles
         //Validate that there's at least one role chosen
-        if (count($roles['assignees_roles']) == 0) {
+        if (0 === \count($roles['assignees_roles'])) {
             throw new GeneralException(trans('exceptions.backend.access.users.role_needed'));
         }
     }
@@ -351,7 +352,7 @@ class UserRepository extends BaseRepository
     protected function createUserStub($input)
     {
         $user = self::MODEL;
-        $user = new $user;
+        $user = new $user();
         $user->surname = $input['surname'];
         $user->other_names = $input['other_names'];
         $user->email = $input['email'];

@@ -24,8 +24,8 @@ class TicketOffenceTableSeeder extends Seeder
 
         $ticketOffence = [
             [
-                'ticket_id'             => 1,
-                'offence_id'            => 1,
+                'ticket_id' => 1,
+                'offence_id' => 1,
             ],
         ];
 

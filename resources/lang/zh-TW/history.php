@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | History Language Lines
@@ -24,7 +23,7 @@ return [
             'updated' => '更新的角色',
         ],
         'users' => [
-            'changed_pa​​ssword' => '為用戶更改密碼',
+            'changed_password' => '為用戶更改密碼',
             'created' => '創建用戶',
             'deactivated' => '停用用戶',
             'deleted' => '已刪除的用戶',

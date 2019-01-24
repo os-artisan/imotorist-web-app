@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Buttons Language Lines
@@ -16,14 +15,14 @@ return [
     'backend' => [
         'access' => [
             'users' => [
-                'activate'           => 'تفعيل',
-                'change_password'    => 'تغيير كلمة المرور',
-                'clear_session'         => 'Clear Session',
-                'deactivate'         => 'تعطيل',
+                'activate' => 'تفعيل',
+                'change_password' => 'تغيير كلمة المرور',
+                'clear_session' => 'Clear Session',
+                'deactivate' => 'تعطيل',
                 'delete_permanently' => 'حذف نهائي',
-                'login_as'           => 'تسجيل الدخول كـ :user',
-                'resend_email'       => 'إعادة إرسالة بريد التفعيل',
-                'restore_user'       => 'إستعادة المستخدم',
+                'login_as' => 'تسجيل الدخول كـ :user',
+                'resend_email' => 'إعادة إرسالة بريد التفعيل',
+                'restore_user' => 'إستعادة المستخدم',
             ],
         ],
     ],
@@ -31,7 +30,7 @@ return [
     'emails' => [
         'auth' => [
             'confirm_account' => 'Confirm Account',
-            'reset_password'  => 'Reset Password',
+            'reset_password' => 'Reset Password',
         ],
     ],
 
@@ -42,9 +41,9 @@ return [
         'crud' => [
             'create' => 'إنشاء',
             'delete' => 'حذف',
-            'edit'   => 'تعديل',
+            'edit' => 'تعديل',
             'update' => 'تحديث',
-            'view'   => 'View',
+            'view' => 'View',
         ],
 
         'save' => 'حفظ',

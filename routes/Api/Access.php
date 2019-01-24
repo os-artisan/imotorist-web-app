@@ -5,7 +5,6 @@
  * All route names are prefixed with 'api'.
  */
 Route::group(['namespace' => 'Auth'], function () {
-
     // Register a new user into the system
     Route::post('register', 'RegisterController@register');
 
@@ -19,7 +18,6 @@ Route::group(['namespace' => 'Auth'], function () {
      * Only logged in users can access these routes
      */
     Route::middleware('auth:api')->group(function () {
-
         // Logout a logged in user
         Route::post('logout', 'LoginController@logout');
     });

@@ -32,11 +32,11 @@ trait RoleAccess
      */
     public function attachPermission($permission)
     {
-        if (is_object($permission)) {
+        if (\is_object($permission)) {
             $permission = $permission->getKey();
         }
 
-        if (is_array($permission)) {
+        if (\is_array($permission)) {
             $permission = $permission['id'];
         }
 
@@ -52,11 +52,11 @@ trait RoleAccess
      */
     public function detachPermission($permission)
     {
-        if (is_object($permission)) {
+        if (\is_object($permission)) {
             $permission = $permission->getKey();
         }
 
-        if (is_array($permission)) {
+        if (\is_array($permission)) {
             $permission = $permission['id'];
         }
 

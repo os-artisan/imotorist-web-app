@@ -65,6 +65,25 @@
             </li>
             @endauth
 
+            @role(1)
+            <li class="{{ active_class(Active::checkUriPattern('admin/fine/*')) }} treeview">
+                <a href="#">
+                    <i class="fa fa-ticket"></i>
+                    <span>{{ trans('menus.backend.fine.title') }}</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+
+                <ul class="treeview-menu {{ active_class(Active::checkUriPattern('admin/fine/*'), 'menu-open') }}" style="display: none; {{ active_class(Active::checkUriPattern('admin/fine/*'), 'display: block;') }}">
+                    <li class="{{ active_class(Active::checkUriPattern('admin/fine/offence*')) }}">
+                        <a href="{{ route('admin.fine.offence.index') }}">
+                            <i class="fa fa-circle-o"></i>
+                            <span>{{ trans('labels.backend.fine.offences.management') }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            @endauth
+
             <li class="{{ active_class(Active::checkUriPattern('admin/log-viewer*')) }} treeview">
                 <a href="#">
                     <i class="fa fa-list"></i>

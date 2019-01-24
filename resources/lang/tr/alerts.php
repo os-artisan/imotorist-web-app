@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Alert Language Lines
@@ -21,14 +20,14 @@ return [
         ],
 
         'users' => [
-            'confirmation_email'  => 'Kayıtlı e-posta adresine yeni bir onay e-postası gönderildi.',
-            'created'             => 'Kullanıcı başarıyla oluşturuldu.',
-            'deleted'             => 'Kullanıcı başarıyla silindi.',
+            'confirmation_email' => 'Kayıtlı e-posta adresine yeni bir onay e-postası gönderildi.',
+            'created' => 'Kullanıcı başarıyla oluşturuldu.',
+            'deleted' => 'Kullanıcı başarıyla silindi.',
             'deleted_permanently' => 'Kullanıcı kalıcı olarak silindi.',
-            'restored'            => 'Kullanıcı başarıyla geri yüklendi.',
-            'session_cleared'      => 'Kullanıcının oturumu başarıyla temizlendi.',
-            'updated'             => 'Kullanıcı başarıyla güncellendi.',
-            'updated_password'    => 'Kullanıcının şifresi başarıyla güncellendi.',
+            'restored' => 'Kullanıcı başarıyla geri yüklendi.',
+            'session_cleared' => 'Kullanıcının oturumu başarıyla temizlendi.',
+            'updated' => 'Kullanıcı başarıyla güncellendi.',
+            'updated_password' => 'Kullanıcının şifresi başarıyla güncellendi.',
         ],
     ],
 ];

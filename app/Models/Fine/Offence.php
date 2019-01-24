@@ -3,6 +3,7 @@
 namespace App\Models\Fine;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Fine\Traits\Attribute\OffenceAttribute;
 use App\Models\Fine\Traits\Relationship\OffenceRelationship;
 
 /**
@@ -10,7 +11,8 @@ use App\Models\Fine\Traits\Relationship\OffenceRelationship;
  */
 class Offence extends Model
 {
-    use OffenceRelationship;
+    use OffenceAttribute,
+        OffenceRelationship;
 
     /**
      * The database table used by the model.

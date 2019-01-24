@@ -54,7 +54,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Revenue</span>
-              <span class="info-box-number">{{ number_format(App\Models\Fine\Ticket::revenue()) }}</span>
+              <span class="info-box-number">Rs. {{ number_format(App\Models\Fine\Ticket::revenue(), 2, '.', ',') }}</span>
             </div>
             <!-- /.info-box-content -->
           </div>

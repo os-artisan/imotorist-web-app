@@ -21,7 +21,8 @@ class TicketController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $ticket_no
+     * @param int $ticket_no
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($ticket_no)
@@ -34,7 +35,8 @@ class TicketController extends Controller
     /**
      * Search the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function search(Request $request)

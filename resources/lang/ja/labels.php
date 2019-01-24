@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Labels Language Lines
@@ -100,7 +99,6 @@ return [
     ],
 
     'frontend' => [
-
         'auth' => [
             'login_box_title' => 'ログイン',
             'login_button' => 'ログイン',
@@ -158,6 +156,5 @@ return [
                 'update_information' => '情報更新',
             ],
         ],
-
     ],
 ];

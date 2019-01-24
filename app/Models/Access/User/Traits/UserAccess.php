@@ -10,7 +10,7 @@ trait UserAccess
     /**
      * Checks if the user has a Role by its name or id.
      *
-     * @param string $nameOrId Role name or id.
+     * @param string $nameOrId role name or id
      *
      * @return bool
      */
@@ -24,13 +24,13 @@ trait UserAccess
 
             //First check to see if it's an ID
             if (is_numeric($nameOrId)) {
-                if ($role->id == $nameOrId) {
+                if ($role->id === $nameOrId) {
                     return true;
                 }
             }
 
             //Otherwise check by name
-            if ($role->name == $nameOrId) {
+            if ($role->name === $nameOrId) {
                 return true;
             }
         }
@@ -51,14 +51,14 @@ trait UserAccess
     public function hasRoles($roles, $needsAll = false)
     {
         //If not an array, make a one item array
-        if (! is_array($roles)) {
+        if (! \is_array($roles)) {
             $roles = [$roles];
         }
 
         //User has to possess all of the roles specified
         if ($needsAll) {
             $hasRoles = 0;
-            $numRoles = count($roles);
+            $numRoles = \count($roles);
 
             foreach ($roles as $role) {
                 if ($this->hasRole($role)) {
@@ -66,7 +66,7 @@ trait UserAccess
                 }
             }
 
-            return $numRoles == $hasRoles;
+            return $numRoles === $hasRoles;
         }
 
         //User has to possess one of the roles specified
@@ -82,7 +82,7 @@ trait UserAccess
     /**
      * Check if user has a permission by its name or id.
      *
-     * @param string $nameOrId Permission name or id.
+     * @param string $nameOrId permission name or id
      *
      * @return bool
      */
@@ -96,16 +96,15 @@ trait UserAccess
 
             // Validate against the Permission table
             foreach ($role->permissions as $perm) {
-
                 // First check to see if it's an ID
                 if (is_numeric($nameOrId)) {
-                    if ($perm->id == $nameOrId) {
+                    if ($perm->id === $nameOrId) {
                         return true;
                     }
                 }
 
                 // Otherwise check by name
-                if ($perm->name == $nameOrId) {
+                if ($perm->name === $nameOrId) {
                     return true;
                 }
             }
@@ -125,14 +124,14 @@ trait UserAccess
     public function allowMultiple($permissions, $needsAll = false)
     {
         //If not an array, make a one item array
-        if (! is_array($permissions)) {
+        if (! \is_array($permissions)) {
             $permissions = [$permissions];
         }
 
         //User has to possess all of the permissions specified
         if ($needsAll) {
             $hasPermissions = 0;
-            $numPermissions = count($permissions);
+            $numPermissions = \count($permissions);
 
             foreach ($permissions as $perm) {
                 if ($this->allow($perm)) {
@@ -140,7 +139,7 @@ trait UserAccess
                 }
             }
 
-            return $numPermissions == $hasPermissions;
+            return $numPermissions === $hasPermissions;
         }
 
         //User has to possess one of the permissions specified
@@ -183,11 +182,11 @@ trait UserAccess
      */
     public function attachRole($role)
     {
-        if (is_object($role)) {
+        if (\is_object($role)) {
             $role = $role->getKey();
         }
 
-        if (is_array($role)) {
+        if (\is_array($role)) {
             $role = $role['id'];
         }
 
@@ -203,11 +202,11 @@ trait UserAccess
      */
     public function detachRole($role)
     {
-        if (is_object($role)) {
+        if (\is_object($role)) {
             $role = $role->getKey();
         }
 
-        if (is_array($role)) {
+        if (\is_array($role)) {
             $role = $role['id'];
         }
 

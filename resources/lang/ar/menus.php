@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Menus Language Lines
@@ -18,35 +17,35 @@ return [
             'title' => 'إدارة المستخدمين',
 
             'roles' => [
-                'all'        => 'جميع الأدوار',
-                'create'     => 'إنشاء دور جديد',
-                'edit'       => 'تعديل دور',
+                'all' => 'جميع الأدوار',
+                'create' => 'إنشاء دور جديد',
+                'edit' => 'تعديل دور',
                 'management' => 'إدارة الأدوار',
-                'main'       => 'أدوار المتسخدمين',
+                'main' => 'أدوار المتسخدمين',
             ],
 
             'users' => [
-                'all'             => 'جميع المستخدمين',
+                'all' => 'جميع المستخدمين',
                 'change-password' => 'تغيير كلمة السر',
-                'create'          => 'إنشاء مستخدم جديد',
-                'deactivated'     => 'المستخدمون المعطلون',
-                'deleted'         => 'المستخدمون المحذفون',
-                'edit'            => 'تعديل مستخدم',
-                'main'            => 'المستخدمين',
-                'view'            => 'View User',
+                'create' => 'إنشاء مستخدم جديد',
+                'deactivated' => 'المستخدمون المعطلون',
+                'deleted' => 'المستخدمون المحذفون',
+                'edit' => 'تعديل مستخدم',
+                'main' => 'المستخدمين',
+                'view' => 'View User',
             ],
         ],
 
         'log-viewer' => [
-            'main'      => 'عارض السجلات',
+            'main' => 'عارض السجلات',
             'dashboard' => 'اللوحة الرئيسية',
-            'logs'      => 'السجلات',
+            'logs' => 'السجلات',
         ],
 
         'sidebar' => [
             'dashboard' => 'اللوحة الرئيسية',
-            'general'   => 'عام',
-            'system'    => 'System',
+            'general' => 'عام',
+            'system' => 'System',
         ],
     ],
 
@@ -59,24 +58,24 @@ return [
          * Be sure to add the new language in alphabetical order.
          */
         'langs' => [
-            'ar'    => 'العربية (Arabic)',
-            'zh'    => '(Chinese Simplified)',
+            'ar' => 'العربية (Arabic)',
+            'zh' => '(Chinese Simplified)',
             'zh-TW' => '(Chinese Traditional)',
-            'da'    => 'الدنماركية (Danish)',
-            'de'    => 'الألمانية (German)',
-            'el'    => '(Greek)',
-            'en'    => 'الإنجليزية (English)',
-            'es'    => 'الأسبانية (Spanish)',
-            'fr'    => 'الفرنسية (French)',
-            'id'    => 'الأندونيسية (Indonesian)',
-            'it'    => 'الإيطالية (Italian)',
-            'ja'    => '(Japanese)',
-            'nl'    => 'هولندي (Dutch)',
+            'da' => 'الدنماركية (Danish)',
+            'de' => 'الألمانية (German)',
+            'el' => '(Greek)',
+            'en' => 'الإنجليزية (English)',
+            'es' => 'الأسبانية (Spanish)',
+            'fr' => 'الفرنسية (French)',
+            'id' => 'الأندونيسية (Indonesian)',
+            'it' => 'الإيطالية (Italian)',
+            'ja' => '(Japanese)',
+            'nl' => 'هولندي (Dutch)',
             'pt_BR' => 'البرازيلية البرتغالية (Brazilian Portuguese)',
-            'ru'    => '(Russian) الروسية',
-            'sv'    => 'السويسرية (Swedish)',
-            'th'    => '(Thai)',
-            'tr'    => 'اللغة التركية(Turkish)',
+            'ru' => '(Russian) الروسية',
+            'sv' => 'السويسرية (Swedish)',
+            'th' => '(Thai)',
+            'tr' => 'اللغة التركية(Turkish)',
         ],
     ],
 ];

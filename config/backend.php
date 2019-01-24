@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
      * Skin for Admin LTE backend theme
      *

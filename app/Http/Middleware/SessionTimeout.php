@@ -40,7 +40,7 @@ class SessionTimeout
     public function handle($request, Closure $next)
     {
         if (config('session.timeout_status')) {
-            $isLoggedIn = $request->path() != '/logout';
+            $isLoggedIn = '/logout' !== $request->path();
 
             if (! session('lastActivityTime')) {
                 $this->session->put('lastActivityTime', time());

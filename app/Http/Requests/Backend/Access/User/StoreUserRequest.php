@@ -28,9 +28,9 @@ class StoreUserRequest extends Request
     public function rules()
     {
         return [
-            'surname'     => 'required|max:191',
-            'other_names'  => 'required|max:191',
-            'email'    => ['required', 'email', 'max:191', Rule::unique('users')],
+            'surname' => 'required|max:191',
+            'other_names' => 'required|max:191',
+            'email' => ['required', 'email', 'max:191', Rule::unique('users')],
             'password' => 'required|min:6|confirmed',
             'phone' => 'nullable|numeric',
             'address' => 'max:255',

@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Buttons Language Lines
@@ -16,14 +15,14 @@ return [
     'backend' => [
         'access' => [
             'users' => [
-                'activate'           => 'Ενεργοποίησε',
-                'change_password'    => 'Άλλαξε κωδικό',
-                'clear_session'         => 'Clear Session',
-                'deactivate'         => 'Απενεργοποίησε',
+                'activate' => 'Ενεργοποίησε',
+                'change_password' => 'Άλλαξε κωδικό',
+                'clear_session' => 'Clear Session',
+                'deactivate' => 'Απενεργοποίησε',
                 'delete_permanently' => 'Διέγραψε μόνιμα',
-                'login_as'           => 'Συνδέσου σαν :user',
-                'resend_email'       => 'Ξαναστείλε email επιβεβαίωσης',
-                'restore_user'       => 'Επαναφορά χρήστη',
+                'login_as' => 'Συνδέσου σαν :user',
+                'resend_email' => 'Ξαναστείλε email επιβεβαίωσης',
+                'restore_user' => 'Επαναφορά χρήστη',
             ],
         ],
     ],
@@ -31,7 +30,7 @@ return [
     'emails' => [
         'auth' => [
             'confirm_account' => 'Επιβεβαίωσε τον λογαριασμό',
-            'reset_password'  => 'Επαναφορά κωδικού',
+            'reset_password' => 'Επαναφορά κωδικού',
         ],
     ],
 
@@ -42,9 +41,9 @@ return [
         'crud' => [
             'create' => 'Δημιουργία',
             'delete' => 'Διαγραφή',
-            'edit'   => 'Διαμόρφωση',
+            'edit' => 'Διαμόρφωση',
             'update' => 'Ανανέωση',
-            'view'   => 'Προβολή',
+            'view' => 'Προβολή',
         ],
 
         'save' => 'Αποθήκευση',

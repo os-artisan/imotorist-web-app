@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Navs Language Lines
@@ -14,22 +13,22 @@ return [
     */
 
     'general' => [
-        'home'   => 'Beranda',
+        'home' => 'Beranda',
         'logout' => 'Keluar',
     ],
 
     'frontend' => [
         'dashboard' => 'Dasbor',
-        'login'     => 'Masuk',
-        'macros'    => 'Makro',
-        'register'  => 'Daftar',
+        'login' => 'Masuk',
+        'macros' => 'Makro',
+        'register' => 'Daftar',
 
         'user' => [
-            'account'         => 'Akunku',
-            'administration'  => 'Administrasi',
+            'account' => 'Akunku',
+            'administration' => 'Administrasi',
             'change_password' => 'Ubah Sandi',
-            'my_information'  => 'Informasiku',
-            'profile'         => 'Profil',
+            'my_information' => 'Informasiku',
+            'profile' => 'Profil',
         ],
     ],
 ];

@@ -5,17 +5,16 @@ $username = null;
 $password = null;
 $database = null;
 
-if (! is_null(env('DATABASE_URL'))) {
+if (null !== env('DATABASE_URL')) {
     $url = parse_url(env('DATABASE_URL'));
 
     $host = $url['host'];
     $username = $url['user'];
     $password = $url['pass'];
-    $database = substr($url['path'], 1);
+    $database = mb_substr($url['path'], 1);
 }
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -66,9 +65,9 @@ return [
         ],
 
         'sqlite_testing' => [
-            'driver'   => 'sqlite',
+            'driver' => 'sqlite',
             'database' => ':memory:',
-            'prefix'   => '',
+            'prefix' => '',
         ],
 
         'mysql' => [
@@ -109,7 +108,6 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
         ],
-
     ],
 
     /*
@@ -137,7 +135,6 @@ return [
     */
 
     'redis' => [
-
         'client' => 'predis',
 
         'default' => [
@@ -146,7 +143,5 @@ return [
             'port' => env('REDIS_PORT', 6379),
             'database' => 0,
         ],
-
     ],
-
 ];

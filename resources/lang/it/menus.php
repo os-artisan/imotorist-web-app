@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Menus Language Lines
@@ -18,35 +17,35 @@ return [
             'title' => 'Gestione accessi',
 
             'roles' => [
-                'all'        => 'Tutti i ruoli',
-                'create'     => 'Crea ruolo',
-                'edit'       => 'Modifica ruolo',
+                'all' => 'Tutti i ruoli',
+                'create' => 'Crea ruolo',
+                'edit' => 'Modifica ruolo',
                 'management' => 'Gestione ruoli',
-                'main'       => 'Ruoli',
+                'main' => 'Ruoli',
             ],
 
             'users' => [
-                'all'             => 'Tutti gli utenti',
+                'all' => 'Tutti gli utenti',
                 'change-password' => 'Cambia password',
-                'create'          => 'Crea utente',
-                'deactivated'     => 'Utenti disattivati',
-                'deleted'         => 'Utenti eliminati',
-                'edit'            => 'Modifica utente',
-                'main'            => 'Utenti',
-                'view'            => 'View User',
+                'create' => 'Crea utente',
+                'deactivated' => 'Utenti disattivati',
+                'deleted' => 'Utenti eliminati',
+                'edit' => 'Modifica utente',
+                'main' => 'Utenti',
+                'view' => 'View User',
             ],
         ],
 
         'log-viewer' => [
-            'main'      => 'Log',
+            'main' => 'Log',
             'dashboard' => 'Dashboard',
-            'logs'      => 'Logs',
+            'logs' => 'Logs',
         ],
 
         'sidebar' => [
             'dashboard' => 'Dashboard',
-            'general'   => 'Generale',
-            'system'    => 'System',
+            'general' => 'Generale',
+            'system' => 'System',
         ],
     ],
 
@@ -59,24 +58,24 @@ return [
          * Be sure to add the new language in alphabetical order.
          */
         'langs' => [
-            'ar'    => 'العربية (Arabic)',
-            'zh'    => '(Chinese Simplified)',
+            'ar' => 'العربية (Arabic)',
+            'zh' => '(Chinese Simplified)',
             'zh-TW' => '(Chinese Traditional)',
-            'da'    => 'Danese (Danish)',
-            'de'    => 'Tedesco (German)',
-            'el'    => '(Greek)',
-            'en'    => 'Inglese (English)',
-            'es'    => 'Spagnol (Spanish)',
-            'fr'    => 'Francese (French)',
-            'id'    => 'Indonesiano (Indonesian)',
-            'it'    => 'Italiano (Italian)',
-            'ja'    => '(Japanese)',
-            'nl'    => 'Olandese (Dutch)',
+            'da' => 'Danese (Danish)',
+            'de' => 'Tedesco (German)',
+            'el' => '(Greek)',
+            'en' => 'Inglese (English)',
+            'es' => 'Spagnol (Spanish)',
+            'fr' => 'Francese (French)',
+            'id' => 'Indonesiano (Indonesian)',
+            'it' => 'Italiano (Italian)',
+            'ja' => '(Japanese)',
+            'nl' => 'Olandese (Dutch)',
             'pt_BR' => 'Portoghese Brasiliano (Brazilian Portuguese)',
-            'ru'    => 'Russo (Russian)',
-            'sv'    => 'Svedese (Swedish)',
-            'th'    => '(Thai)',
-            'tr'    => '(Turkish)',
+            'ru' => 'Russo (Russian)',
+            'sv' => 'Svedese (Swedish)',
+            'th' => '(Thai)',
+            'tr' => '(Turkish)',
         ],
     ],
 ];

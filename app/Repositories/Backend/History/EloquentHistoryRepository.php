@@ -53,8 +53,9 @@ class EloquentHistoryRepository implements HistoryContract
     /**
      * @param $type
      *
-     * @return $this
      * @throws GeneralException
+     *
+     * @return $this
      */
     public function withType($type)
     {
@@ -75,12 +76,13 @@ class EloquentHistoryRepository implements HistoryContract
     /**
      * @param $text
      *
-     * @return $this
      * @throws GeneralException
+     *
+     * @return $this
      */
     public function withText($text)
     {
-        if (strlen($text)) {
+        if (\mb_strlen($text)) {
             $this->text = $text;
         } else {
             throw new GeneralException('You must supply text for each history item.');
@@ -132,7 +134,7 @@ class EloquentHistoryRepository implements HistoryContract
      */
     public function withAssets($assets)
     {
-        $this->assets = is_array($assets) && count($assets) ? json_encode($assets) : null;
+        $this->assets = \is_array($assets) && \count($assets) ? json_encode($assets) : null;
 
         return $this;
     }
@@ -143,13 +145,13 @@ class EloquentHistoryRepository implements HistoryContract
     public function log()
     {
         return History::create([
-            'type_id'   => $this->type->id,
-            'user_id'   => access()->id(),
+            'type_id' => $this->type->id,
+            'user_id' => access()->id(),
             'entity_id' => $this->entity_id,
-            'icon'      => $this->icon,
-            'class'     => $this->class,
-            'text'      => $this->text,
-            'assets'    => $this->assets,
+            'icon' => $this->icon,
+            'class' => $this->class,
+            'text' => $this->text,
+            'assets' => $this->assets,
         ]);
     }
 
@@ -234,17 +236,17 @@ class EloquentHistoryRepository implements HistoryContract
     {
         $assets = json_decode($assets, true);
         $count = 1;
-        $asset_count = count($assets) + 1;
+        $asset_count = \count($assets) + 1;
 
-        if (count($assets)) {
+        if (\count($assets)) {
             foreach ($assets as $name => $values) {
                 $key = explode('_', $name)[0];
                 $type = explode('_', $name)[1];
 
                 switch ($type) {
                     case 'link':
-                        if (is_array($values)) {
-                            switch (count($values)) {
+                        if (\is_array($values)) {
+                            switch (\count($values)) {
                                 case 1:
                                     $text = str_replace('{'.$key.'}', link_to_route($values[0], $values[0]), $text);
                                 break;
@@ -277,7 +279,7 @@ class EloquentHistoryRepository implements HistoryContract
             }
         }
 
-        if ($asset_count == $count) {
+        if ($asset_count === $count) {
             //Evaluate all trans functions as PHP
             //We don't want to use eval() for security reasons so we're explicitly converting trans cases
             return preg_replace_callback('/trans\(\"([^"]+)\"\)/', function ($matches) {
@@ -312,13 +314,12 @@ class EloquentHistoryRepository implements HistoryContract
     {
         if ($paginate && is_numeric($pagination)) {
             return $query->{$this->paginationType}($pagination);
-        } else {
-            if ($limit && is_numeric($limit)) {
-                $query->take($limit);
-            }
-
-            return $query->get();
         }
+        if ($limit && is_numeric($limit)) {
+            $query->take($limit);
+        }
+
+        return $query->get();
     }
 
     /**
@@ -331,12 +332,11 @@ class EloquentHistoryRepository implements HistoryContract
     {
         if (is_numeric($type)) {
             return $query->where('type_id', $type)->latest();
-        } else {
-            $type = strtolower($type);
-
-            return $query->whereHas('type', function ($query) use ($type) {
-                $query->where('name', ucfirst($type));
-            })->latest();
         }
+        $type = mb_strtolower($type);
+
+        return $query->whereHas('type', function ($query) use ($type) {
+            $query->where('name', ucfirst($type));
+        })->latest();
     }
 }

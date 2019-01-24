@@ -21,10 +21,10 @@ class AppServiceProvider extends ServiceProvider
          * define a "morph map" to instruct Eloquent to use a custom name for each model instead of the class name
          */
         Relation::morphMap([
-            'station'   => config('police.station'),
-            'district'  => config('police.district'),
-            'division'  => config('police.division'),
-            'range'     => config('police.range'),
+            'station' => config('police.station'),
+            'district' => config('police.district'),
+            'division' => config('police.division'),
+            'range' => config('police.range'),
         ]);
 
         /*
@@ -54,7 +54,7 @@ class AppServiceProvider extends ServiceProvider
         }
 
         // Force SSL in production
-        if ($this->app->environment() == 'production') {
+        if ('production' === $this->app->environment()) {
             //URL::forceScheme('https');
         }
 
@@ -73,7 +73,7 @@ class AppServiceProvider extends ServiceProvider
         /*
          * Sets third party service providers that are only needed on local/testing environments
          */
-        if ($this->app->environment() != 'production') {
+        if ('production' !== $this->app->environment()) {
             /**
              * Loader for registering facades.
              */

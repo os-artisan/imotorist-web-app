@@ -21,7 +21,7 @@ trait RoleAttribute
     public function getDeleteButtonAttribute()
     {
         //Can't delete master admin role
-        if ($this->id != 1) {
+        if (1 !== $this->id) {
             return '<a href="'.route('admin.access.role.destroy', $this).'"
                 data-method="delete"
                 data-trans-button-cancel="'.trans('buttons.general.cancel').'"

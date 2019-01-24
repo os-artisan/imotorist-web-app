@@ -89,7 +89,7 @@ trait UserAttribute
     public function hasProvider($provider)
     {
         foreach ($this->providers as $p) {
-            if ($p->provider == $provider) {
+            if ($p->provider === $provider) {
                 return true;
             }
         }
@@ -102,7 +102,7 @@ trait UserAttribute
      */
     public function isActive()
     {
-        return $this->status == 1;
+        return 1 === $this->status;
     }
 
     /**
@@ -110,7 +110,7 @@ trait UserAttribute
      */
     public function isConfirmed()
     {
-        return $this->confirmed == 1;
+        return 1 === $this->confirmed;
     }
 
     /**
@@ -118,7 +118,7 @@ trait UserAttribute
      */
     public function isVerified()
     {
-        return $this->verified == 1;
+        return 1 === $this->verified;
     }
 
     /**
@@ -150,25 +150,22 @@ trait UserAttribute
      */
     public function getStatusButtonAttribute()
     {
-        if ($this->id != access()->id()) {
+        if ($this->id !== access()->id()) {
             switch ($this->status) {
                 case 0:
                     return '<a href="'.route('admin.access.user.mark', [
                         $this,
                         1,
                     ]).'" class="btn btn-xs btn-success"><i class="fa fa-play" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.backend.access.users.activate').'"></i></a> ';
-                // No break
 
                 case 1:
                     return '<a href="'.route('admin.access.user.mark', [
                         $this,
                         0,
                     ]).'" class="btn btn-xs btn-warning"><i class="fa fa-pause" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.backend.access.users.deactivate').'"></i></a> ';
-                // No break
 
                 default:
                     return '';
-                // No break
             }
         }
 
@@ -192,7 +189,7 @@ trait UserAttribute
      */
     public function getDeleteButtonAttribute()
     {
-        if ($this->id != access()->id() && $this->id != 1) {
+        if ($this->id !== access()->id() && 1 !== $this->id) {
             return '<a href="'.route('admin.access.user.destroy', $this).'"
                  data-method="delete"
                  data-trans-button-cancel="'.trans('buttons.general.cancel').'"
@@ -230,7 +227,7 @@ trait UserAttribute
          */
         if (! session()->has('admin_user_id') || ! session()->has('temp_user_id')) {
             //Won't break, but don't let them "Login As" themselves
-            if ($this->id != access()->id()) {
+            if ($this->id !== access()->id()) {
                 return '<a href="'.route('admin.access.user.login-as',
                     $this).'" class="btn btn-xs btn-success"><i class="fa fa-lock" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.backend.access.users.login_as',
                     ['user' => $this->full_name]).'"></i></a> ';
@@ -245,7 +242,7 @@ trait UserAttribute
      */
     public function getClearSessionButtonAttribute()
     {
-        if ($this->id != access()->id() && config('session.driver') == 'database') {
+        if ($this->id !== access()->id() && 'database' === config('session.driver')) {
             return '<a href="'.route('admin.access.user.clear-session', $this).'"
 			 	 data-trans-button-cancel="'.trans('buttons.general.cancel').'"
                  data-trans-button-confirm="'.trans('buttons.general.continue').'"
@@ -299,6 +296,7 @@ trait UserAttribute
      * Find the user identified by the given $identifier.
      *
      * @param $identifier email|phone
+     *
      * @return mixed
      */
     public function findForPassport($identifier)
@@ -314,7 +312,7 @@ trait UserAttribute
     public function countUnpaidTickets()
     {
         if ($this->motorist) {
-            return count($this->motorist->tickets->where('paid', '=', false));
+            return \count($this->motorist->tickets->where('paid', '=', false));
         }
 
         return 0;
@@ -326,7 +324,7 @@ trait UserAttribute
     public function countTickets()
     {
         if ($this->motorist) {
-            return count($this->motorist->tickets);
+            return \count($this->motorist->tickets);
         }
 
         return 0;

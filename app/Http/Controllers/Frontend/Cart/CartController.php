@@ -27,13 +27,14 @@ class CartController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $this->validate($request, [
-            'ticket_no'      => 'required|array|exists:tickets,ticket_no,paid,0',
+            'ticket_no' => 'required|array|exists:tickets,ticket_no,paid,0',
         ], [
             'ticket_no.exists' => 'This ticket has already been paid.',
         ]);
@@ -52,7 +53,8 @@ class CartController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $ticket_no
+     * @param int $ticket_no
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($ticket_no)

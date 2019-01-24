@@ -81,7 +81,7 @@ class UserRouteTest extends BrowserKitTestCase
              ->seePageIs('/dashboard')
              ->see('You are currently logged in as '.$this->user->full_name.'.')
              ->see($this->admin->full_name)
-             ->assertTrue(access()->id() == $this->user->id);
+             ->assertTrue(access()->id() === $this->user->id);
     }
 
     public function testCantLoginAsSelf()
@@ -99,7 +99,7 @@ class UserRouteTest extends BrowserKitTestCase
              ->see('You are currently logged in as '.$this->user->full_name.'.')
              ->click('Re-Login as '.$this->admin->full_name)
              ->seePageIs('/admin/access/user')
-             ->assertTrue(access()->id() == $this->admin->id);
+             ->assertTrue(access()->id() === $this->admin->id);
     }
 
     public function testDeactivateReactivateUser()

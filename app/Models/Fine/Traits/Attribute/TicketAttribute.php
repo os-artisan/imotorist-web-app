@@ -27,7 +27,7 @@ trait TicketAttribute
      */
     public function isPaid()
     {
-        return $this->paid == 1;
+        return 1 === $this->paid;
     }
 
     /**

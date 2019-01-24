@@ -28,8 +28,8 @@ class UpdateUserRequest extends Request
     {
         return [
             'email' => 'required|email|max:191',
-            'surname'  => 'required|max:191',
-            'other_names'  => 'required|max:191',
+            'surname' => 'required|max:191',
+            'other_names' => 'required|max:191',
         ];
     }
 }

@@ -19,11 +19,11 @@ $factory->define(User::class, function (Generator $faker) {
     static $password;
 
     return [
-        'surname'           => $faker->firstName,
-        'other_names'       => $faker->lastName,
-        'email'             => $faker->safeEmail,
-        'password'          => $password ?: $password = bcrypt('secret'),
-        'remember_token'    => str_random(10),
+        'surname' => $faker->firstName,
+        'other_names' => $faker->lastName,
+        'email' => $faker->safeEmail,
+        'password' => $password ?: $password = bcrypt('secret'),
+        'remember_token' => str_random(10),
         'confirmation_code' => md5(uniqid(mt_rand(), true)),
     ];
 });
@@ -58,7 +58,7 @@ $factory->state(User::class, 'unconfirmed', function () {
 $factory->define(Role::class, function (Generator $faker) {
     return [
         'name' => $faker->name,
-        'all'  => 0,
+        'all' => 0,
         'sort' => $faker->numberBetween(1, 100),
     ];
 });

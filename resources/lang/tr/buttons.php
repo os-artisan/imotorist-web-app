@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Buttons Language Lines
@@ -16,14 +15,14 @@ return [
     'backend' => [
         'access' => [
             'users' => [
-                'activate'           => 'Etkinleştir',
-                'change_password'    => 'Parolayı Değiştir',
-                'clear_session'         => 'Oturumu Temizle',
-                'deactivate'         => 'Devre dışı bırak',
+                'activate' => 'Etkinleştir',
+                'change_password' => 'Parolayı Değiştir',
+                'clear_session' => 'Oturumu Temizle',
+                'deactivate' => 'Devre dışı bırak',
                 'delete_permanently' => 'Kalıcı Olarak Sil',
-                'login_as'           => 'Kullanıcı :user olarak oturum aç',
-                'resend_email'       => 'Onay E-postasını Yeniden Gönder',
-                'restore_user'       => 'Kullanıcıyı Kurtar',
+                'login_as' => 'Kullanıcı :user olarak oturum aç',
+                'resend_email' => 'Onay E-postasını Yeniden Gönder',
+                'restore_user' => 'Kullanıcıyı Kurtar',
             ],
         ],
     ],
@@ -31,7 +30,7 @@ return [
     'emails' => [
         'auth' => [
             'confirm_account' => 'Hesabı Onayla',
-            'reset_password'  => 'Parolayı Sıfırla',
+            'reset_password' => 'Parolayı Sıfırla',
         ],
     ],
 
@@ -42,9 +41,9 @@ return [
         'crud' => [
             'create' => 'Oluştur',
             'delete' => 'Sil',
-            'edit'   => 'Düzenle',
+            'edit' => 'Düzenle',
             'update' => 'Güncelle',
-            'view'   => 'Görüntüle',
+            'view' => 'Görüntüle',
         ],
 
         'save' => 'Kaydet',

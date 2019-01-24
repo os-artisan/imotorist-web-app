@@ -29,10 +29,10 @@ class RegisterController extends Controller
     public function register(Request $request)
     {
         $this->validate($request, [
-            'surname'           => 'required|string|max:191',
-            'other_names'       => 'required|string|max:191',
-            'email'             => ['required', 'string', 'email', 'max:191', Rule::unique('users')],
-            'password'          => 'required|string|min:6',
+            'surname' => 'required|string|max:191',
+            'other_names' => 'required|string|max:191',
+            'email' => ['required', 'string', 'email', 'max:191', Rule::unique('users')],
+            'password' => 'required|string|min:6',
         ]);
 
         if (config('access.users.confirm_email')) {
@@ -40,11 +40,10 @@ class RegisterController extends Controller
             event(new UserRegistered($user));
 
             return ['alert' => trans('exceptions.frontend.auth.confirmation.created_confirm')];
-        } else {
-            access()->login($this->user->create($request->only('surname', 'other_names', 'email', 'password')));
-            event(new UserRegistered(access()->user()));
-
-            return response()->json([], 204);
         }
+        access()->login($this->user->create($request->only('surname', 'other_names', 'email', 'password')));
+        event(new UserRegistered(access()->user()));
+
+        return response()->json([], 204);
     }
 }

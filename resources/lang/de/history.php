@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | History Language Lines
@@ -13,10 +12,10 @@ return [
     */
 
     'backend' => [
-        'none'            => 'Es gibt keinen neuesten Verlauf.',
-        'none_for_type'   => 'Es gibt keinen Verlauf für diesen Typ.',
+        'none' => 'Es gibt keinen neuesten Verlauf.',
+        'none_for_type' => 'Es gibt keinen Verlauf für diesen Typ.',
         'none_for_entity' => 'Es gibt keinen Verlauf für :entity.',
-        'recent_history'  => 'Neuester Verlauf',
+        'recent_history' => 'Neuester Verlauf',
 
         'roles' => [
             'created' => 'Rolle erstellt',
@@ -24,14 +23,14 @@ return [
             'updated' => 'Rolle aktualisiert',
         ],
         'users' => [
-            'changed_password'    => 'Kennwort für Benutzer geändert',
-            'created'             => 'Benutzer erstellt',
-            'deactivated'         => 'Benutzer deaktiviert',
-            'deleted'             => 'Benutzer gelöscht',
+            'changed_password' => 'Kennwort für Benutzer geändert',
+            'created' => 'Benutzer erstellt',
+            'deactivated' => 'Benutzer deaktiviert',
+            'deleted' => 'Benutzer gelöscht',
             'permanently_deleted' => 'Benutzer endgültig gelöscht',
-            'updated'             => 'Benutzer aktualisiert',
-            'reactivated'         => 'Benutzer wieder aktiviert',
-            'restored'            => 'Benutzer wiederhergestellt',
+            'updated' => 'Benutzer aktualisiert',
+            'reactivated' => 'Benutzer wieder aktiviert',
+            'restored' => 'Benutzer wiederhergestellt',
         ],
     ],
 ];

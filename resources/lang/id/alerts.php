@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Alert Language Lines
@@ -21,14 +20,14 @@ return [
         ],
 
         'users' => [
-            'confirmation_email'  => 'Sebuah e-mail konfirmasi baru telah dikirim ke alamat bersangkutan.',
-            'created'             => 'Pengguna telah berhasil dibuat.',
-            'deleted'             => 'Pengguna telah berhasil dihapus.',
+            'confirmation_email' => 'Sebuah e-mail konfirmasi baru telah dikirim ke alamat bersangkutan.',
+            'created' => 'Pengguna telah berhasil dibuat.',
+            'deleted' => 'Pengguna telah berhasil dihapus.',
             'deleted_permanently' => 'Pengguna telah dihapus secara permanen.',
-            'restored'            => 'Pengguna telah berhasil direstorasi.',
-            'session_cleared'      => "The user's session was successfully cleared.",
-            'updated'             => 'Pengguna telah berhasil diperbarui.',
-            'updated_password'    => 'Sandi pengguna telah berhasil diperbarui.',
+            'restored' => 'Pengguna telah berhasil direstorasi.',
+            'session_cleared' => "The user's session was successfully cleared.",
+            'updated' => 'Pengguna telah berhasil diperbarui.',
+            'updated_password' => 'Sandi pengguna telah berhasil diperbarui.',
         ],
     ],
 ];

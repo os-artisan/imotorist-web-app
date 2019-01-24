@@ -64,7 +64,7 @@ class RoleRepository extends BaseRepository
         }
 
         //See if the role has all access
-        $all = $input['associated-permissions'] == 'all' ? true : false;
+        $all = 'all' === $input['associated-permissions'] ? true : false;
 
         if (! isset($input['permissions'])) {
             $input['permissions'] = [];
@@ -73,7 +73,7 @@ class RoleRepository extends BaseRepository
         //This config is only required if all is false
         if (! $all) {
             //See if the role must contain a permission as per config
-            if (config('access.roles.role_must_contain_permission') && count($input['permissions']) == 0) {
+            if (config('access.roles.role_must_contain_permission') && 0 === \count($input['permissions'])) {
                 throw new GeneralException(trans('exceptions.backend.access.roles.needs_permission'));
             }
         }
@@ -82,7 +82,7 @@ class RoleRepository extends BaseRepository
             $role = self::MODEL;
             $role = new $role();
             $role->name = $input['name'];
-            $role->sort = isset($input['sort']) && strlen($input['sort']) > 0 && is_numeric($input['sort']) ? (int) $input['sort'] : 0;
+            $role->sort = isset($input['sort']) && \mb_strlen($input['sort']) > 0 && is_numeric($input['sort']) ? (int) $input['sort'] : 0;
 
             //See if this role has all permissions and set the flag on the role
             $role->all = $all;
@@ -91,7 +91,7 @@ class RoleRepository extends BaseRepository
                 if (! $all) {
                     $permissions = [];
 
-                    if (is_array($input['permissions']) && count($input['permissions'])) {
+                    if (\is_array($input['permissions']) && \count($input['permissions'])) {
                         foreach ($input['permissions'] as $perm) {
                             if (is_numeric($perm)) {
                                 array_push($permissions, $perm);
@@ -122,10 +122,10 @@ class RoleRepository extends BaseRepository
     public function update(Model $role, array $input)
     {
         //See if the role has all access, administrator always has all access
-        if ($role->id == 1) {
+        if (1 === $role->id) {
             $all = true;
         } else {
-            $all = $input['associated-permissions'] == 'all' ? true : false;
+            $all = 'all' === $input['associated-permissions'] ? true : false;
         }
 
         if (! isset($input['permissions'])) {
@@ -135,13 +135,13 @@ class RoleRepository extends BaseRepository
         //This config is only required if all is false
         if (! $all) {
             //See if the role must contain a permission as per config
-            if (config('access.roles.role_must_contain_permission') && count($input['permissions']) == 0) {
+            if (config('access.roles.role_must_contain_permission') && 0 === \count($input['permissions'])) {
                 throw new GeneralException(trans('exceptions.backend.access.roles.needs_permission'));
             }
         }
 
         $role->name = $input['name'];
-        $role->sort = isset($input['sort']) && strlen($input['sort']) > 0 && is_numeric($input['sort']) ? (int) $input['sort'] : 0;
+        $role->sort = isset($input['sort']) && \mb_strlen($input['sort']) > 0 && is_numeric($input['sort']) ? (int) $input['sort'] : 0;
 
         //See if this role has all permissions and set the flag on the role
         $role->all = $all;
@@ -158,7 +158,7 @@ class RoleRepository extends BaseRepository
                     //Attach permissions if the role does not have all access
                     $permissions = [];
 
-                    if (is_array($input['permissions']) && count($input['permissions'])) {
+                    if (\is_array($input['permissions']) && \count($input['permissions'])) {
                         foreach ($input['permissions'] as $perm) {
                             if (is_numeric($perm)) {
                                 array_push($permissions, $perm);
@@ -188,7 +188,7 @@ class RoleRepository extends BaseRepository
     public function delete(Model $role)
     {
         //Would be stupid to delete the administrator role
-        if ($role->id == 1) { //id is 1 because of the seeder
+        if (1 === $role->id) { //id is 1 because of the seeder
             throw new GeneralException(trans('exceptions.backend.access.roles.cant_delete_admin'));
         }
 

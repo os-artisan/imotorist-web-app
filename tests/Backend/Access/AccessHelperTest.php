@@ -10,12 +10,12 @@ class AccessHelperTest extends BrowserKitTestCase
     public function testAccessUser()
     {
         $this->actingAs($this->user);
-        $this->assertEquals(auth()->user(), access()->user());
+        $this->assertSame(auth()->user(), access()->user());
     }
 
     public function testAccessGuest()
     {
-        $this->assertEquals(auth()->guest(), access()->guest());
+        $this->assertSame(auth()->guest(), access()->guest());
     }
 
     public function testAccessLogout()
@@ -29,13 +29,13 @@ class AccessHelperTest extends BrowserKitTestCase
     public function testAccessGetsUserId()
     {
         $this->actingAs($this->user);
-        $this->assertEquals(auth()->id(), access()->id());
+        $this->assertSame(auth()->id(), access()->id());
     }
 
     public function testAccessLogsUserInById()
     {
         access()->loginUsingId(3);
-        $this->assertEquals(auth()->user(), access()->user());
+        $this->assertSame(auth()->user(), access()->user());
     }
 
     public function testAccessHasRole()

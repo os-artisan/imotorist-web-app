@@ -129,7 +129,7 @@ class LoggedOutRouteTest extends BrowserKitTestCase
     public function test404Page()
     {
         $response = $this->call('GET', '7g48hwbfw9eufj');
-        $this->assertEquals(404, $response->getStatusCode());
+        $this->assertSame(404, $response->getStatusCode());
         $this->assertContains('Page Not Found', $response->getContent());
     }
 }

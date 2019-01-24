@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | History Language Lines
@@ -13,10 +12,10 @@ return [
     */
 
     'backend' => [
-        'none'            => 'Er is geen recente geschiedenis.',
-        'none_for_type'   => 'Er is geen geschiedenis voor dit type.',
+        'none' => 'Er is geen recente geschiedenis.',
+        'none_for_type' => 'Er is geen geschiedenis voor dit type.',
         'none_for_entity' => 'Er is geen geschiedenis voor deze :entity.',
-        'recent_history'  => 'Recente Geschiedenis',
+        'recent_history' => 'Recente Geschiedenis',
 
         'roles' => [
             'created' => 'rol aangemaakt',
@@ -24,14 +23,14 @@ return [
             'updated' => 'rol aangepast',
         ],
         'users' => [
-            'changed_password'    => 'wachtwoord verandert voor gebruiker',
-            'created'             => 'gebruiker aangemaakt',
-            'deactivated'         => 'gebruiker gedeactiveerd',
-            'deleted'             => 'gebruiker verwijdert',
+            'changed_password' => 'wachtwoord verandert voor gebruiker',
+            'created' => 'gebruiker aangemaakt',
+            'deactivated' => 'gebruiker gedeactiveerd',
+            'deleted' => 'gebruiker verwijdert',
             'permanently_deleted' => 'gebruiker permanent verwijdert',
-            'updated'             => 'gebruiker aangepast',
-            'reactivated'         => 'gebruiker geheractiveerd',
-            'restored'            => 'gebruiker hersteld',
+            'updated' => 'gebruiker aangepast',
+            'reactivated' => 'gebruiker geheractiveerd',
+            'restored' => 'gebruiker hersteld',
         ],
     ],
 ];

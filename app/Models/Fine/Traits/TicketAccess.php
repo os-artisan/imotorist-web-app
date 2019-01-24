@@ -16,11 +16,11 @@ trait TicketAccess
      */
     public function attachOffence($offence)
     {
-        if (is_object($offence)) {
+        if (\is_object($offence)) {
             $offence = $offence->getKey();
         }
 
-        if (is_array($offence)) {
+        if (\is_array($offence)) {
             $offence = $offence['id'];
         }
 
@@ -36,11 +36,11 @@ trait TicketAccess
      */
     public function detachOffence($offence)
     {
-        if (is_object($offence)) {
+        if (\is_object($offence)) {
             $offence = $offence->getKey();
         }
 
-        if (is_array($offence)) {
+        if (\is_array($offence)) {
             $offence = $offence['id'];
         }
 

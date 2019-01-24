@@ -14,14 +14,15 @@ class PaymentController extends Controller
     /**
      * complete payment.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function checkout(Request $request)
     {
         // Valid and unpaid tickets.
         $this->validate($request, [
-            'ticket_no'      => 'required|array|exists:tickets,ticket_no,paid,0',
+            'ticket_no' => 'required|array|exists:tickets,ticket_no,paid,0',
         ], [
             'ticket_no.exists' => 'This ticket is not found or has already been paid.',
         ]);
@@ -40,11 +41,11 @@ class PaymentController extends Controller
         $total = $subtotal + $convenience;
 
         $input = [
-            'user_id'       => Auth::user()->id,
-            'token'         => unique_random(config('fine.payments_table'), 'token', config('fine.payment_token.length')),
-            'subtotal'      => $subtotal,
-            'convenience'   => $convenience,
-            'total'         => $total,
+            'user_id' => Auth::user()->id,
+            'token' => unique_random(config('fine.payments_table'), 'token', config('fine.payment_token.length')),
+            'subtotal' => $subtotal,
+            'convenience' => $convenience,
+            'total' => $total,
         ];
 
         $payment = Payment::create($input);
@@ -62,18 +63,19 @@ class PaymentController extends Controller
     /**
      * complete payment.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function completePayment(Request $request)
     {
         // Get only valid and unpaid orders.
         $this->validate($request, [
-            'token'         => 'required|exists:payments,token,status,0',
-            'name'          => 'required',
-            'number'        => 'required',
-            'expiry'        => 'required',
-            'cvc'           => 'numeric|digits_between:3,4',
+            'token' => 'required|exists:payments,token,status,0',
+            'name' => 'required',
+            'number' => 'required',
+            'expiry' => 'required',
+            'cvc' => 'numeric|digits_between:3,4',
         ], [
             'token.exists' => 'There was an error processing your order. Please contact us or try again later.',
         ]);
@@ -89,14 +91,14 @@ class PaymentController extends Controller
         $url = 'http://www.dummypaymentgateway2.somee.com/payment';
 
         $params = [
-                'token'         => $request->token,
-                'card_type'     => 'VISA',
-                'card_no'       => $card_no,
-                'cvv'           => $request->cvc,
-                'card_name'     => $request->name,
-                'exp_year'      => $year,
-                'exp_month'     => $month,
-                'amount'        => $total,
+                'token' => $request->token,
+                'card_type' => 'VISA',
+                'card_no' => $card_no,
+                'cvv' => $request->cvc,
+                'card_name' => $request->name,
+                'exp_year' => $year,
+                'exp_month' => $month,
+                'amount' => $total,
         ];
 
         $header = [
@@ -122,7 +124,7 @@ class PaymentController extends Controller
 
         $return = [];
 
-        if (! $is_success && ! is_null($error)) {
+        if (! $is_success && null !== $error) {
             $return = ['error' => $error];
         } elseif ($is_success) {
             $payment = Payment::where('token', $token)->first();

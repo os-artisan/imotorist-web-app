@@ -3,7 +3,6 @@
 use App\Models\Access\User\User;
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Authentication Defaults
@@ -100,5 +99,4 @@ return [
             'expire' => 60,
         ],
     ],
-
 ];

@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Session Driver
@@ -186,6 +185,5 @@ return [
     |
     */
     'timeout_status' => env('SESSION_TIMEOUT_STATUS', true),
-    'timeout'        => env('SESSION_TIMEOUT', 600),
-
+    'timeout' => env('SESSION_TIMEOUT', 600),
 ];

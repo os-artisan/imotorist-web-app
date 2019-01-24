@@ -54,6 +54,7 @@ class User extends Authenticatable
 
     /**
      * The dynamic attributes from mutators that should be returned with the user object.
+     *
      * @var array
      */
     protected $appends = ['full_name', 'name'];

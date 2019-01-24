@@ -102,7 +102,7 @@ class UserRepository extends BaseRepository
     public function create(array $data, $provider = false)
     {
         $user = self::MODEL;
-        $user = new $user;
+        $user = new $user();
         $user->surname = $data['surname'];
         $user->other_names = $data['other_names'];
         $user->email = $data['email'];
@@ -126,7 +126,7 @@ class UserRepository extends BaseRepository
          *
          * If this is a social account they are confirmed through the social provider by default
          */
-        if (config('access.users.confirm_email') && $provider === false) {
+        if (config('access.users.confirm_email') && false === $provider) {
             $user->notify(new UserNeedsConfirmation($user->confirmation_code));
         }
 
@@ -140,8 +140,9 @@ class UserRepository extends BaseRepository
      * @param $data
      * @param $provider
      *
-     * @return UserRepository|bool
      * @throws GeneralException
+     *
+     * @return UserRepository|bool
      */
     public function findOrCreateSocial($data, $provider)
     {
@@ -166,8 +167,8 @@ class UserRepository extends BaseRepository
             $nameParts = $this->getNameParts($data->getName());
 
             $user = $this->create([
-                'surname'  => $nameParts['surname'],
-                'other_names'  => $nameParts['other_names'],
+                'surname' => $nameParts['surname'],
+                'other_names' => $nameParts['other_names'],
                 'email' => $user_email,
             ], true);
         }
@@ -176,16 +177,16 @@ class UserRepository extends BaseRepository
         if (! $user->hasProvider($provider)) {
             // Gather the provider data for saving and associate it with the user
             $user->providers()->save(new SocialLogin([
-                'provider'    => $provider,
+                'provider' => $provider,
                 'provider_id' => $data->id,
-                'token'       => $data->token,
-                'avatar'      => $data->avatar,
+                'token' => $data->token,
+                'avatar' => $data->avatar,
             ]));
         } else {
             // Update the users information, token and avatar can be updated.
             $user->providers()->update([
-                'token'       => $data->token,
-                'avatar'      => $data->avatar,
+                'token' => $data->token,
+                'avatar' => $data->avatar,
             ]);
         }
 
@@ -204,11 +205,11 @@ class UserRepository extends BaseRepository
     {
         $user = $this->findByConfirmationToken($token);
 
-        if ($user->confirmed == 1) {
+        if (1 === $user->confirmed) {
             throw new GeneralException(trans('exceptions.frontend.auth.confirmation.already_confirmed'));
         }
 
-        if ($user->confirmation_code == $token) {
+        if ($user->confirmation_code === $token) {
             $user->confirmed = 1;
 
             event(new UserConfirmed($user));
@@ -235,7 +236,7 @@ class UserRepository extends BaseRepository
 
         if ($user->canChangeEmail()) {
             //Address is not current address
-            if ($user->email != $input['email']) {
+            if ($user->email !== $input['email']) {
                 //Emails have to be unique
                 if ($this->findByEmail($input['email'])) {
                     throw new GeneralException(trans('exceptions.frontend.auth.email_taken'));
@@ -289,7 +290,7 @@ class UserRepository extends BaseRepository
     {
         $parts = array_values(array_filter(explode(' ', $fullName)));
 
-        $size = count($parts);
+        $size = \count($parts);
 
         $result = [];
 
@@ -298,7 +299,7 @@ class UserRepository extends BaseRepository
             $result['other_names'] = null;
         }
 
-        if (! empty($parts) && $size == 1) {
+        if (! empty($parts) && 1 === $size) {
             $result['surname'] = $parts[0];
             $result['other_names'] = null;
         }

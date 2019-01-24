@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Menus Language Lines
@@ -18,35 +17,35 @@ return [
             'title' => 'Adgangsadministration',
 
             'roles' => [
-                'all'        => 'Alle Roller',
-                'create'     => 'Opret Rolle',
-                'edit'       => 'Rediger Rolle',
+                'all' => 'Alle Roller',
+                'create' => 'Opret Rolle',
+                'edit' => 'Rediger Rolle',
                 'management' => 'Rolleadministration',
-                'main'       => 'Roller',
+                'main' => 'Roller',
             ],
 
             'users' => [
-                'all'             => 'Alle Brugere',
+                'all' => 'Alle Brugere',
                 'change-password' => 'Skift Adgangskode',
-                'create'          => 'Opret Bruger',
-                'deactivated'     => 'Deaktiverede Brugere',
-                'deleted'         => 'Slet Bruger',
-                'edit'            => 'Rediger Bruger',
-                'main'            => 'Brugere',
-                'view'            => 'View User',
+                'create' => 'Opret Bruger',
+                'deactivated' => 'Deaktiverede Brugere',
+                'deleted' => 'Slet Bruger',
+                'edit' => 'Rediger Bruger',
+                'main' => 'Brugere',
+                'view' => 'View User',
             ],
         ],
 
         'log-viewer' => [
-            'main'      => 'Logbog',
+            'main' => 'Logbog',
             'dashboard' => 'Dashboard',
-            'logs'      => 'Logbog',
+            'logs' => 'Logbog',
         ],
 
         'sidebar' => [
             'dashboard' => 'Betjeningspanel',
-            'general'   => 'Generelt',
-            'system'    => 'System',
+            'general' => 'Generelt',
+            'system' => 'System',
         ],
     ],
 
@@ -59,24 +58,24 @@ return [
          * Be sure to add the new language in alphabetical order.
          */
         'langs' => [
-            'ar'    => 'Arabisk (Arabic)',
-            'zh'    => '(Chinese Simplified)',
+            'ar' => 'Arabisk (Arabic)',
+            'zh' => '(Chinese Simplified)',
             'zh-TW' => '(Chinese Traditional)',
-            'da'    => 'Dansk (Danish)',
-            'de'    => 'Tysk (German)',
-            'el'    => '(Greek)',
-            'en'    => 'Engelsk (English)',
-            'es'    => 'Spansk (Spanish)',
-            'fr'    => 'Fransk (French)',
-            'id'    => 'Indonesisk (Indonesian)',
-            'it'    => 'Italiensk (Italian)',
-            'ja'    => '(Japanese)',
-            'nl'    => 'Hollandsk (Dutch)',
+            'da' => 'Dansk (Danish)',
+            'de' => 'Tysk (German)',
+            'el' => '(Greek)',
+            'en' => 'Engelsk (English)',
+            'es' => 'Spansk (Spanish)',
+            'fr' => 'Fransk (French)',
+            'id' => 'Indonesisk (Indonesian)',
+            'it' => 'Italiensk (Italian)',
+            'ja' => '(Japanese)',
+            'nl' => 'Hollandsk (Dutch)',
             'pt_BR' => 'Brasiliansk portugisisk (Brazilian Portuguese)',
-            'ru'    => 'Russisk (Russian)',
-            'sv'    => 'Svensk (Swedish)',
-            'th'    => '(Thai)',
-            'tr'    => '(Turkish)',
+            'ru' => 'Russisk (Russian)',
+            'sv' => 'Svensk (Swedish)',
+            'th' => '(Thai)',
+            'tr' => '(Turkish)',
         ],
     ],
 ];

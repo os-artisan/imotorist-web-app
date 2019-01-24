@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Menus Language Lines
@@ -18,35 +17,35 @@ return [
             'title' => 'Access Management',
 
             'roles' => [
-                'all'        => 'Όλοι οι ρόλοι',
-                'create'     => 'Δημιουργία ρόλου',
-                'edit'       => 'Επεξεργασία ρόλου',
+                'all' => 'Όλοι οι ρόλοι',
+                'create' => 'Δημιουργία ρόλου',
+                'edit' => 'Επεξεργασία ρόλου',
                 'management' => 'Διαχείρηση ρόλων',
-                'main'       => 'Ρόλοι',
+                'main' => 'Ρόλοι',
             ],
 
             'users' => [
-                'all'             => 'Όλοι οι χρήστες',
+                'all' => 'Όλοι οι χρήστες',
                 'change-password' => 'Αλλαγή κωδικού',
-                'create'          => 'Δημιουργία χρήστη',
-                'deactivated'     => 'Ανενεργοί χρήστες',
-                'deleted'         => 'Διεγραμμένοι χρήστες',
-                'edit'            => 'Επεξεργασία χρήστη',
-                'main'            => 'Χρήστες',
-                'view'            => 'Δες το χρήστη',
+                'create' => 'Δημιουργία χρήστη',
+                'deactivated' => 'Ανενεργοί χρήστες',
+                'deleted' => 'Διεγραμμένοι χρήστες',
+                'edit' => 'Επεξεργασία χρήστη',
+                'main' => 'Χρήστες',
+                'view' => 'Δες το χρήστη',
             ],
         ],
 
         'log-viewer' => [
-            'main'      => 'Log Viewer',
+            'main' => 'Log Viewer',
             'dashboard' => 'Dashboard',
-            'logs'      => 'Logs',
+            'logs' => 'Logs',
         ],
 
         'sidebar' => [
             'dashboard' => 'Dashboard',
-            'general'   => 'Γενικά',
-            'system'    => 'Σύστημα',
+            'general' => 'Γενικά',
+            'system' => 'Σύστημα',
         ],
     ],
 
@@ -59,24 +58,24 @@ return [
          * Be sure to add the new language in alphabetical order.
          */
         'langs' => [
-            'ar'    => 'Αραβικά (Arabic)',
-            'zh'    => '(Chinese Simplified)',
+            'ar' => 'Αραβικά (Arabic)',
+            'zh' => '(Chinese Simplified)',
             'zh-TW' => '(Chinese Traditional)',
-            'da'    => 'Δανέζικα (Danish)',
-            'de'    => 'Γερμανικά (German)',
-            'el'    => 'Ελληνικά (Greek)',
-            'en'    => 'Αγγλικά (English)',
-            'es'    => 'Ισπανικά (Spanish)',
-            'fr'    => 'Γαλλικά (French)',
-            'id'    => 'Ινδονησίας (Indonesian)',
-            'it'    => 'Ιταλικά (Italian)',
-            'ja'    => '(Japanese)',
-            'nl'    => 'Ολλανδικά (Dutch)',
+            'da' => 'Δανέζικα (Danish)',
+            'de' => 'Γερμανικά (German)',
+            'el' => 'Ελληνικά (Greek)',
+            'en' => 'Αγγλικά (English)',
+            'es' => 'Ισπανικά (Spanish)',
+            'fr' => 'Γαλλικά (French)',
+            'id' => 'Ινδονησίας (Indonesian)',
+            'it' => 'Ιταλικά (Italian)',
+            'ja' => '(Japanese)',
+            'nl' => 'Ολλανδικά (Dutch)',
             'pt_BR' => '(Brazilian Portuguese)',
-            'ru'    => 'Ρωσικός (Russian)',
-            'sv'    => 'Σουηδικά (Swedish)',
-            'th'    => 'Ταιλανδέζικα (Thai)',
-            'tr'    => '(Turkish)',
+            'ru' => 'Ρωσικός (Russian)',
+            'sv' => 'Σουηδικά (Swedish)',
+            'th' => 'Ταιλανδέζικα (Thai)',
+            'tr' => '(Turkish)',
         ],
     ],
 ];

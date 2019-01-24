@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Labels Language Lines
@@ -14,86 +13,86 @@ return [
     */
 
     'general' => [
-        'all'     => 'Hepsi',
-        'yes'     => 'Evet',
-        'no'      => 'Hayır',
-        'custom'  => 'Özel',
+        'all' => 'Hepsi',
+        'yes' => 'Evet',
+        'no' => 'Hayır',
+        'custom' => 'Özel',
         'actions' => 'İşlemler',
-        'active'  => 'Etkin',
+        'active' => 'Etkin',
         'buttons' => [
-            'save'   => 'Kaydet',
+            'save' => 'Kaydet',
             'update' => 'Güncelle',
         ],
-        'hide'              => 'Gizle',
-        'inactive'          => 'Etkin değil',
-        'none'              => 'Hiçbiri',
-        'show'              => 'Göster',
+        'hide' => 'Gizle',
+        'inactive' => 'Etkin değil',
+        'none' => 'Hiçbiri',
+        'show' => 'Göster',
         'toggle_navigation' => 'Navigasyon Açık',
     ],
 
     'backend' => [
         'access' => [
             'roles' => [
-                'create'     => 'Rol Oluştur',
-                'edit'       => 'Rol Düzenle',
+                'create' => 'Rol Oluştur',
+                'edit' => 'Rol Düzenle',
                 'management' => 'Rol Yönetimi',
 
                 'table' => [
                     'number_of_users' => 'Kullanıcı Sayısı',
-                    'permissions'     => 'İzinler',
-                    'role'            => 'Rol',
-                    'sort'            => 'Sıralama',
-                    'total'           => 'rol toplam|roller toplam',
+                    'permissions' => 'İzinler',
+                    'role' => 'Rol',
+                    'sort' => 'Sıralama',
+                    'total' => 'rol toplam|roller toplam',
                 ],
             ],
 
             'users' => [
-                'active'              => 'Aktif Kullanıcılar',
-                'all_permissions'     => 'Tüm İzinler',
-                'change_password'     => 'Parolayı Değiştir',
+                'active' => 'Aktif Kullanıcılar',
+                'all_permissions' => 'Tüm İzinler',
+                'change_password' => 'Parolayı Değiştir',
                 'change_password_for' => 'Kullanıcı :user parolasını değiştir',
-                'create'              => 'Kullanıcı Oluştur',
-                'deactivated'         => 'Devre Dışı Bırakılan Kullanıcılar',
-                'deleted'             => 'Silinmiş Kullanıcılar',
-                'edit'                => 'Kullanıcı Düzenle',
-                'management'          => 'Kullanıcı Yönetimi',
-                'no_permissions'      => 'İzin yok.',
-                'no_roles'            => 'Ayarlanacak Rol yok.',
-                'permissions'         => 'İzinler',
+                'create' => 'Kullanıcı Oluştur',
+                'deactivated' => 'Devre Dışı Bırakılan Kullanıcılar',
+                'deleted' => 'Silinmiş Kullanıcılar',
+                'edit' => 'Kullanıcı Düzenle',
+                'management' => 'Kullanıcı Yönetimi',
+                'no_permissions' => 'İzin yok.',
+                'no_roles' => 'Ayarlanacak Rol yok.',
+                'permissions' => 'İzinler',
 
                 'table' => [
-                    'confirmed'      => 'Onaylandı',
-                    'created'        => 'Oluşturuldu',
-                    'email'          => 'E-posta',
-                    'id'             => 'ID',
-                    'last_updated'   => 'Son Güncelleme',
-                    'name'           => 'İsim',
-                    'surname'     => 'Ad',
-                    'other_names'      => 'Soyad',
+                    'confirmed' => 'Onaylandı',
+                    'created' => 'Oluşturuldu',
+                    'email' => 'E-posta',
+                    'id' => 'ID',
+                    'last_updated' => 'Son Güncelleme',
+                    'name' => 'İsim',
+                    'surname' => 'Ad',
+                    'other_names' => 'Soyad',
                     'no_deactivated' => 'Devre Dışı Bırakılan Kullanıcı Yok',
-                    'no_deleted'     => 'Silinmiş Kullanıcı Yok',
-                    'roles'          => 'Roller',
-                    'total'          => 'toplam kullanıcı|toplam kullanıcılar',
+                    'no_deleted' => 'Silinmiş Kullanıcı Yok',
+                    'roles' => 'Roller',
+                    'total' => 'toplam kullanıcı|toplam kullanıcılar',
                 ],
 
                 'tabs' => [
                     'titles' => [
                         'overview' => 'Genel Bakış',
-                        'history'  => 'Geçmiş',
+                        'history' => 'Geçmiş',
                     ],
 
                     'content' => [
                         'overview' => [
-                            'avatar'       => 'Avatar',
-                            'confirmed'    => 'Onaylandı',
-                            'created_at'   => 'Oluşturulma',
-                            'deleted_at'   => 'Silinme',
-                            'email'        => 'E-posta',
+                            'avatar' => 'Avatar',
+                            'confirmed' => 'Onaylandı',
+                            'created_at' => 'Oluşturulma',
+                            'deleted_at' => 'Silinme',
+                            'email' => 'E-posta',
                             'last_updated' => 'Son Güncellenme',
-                            'name'         => 'İsim',
-                            'surname'   => 'Ad',
-                            'other_names'    => 'Soyad',
-                            'status'       => 'Durum',
+                            'name' => 'İsim',
+                            'surname' => 'Ad',
+                            'other_names' => 'Soyad',
+                            'status' => 'Durum',
                         ],
                     ],
                 ],
@@ -104,28 +103,27 @@ return [
     ],
 
     'frontend' => [
-
         'auth' => [
-            'login_box_title'    => 'Giriş',
-            'login_button'       => 'Giriş',
-            'login_with'         => 'Şununla Gir :social_media',
+            'login_box_title' => 'Giriş',
+            'login_button' => 'Giriş',
+            'login_with' => 'Şununla Gir :social_media',
             'register_box_title' => 'Kayıt',
-            'register_button'    => 'Kayıt',
-            'remember_me'        => 'Beni Hatırla',
+            'register_button' => 'Kayıt',
+            'remember_me' => 'Beni Hatırla',
         ],
 
         'passwords' => [
-            'forgot_password'                 => 'Parolanızı mı Unuttunuz?',
-            'reset_password_box_title'        => 'Parola Sıfırla',
-            'reset_password_button'           => 'Parola Sıfırla',
+            'forgot_password' => 'Parolanızı mı Unuttunuz?',
+            'reset_password_box_title' => 'Parola Sıfırla',
+            'reset_password_button' => 'Parola Sıfırla',
             'send_password_reset_link_button' => 'Parolayı Sıfırlama Bağlantısı Gönder',
         ],
 
         'macros' => [
             'country' => [
-                'alpha'   => 'Ülke Alfa Kodları',
-                'alpha2'  => 'Ülke Alfa2 Kodları',
-                'alpha3'  => 'Ülke Alfa3 Kodları',
+                'alpha' => 'Ülke Alfa Kodları',
+                'alpha2' => 'Ülke Alfa2 Kodları',
+                'alpha3' => 'Ülke Alfa3 Kodları',
                 'numeric' => 'Ülke Sayısal Kodları',
             ],
 
@@ -133,10 +131,10 @@ return [
 
             'state' => [
                 'mexico' => 'Meksika Devlet Listesi',
-                'us'     => [
-                    'us'       => 'ABD Eyaletleri',
+                'us' => [
+                    'us' => 'ABD Eyaletleri',
                     'outlying' => 'ABD Dış Bölgeler',
-                    'armed'    => 'ABD Silahlı Kuvvetleri',
+                    'armed' => 'ABD Silahlı Kuvvetleri',
                 ],
             ],
 
@@ -153,17 +151,16 @@ return [
             ],
 
             'profile' => [
-                'avatar'             => 'Avatar',
-                'created_at'         => 'Oluşturulma',
-                'edit_information'   => 'Bilgileri Düzenle',
-                'email'              => 'E-posta',
-                'last_updated'       => 'Son Güncelleme',
-                'name'               => 'İsim',
-                'surname'         => 'Ad',
-                'other_names'          => 'Soyad',
+                'avatar' => 'Avatar',
+                'created_at' => 'Oluşturulma',
+                'edit_information' => 'Bilgileri Düzenle',
+                'email' => 'E-posta',
+                'last_updated' => 'Son Güncelleme',
+                'name' => 'İsim',
+                'surname' => 'Ad',
+                'other_names' => 'Soyad',
                 'update_information' => 'Bilgileri Güncelle',
             ],
         ],
-
     ],
 ];

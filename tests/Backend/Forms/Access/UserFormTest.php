@@ -186,11 +186,11 @@ class UserFormTest extends BrowserKitTestCase
              ->see('The user was successfully updated.')
              ->seeInDatabase(config('access.users_table'),
                  [
-                     'id'        => $this->user->id,
-                     'surname'      => 'User',
-                     'other_names'      => 'New',
-                     'email'     => 'user2@user.com',
-                     'status'    => 0,
+                     'id' => $this->user->id,
+                     'surname' => 'User',
+                     'other_names' => 'New',
+                     'email' => 'user2@user.com',
+                     'status' => 0,
                      'confirmed' => 0,
                  ])
              ->seeInDatabase(config('access.role_user_table'), ['user_id' => $this->user->id, 'role_id' => 2])
