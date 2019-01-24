@@ -161,6 +161,14 @@ return [
                     'send_confirmation_email' => 'Send Confirmation E-mail',
                 ],
             ],
+            'fine' => [
+                'offences' => [
+                    'description' => 'Description',
+                    'description_si' => 'Description (si)',
+                    'fine' => 'Fine',
+                    'dip' => 'DIP',
+                ],
+            ],
         ],
 
         'frontend' => [

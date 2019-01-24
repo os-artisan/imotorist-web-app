@@ -32,5 +32,10 @@ return [
             'reactivated' => 'reactivated user',
             'restored' => 'restored user',
         ],
+        'offences' => [
+            'created' => 'created offence',
+            'deleted' => 'deleted offence',
+            'updated' => 'updated offence',
+        ],
     ],
 ];

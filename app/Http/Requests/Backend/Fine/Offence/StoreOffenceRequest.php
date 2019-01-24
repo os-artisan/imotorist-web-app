@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Requests\Backend\Fine;
+namespace App\Http\Requests\Backend\Fine\Offence;
 
 use App\Http\Requests\Request;
 
 /**
- * Class ManageOffenceRequest.
+ * Class StoreOffenceRequest.
  */
-class ManageOffenceRequest extends Request
+class StoreOffenceRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -27,6 +27,10 @@ class ManageOffenceRequest extends Request
     public function rules()
     {
         return [
+            'description' => 'required|max:191',
+            'description_si' => 'required|max:191',
+            'fine' => 'required|numeric|min:0',
+            'dip' => 'required|numeric|min:0',
         ];
     }
 }

@@ -45,6 +45,15 @@ return [
                 'update_password_error' => 'There was a problem changing this users password. Please try again.',
             ],
         ],
+
+        'fine' => [
+            'offences' => [
+                'create_error' => 'There was a problem creating this offence. Please try again.',
+                'delete_error' => 'There was a problem deleting this offence. Please try again.',
+                'not_found' => 'That offence does not exist.',
+                'update_error' => 'There was a problem updating this offence. Please try again.',
+            ],
+        ],
     ],
 
     'frontend' => [

@@ -8,15 +8,9 @@ use Illuminate\Support\Facades\DB;
 use App\Exceptions\GeneralException;
 use App\Repositories\BaseRepository;
 use Illuminate\Database\Eloquent\Model;
-use App\Events\Backend\Access\User\UserCreated;
-use App\Events\Backend\Access\User\UserDeleted;
-use App\Events\Backend\Access\User\UserUpdated;
-use App\Events\Backend\Access\User\UserRestored;
-use App\Events\Backend\Access\User\UserDeactivated;
-use App\Events\Backend\Access\User\UserReactivated;
-use App\Events\Backend\Access\User\UserPasswordChanged;
-use App\Events\Backend\Access\User\UserPermanentlyDeleted;
-use App\Notifications\Frontend\Auth\UserNeedsConfirmation;
+use App\Events\Backend\Fine\Offence\OffenceCreated;
+use App\Events\Backend\Fine\Offence\OffenceDeleted;
+use App\Events\Backend\Fine\Offence\OffenceUpdated;
 
 /**
  * Class OffenceRepository.
@@ -56,192 +50,61 @@ class OffenceRepository extends BaseRepository
      */
     public function create($input)
     {
-        $data = $input['data'];
-        $roles = $input['roles'];
+        $offence = $this->createOffenceStub($input);
 
-        $user = $this->createUserStub($data);
-
-        DB::transaction(function () use ($user, $data, $roles) {
-            if ($user->save()) {
-                //User Created, Validate Roles
-                if (! \count($roles['assignees_roles'])) {
-                    throw new GeneralException(trans('exceptions.backend.access.users.role_needed_create'));
-                }
-
-                //Attach new roles
-                $user->attachRoles($roles['assignees_roles']);
-
-                //Send confirmation email if requested
-                if (isset($data['confirmation_email']) && 0 === $user->confirmed) {
-                    $user->notify(new UserNeedsConfirmation($user->confirmation_code));
-                }
-
-                event(new UserCreated($user));
+        DB::transaction(function () use ($offence, $input) {
+            if ($offence->save()) {
+                event(new OffenceCreated($offence));
 
                 return true;
             }
 
-            throw new GeneralException(trans('exceptions.backend.access.users.create_error'));
+            throw new GeneralException(trans('exceptions.backend.fine.offences.create_error'));
         });
     }
 
     /**
-     * @param Model $user
+     * @param Model $offence
      * @param array $input
      *
      * @throws GeneralException
      *
      * @return bool
      */
-    public function update(Model $user, array $input)
+    public function update(Model $offence, array $input)
     {
-        $data = $input['data'];
-        $roles = $input['roles'];
+        $offence->description = $input['description'];
+        $offence->description_si = $input['description_si'];
+        $offence->fine = $input['fine'];
+        $offence->dip = $input['dip'];
 
-        $this->checkUserByEmail($data, $user);
-
-        $user->surname = $data['surname'];
-        $user->other_names = $data['other_names'];
-        $user->email = $data['email'];
-        $user->status = isset($data['status']) ? 1 : 0;
-        $user->confirmed = isset($data['confirmed']) ? 1 : 0;
-
-        DB::transaction(function () use ($user, $data, $roles) {
-            if ($user->save()) {
-                $this->checkUserRolesCount($roles);
-                $this->flushRoles($roles, $user);
-
-                event(new UserUpdated($user));
+        DB::transaction(function () use ($offence, $input) {
+            if ($offence->save()) {
+                event(new OffenceUpdated($offence));
 
                 return true;
             }
 
-            throw new GeneralException(trans('exceptions.backend.access.users.update_error'));
+            throw new GeneralException(trans('exceptions.backend.fine.offences.update_error'));
         });
     }
 
     /**
-     * @param Model $user
-     * @param $input
+     * @param Model $offence
      *
      * @throws GeneralException
      *
      * @return bool
      */
-    public function updatePassword(Model $user, $input)
+    public function delete(Model $offence)
     {
-        $user->password = bcrypt($input['password']);
-
-        if ($user->save()) {
-            event(new UserPasswordChanged($user));
+        if ($offence->delete()) {
+            event(new OffenceDeleted($offence));
 
             return true;
         }
 
-        throw new GeneralException(trans('exceptions.backend.access.users.update_password_error'));
-    }
-
-    /**
-     * @param Model $user
-     *
-     * @throws GeneralException
-     *
-     * @return bool
-     */
-    public function delete(Model $user)
-    {
-        if (access()->id() === $user->id) {
-            throw new GeneralException(trans('exceptions.backend.access.users.cant_delete_self'));
-        }
-
-        if (1 === $user->id) {
-            throw new GeneralException(trans('exceptions.backend.access.users.cant_delete_admin'));
-        }
-
-        if ($user->delete()) {
-            event(new UserDeleted($user));
-
-            return true;
-        }
-
-        throw new GeneralException(trans('exceptions.backend.access.users.delete_error'));
-    }
-
-    /**
-     * @param Model $user
-     *
-     * @throws GeneralException
-     */
-    public function forceDelete(Model $user)
-    {
-        if (null === $user->deleted_at) {
-            throw new GeneralException(trans('exceptions.backend.access.users.delete_first'));
-        }
-
-        DB::transaction(function () use ($user) {
-            if ($user->forceDelete()) {
-                event(new UserPermanentlyDeleted($user));
-
-                return true;
-            }
-
-            throw new GeneralException(trans('exceptions.backend.access.users.delete_error'));
-        });
-    }
-
-    /**
-     * @param Model $user
-     *
-     * @throws GeneralException
-     *
-     * @return bool
-     */
-    public function restore(Model $user)
-    {
-        if (null === $user->deleted_at) {
-            throw new GeneralException(trans('exceptions.backend.access.users.cant_restore'));
-        }
-
-        if ($user->restore()) {
-            event(new UserRestored($user));
-
-            return true;
-        }
-
-        throw new GeneralException(trans('exceptions.backend.access.users.restore_error'));
-    }
-
-    /**
-     * @param Model $user
-     * @param $status
-     *
-     * @throws GeneralException
-     *
-     * @return bool
-     */
-    public function mark(Model $user, $status)
-    {
-        if (access()->id() === $user->id && 0 === $status) {
-            throw new GeneralException(trans('exceptions.backend.access.users.cant_deactivate_self'));
-        }
-
-        $user->status = $status;
-
-        switch ($status) {
-            case 0:
-                event(new UserDeactivated($user));
-            break;
-
-            case 1:
-                event(new UserReactivated($user));
-            break;
-        }
-
-        if ($user->save()) {
-            return true;
-        }
-
-        throw new GeneralException(trans('exceptions.backend.access.users.mark_error'));
+        throw new GeneralException(trans('exceptions.backend.fine.offences.delete_error'));
     }
 
     /**
@@ -249,24 +112,15 @@ class OffenceRepository extends BaseRepository
      *
      * @return mixed
      */
-    protected function createUserStub($input)
+    protected function createOffenceStub($input)
     {
-        $user = self::MODEL;
-        $user = new $user();
-        $user->surname = $input['surname'];
-        $user->other_names = $input['other_names'];
-        $user->email = $input['email'];
-        $user->phone = $input['phone'];
-        $user->verified = isset($input['verified']) ? 1 : 0;
-        $user->address = $input['address'];
-        $user->nic = $input['nic'];
-        $user->passport = $input['passport'];
-        $user->date_of_birth = $input['date_of_birth'];
-        $user->password = bcrypt($input['password']);
-        $user->status = isset($input['status']) ? 1 : 0;
-        $user->confirmation_code = md5(uniqid(mt_rand(), true));
-        $user->confirmed = isset($input['confirmed']) ? 1 : 0;
+        $offence = self::MODEL;
+        $offence = new $offence();
+        $offence->description = $input['description'];
+        $offence->description_si = $input['description_si'];
+        $offence->fine = $input['fine'];
+        $offence->dip = $input['dip'];
 
-        return $user;
+        return $offence;
     }
 }

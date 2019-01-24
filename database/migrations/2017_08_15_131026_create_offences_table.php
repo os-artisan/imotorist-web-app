@@ -8,8 +8,6 @@ class CreateOffencesTable extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
     public function up()
     {
@@ -19,13 +17,12 @@ class CreateOffencesTable extends Migration
             $table->string('description_si');
             $table->decimal('fine', 8, 2);
             $table->integer('dip')->unsigned();
+            $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
     public function down()
     {

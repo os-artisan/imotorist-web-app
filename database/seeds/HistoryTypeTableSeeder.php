@@ -15,8 +15,6 @@ class HistoryTypeTableSeeder extends Seeder
 
     /**
      * Run the database seed.
-     *
-     * @return void
      */
     public function run()
     {
@@ -33,6 +31,12 @@ class HistoryTypeTableSeeder extends Seeder
             [
                 'id' => 2,
                 'name' => 'Role',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ],
+            [
+                'id' => 3,
+                'name' => 'Offence',
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
             ],

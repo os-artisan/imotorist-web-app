@@ -40,12 +40,15 @@ class EventServiceProvider extends ServiceProvider
          */
         \App\Listeners\Backend\Access\User\UserEventListener::class,
         \App\Listeners\Backend\Access\Role\RoleEventListener::class,
+
+        /*
+         * Fine Subscribers
+         */
+        \App\Listeners\Backend\Fine\Offence\OffenceEventListener::class,
     ];
 
     /**
      * Register any events for your application.
-     *
-     * @return void
      */
     public function boot()
     {

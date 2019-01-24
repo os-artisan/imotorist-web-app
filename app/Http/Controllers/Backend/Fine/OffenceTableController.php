@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend\Fine;
 use App\Http\Controllers\Controller;
 use Yajra\Datatables\Facades\Datatables;
 use App\Repositories\Backend\Fine\OffenceRepository;
-use App\Http\Requests\Backend\Fine\ManageOffenceRequest;
+use App\Http\Requests\Backend\Fine\Offence\ManageOffenceRequest;
 
 class OffenceTableController extends Controller
 {

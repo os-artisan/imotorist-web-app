@@ -29,5 +29,11 @@ return [
             'updated' => 'The user was successfully updated.',
             'updated_password' => "The user's password was successfully updated.",
         ],
+
+        'offences' => [
+            'created' => 'The offence was successfully created.',
+            'deleted' => 'The offence was successfully deleted.',
+            'updated' => 'The offence was successfully updated.',
+        ],
     ],
 ];
