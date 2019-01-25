@@ -1,9 +1,9 @@
 <?php
 
 use Database\TruncateTable;
+use App\Models\Fine\Offence;
 use Illuminate\Database\Seeder;
 use Database\DisableForeignKeys;
-use Illuminate\Support\Facades\DB;
 
 /**
  * Class OffenceTableSeeder.
@@ -14,8 +14,6 @@ class OffenceTableSeeder extends Seeder
 
     /**
      * Run the database seed.
-     *
-     * @return void
      */
     public function run()
     {
@@ -235,7 +233,9 @@ class OffenceTableSeeder extends Seeder
             ],
         ];
 
-        DB::table(config('fine.offences_table'))->insert($offences);
+        foreach ($offences as $offence) {
+            Offence::create($offence);
+        }
 
         $this->enableForeignKeys();
     }

@@ -63,9 +63,10 @@ class OffenceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show(Offence $offence)
+    public function show(Offence $offence, ManageOffenceRequest $request)
     {
-        return 'gdfgd';
+        return view('backend.fine.offence.show')
+            ->withOffence($offence);
     }
 
     /**
@@ -75,9 +76,10 @@ class OffenceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit(Offence $offence)
+    public function edit(Offence $offence, ManageOffenceRequest $request)
     {
-        return 'gdfgd';
+        return view('backend.fine.offence.edit')
+            ->withOffence($offence);
     }
 
     /**
@@ -88,9 +90,11 @@ class OffenceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Offence $offence)
+    public function update(StoreOffenceRequest $request, Offence $offence)
     {
-        return 'gdfgd';
+        $this->offences->update($offence, $request->all());
+
+        return redirect()->route('admin.fine.offence.index')->withFlashSuccess(trans('alerts.backend.offences.updated'));
     }
 
     /**

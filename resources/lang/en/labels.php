@@ -115,8 +115,11 @@ return [
                 'table' => [
                     'id' => 'ID',
                     'description' => 'Description',
+                    'description_si' => 'Description (si)',
                     'fine' => 'Fine',
                     'dip' => 'DIP',
+                    'created_at' => 'Created At',
+                    'last_updated' => 'Last Updated',
                 ],
             ],
         ],
