@@ -80,6 +80,13 @@
                             <span>{{ trans('labels.backend.fine.offences.management') }}</span>
                         </a>
                     </li>
+
+                    <li class="{{ active_class(Active::checkUriPattern('admin/fine/ticket*')) }}">
+                        <a href="{{ route('admin.fine.ticket.index') }}">
+                            <i class="fa fa-circle-o"></i>
+                            <span>{{ trans('labels.backend.fine.tickets.management') }}</span>
+                        </a>
+                    </li>
                 </ul>
             </li>
             @endauth

@@ -3,7 +3,6 @@
 namespace App\Repositories\Backend\Fine;
 
 use App\Models\Fine\Offence;
-use App\Models\Access\User\User;
 use Illuminate\Support\Facades\DB;
 use App\Exceptions\GeneralException;
 use App\Repositories\BaseRepository;
@@ -23,9 +22,6 @@ class OffenceRepository extends BaseRepository
     const MODEL = Offence::class;
 
     /**
-     * @param int  $status
-     * @param bool $trashed
-     *
      * @return mixed
      */
     public function getForDataTable()

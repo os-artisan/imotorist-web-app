@@ -43,4 +43,20 @@ trait TicketAttribute
 
         return 0;
     }
+
+    /**
+     * @return string
+     */
+    public function getShowButtonAttribute()
+    {
+        return '<a href="'.route('admin.fine.ticket.show', $this).'" class="btn btn-xs btn-info"><i class="fa fa-search" data-toggle="tooltip" data-placement="top" title="'.trans('buttons.general.crud.view').'"></i></a> ';
+    }
+
+    /**
+     * @return string
+     */
+    public function getActionButtonsAttribute()
+    {
+        return $this->getShowButtonAttribute();
+    }
 }

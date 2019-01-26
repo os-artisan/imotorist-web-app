@@ -17,4 +17,14 @@ Route::group([
      * Offence CRUD
      */
     Route::resource('offence', 'OffenceController');
+
+    /*
+     * For Ticket DataTables
+     */
+    Route::post('ticket/get', 'TicketTableController')->name('ticket.get');
+
+    /*
+     * Ticket CRUD
+     */
+    Route::resource('ticket', 'TicketController');
 });

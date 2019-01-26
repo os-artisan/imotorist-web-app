@@ -122,6 +122,24 @@ return [
                     'last_updated' => 'Last Updated',
                 ],
             ],
+
+            'tickets' => [
+                'all' => 'All Tickets',
+                'create' => 'Create Ticket',
+                'deleted' => 'Deleted Tickets',
+                'edit' => 'Edit Ticket',
+                'management' => 'Ticket Management',
+                'view' => 'View Ticket',
+
+                'table' => [
+                    'id' => 'ID',
+                    'ticket_no' => 'Ticket No',
+                    'total_amount' => 'Total Amount',
+                    'paid' => 'Payment',
+                    'created_at' => 'Created At',
+                    'last_updated' => 'Last Updated',
+                ],
+            ],
         ],
     ],
 

@@ -47,6 +47,15 @@ return [
                 'main' => 'Offences',
                 'view' => 'View Offence',
             ],
+
+            'tickets' => [
+                'all' => 'All Tickets',
+                'create' => 'Create Ticket',
+                'deleted' => 'Deleted Tickets',
+                'edit' => 'Edit Ticket',
+                'main' => 'Tickets',
+                'view' => 'View Ticket',
+            ],
         ],
 
         'log-viewer' => [
