@@ -1,6 +1,6 @@
 ## iMotorist
 
-[![Build Status](https://travis-ci.org/iMotorist/imotorist-web-app.svg?branch=master)](https://travis-ci.org/iMotorist/imotorist-web-app) [![Coverage Status](https://coveralls.io/repos/github/iMotorist/imotorist-web-app/badge.svg?branch=master)](https://coveralls.io/github/iMotorist/imotorist-web-app?branch=master) [![StyleCI](https://styleci.io/repos/93291041/shield?branch=master)](https://styleci.io/repos/93291041) [![Heroku](https://heroku-badge.herokuapp.com/?app=heroku-badge&style=flat)](http://imotorist.herokuapp.com)
+[![Build Status](https://travis-ci.org/iMotorist/imotorist-web-app.svg?branch=master)](https://travis-ci.org/iMotorist/imotorist-web-app) [![Coverage Status](https://coveralls.io/repos/github/iMotorist/imotorist-web-app/badge.svg?branch=master)](https://coveralls.io/github/iMotorist/imotorist-web-app?branch=master) [![StyleCI](https://styleci.io/repos/93291041/shield?branch=master)](https://styleci.io/repos/93291041)
 
 ### Official Documentation
 
