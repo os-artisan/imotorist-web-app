@@ -14,6 +14,6 @@ iMotorist system will facilitate traffic police offices to book traffic violatio
 
 Please view the [wiki](https://github.com/iMotorist/imotorist-web-app/wiki) for a list of [features](https://github.com/iMotorist/imotorist-web-app/wiki#features).
 
-### Issues
+### Report Issues
 
 If you come across any issues please [report them here](https://github.com/iMotorist/imotorist-web-app/issues).
