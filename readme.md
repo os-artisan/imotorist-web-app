@@ -1,7 +1,5 @@
 ## iMotorist
 
-[![Coverage Status](https://coveralls.io/repos/github/iMotorist/imotorist-web-app/badge.svg?branch=master)](https://coveralls.io/github/iMotorist/imotorist-web-app?branch=master)
-
 ### Official Documentation
 
 [Click here for the official documentation](http://laravel-boilerplate.com)
