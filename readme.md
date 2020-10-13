@@ -1,4 +1,4 @@
-## iMotorist
+## iMotorist Web App
 
 ### Official Documentation
 
